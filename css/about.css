@@ -42,8 +42,9 @@ a.button {
   font-size: 1rem;
   color: #656461;
   text-decoration: none;
+  font-weight: bold;
   margin: 0;
-  width: 8rem;
+  padding: 0 0.3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,31 +54,16 @@ a.button {
           flex-direction: column;
   justify-items: center;
   text-align: center;
-}
-
-a.button::after {
-  content: "";
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  margin-top: -0.7em;
-  height: 1rem;
-  background-color: #93bd95;
-  opacity: 0.7;
-  z-index: -1;
-  pointer-events: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: transparent;
 }
 
 a.button:hover {
-  color: #424242;
-}
-
-a.button:hover::after {
-  opacity: 1;
-}
-
-a.button:active::after {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  background: rgba(147, 189, 149, 0.5);
 }
 
 .container {
@@ -182,66 +168,27 @@ a.button:active::after {
   margin-bottom: auto;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f3ecdf;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #656461;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #424242;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: "Roboto Mono", monospace;
-  font-size: 14px;
-  background-color: #f3ecdf;
-  color: #656461;
-  overflow-x: hidden;
-}
-
-h1 {
-  padding: 0 1rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #424242;
-}
-
-h1 underline {
-  border-bottom: solid 3px #93bd95;
-}
-
-p {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0 1rem;
-}
-
 .back {
   position: fixed;
   padding: 0.7em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 3px;
+      grid-template-rows: 1fr 3px;
 }
 
 .back a {
   text-decoration: none;
   color: #656461;
   font-weight: 600;
-  border-bottom: #93bd95 3px solid;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid #93bd95;
+}
+
+.back:hover a {
+  -webkit-transform: translateX(-3px);
+          transform: translateX(-3px);
 }
 
 .social {
@@ -274,6 +221,56 @@ p {
 .social a:hover {
   color: #424242;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3ecdf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #656461;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #424242;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  background-color: #f3ecdf;
+  color: #656461;
+  overflow-x: hidden;
+}
+
+h1 {
+  padding: 1em 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #424242;
+}
+
+h1 underline {
+  border-bottom: solid 3px #93bd95;
+}
+
+p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 1rem;
 }
 
 .s1 {
@@ -350,8 +347,6 @@ p {
 .contact {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 44px auto 44px;
-      grid-template-rows: 44px auto 44px;
 }
 
 .contact .container {
