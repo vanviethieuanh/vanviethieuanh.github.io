@@ -33,44 +33,50 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  padding: 1em 1rem;
-  width: fit-content;
-  font-size: 2rem;
-  font-weight: 500;
-  color: $text-primary;
-  underline {
-    border-bottom: solid 3px $main-color;
-  }
-}
-p {
-  width: fit-content;
-  padding: 0 1rem;
-}
-
 .s1 {
-  display: grid;
-  grid-template-rows: $nav-height auto $nav-height;
-  justify-items: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .container {
     display: grid;
+    grid-template-columns: auto 400px;
     gap: 2rem;
-    align-items: center;
-    grid-template-columns: 1fr 400px;
 
-    padding: 4rem;
+    @media screen and (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+      margin-top: 4rem;
+
+      h1 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 14px;
+      }
+      h1,
+      p {
+        padding: 1rem 0;
+      }
+    }
+    @media screen and (min-width: $sm) {
+      h1 {
+        white-space: nowrap;
+      }
+    }
 
     .content {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
     }
-    img {
-      width: 400px; /* width of container */
-      height: 400px; /* height of container */
-      object-fit: cover;
-      object-position: left top;
+    .photo {
+      background-image: url("../images/desk.JPG");
+      padding-top: 100%;
+      width: 100%;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 }
@@ -100,6 +106,8 @@ p {
       align-items: center;
       justify-content: space-between;
 
+      margin-bottom: 1rem;
+
       &::after {
         content: "";
         width: 3em;
@@ -107,6 +115,9 @@ p {
 
         border-bottom: 1px solid $text-subtitle;
         opacity: 0.5;
+        @media screen and (max-width: $sm) {
+          display: none;
+        }
       }
     }
     [what-i-do-ans] {
@@ -125,6 +136,11 @@ p {
       * {
         padding: 0.5em 0;
       }
+      @media screen and (max-width: $sm) {
+        h1 {
+          padding: 0;
+        }
+      }
     }
 
     [web-design] {
@@ -133,6 +149,14 @@ p {
 
     a.button {
       grid-column-start: 2;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 5rem 2rem;
+      gap: 2rem;
     }
   }
 }

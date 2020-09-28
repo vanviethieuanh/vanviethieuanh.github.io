@@ -33,44 +33,49 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  padding: 1em 1rem;
-  width: fit-content;
-  font-size: 2rem;
-  font-weight: 500;
-  color: $text-primary;
-  underline {
-    border-bottom: solid 3px $main-color;
-  }
-}
-p {
-  width: fit-content;
-  padding: 0 1rem;
-}
-
 .s1 {
-  display: grid;
-  grid-template-rows: $nav-height auto $nav-height;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 1rem;
 
   .container {
     display: grid;
     gap: 2rem;
     align-items: center;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
-    padding: 4rem;
+    @media screen and (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 14px;
+      }
+      h1,
+      p {
+        padding: 1rem 0;
+      }
+    }
 
     .content {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
-    img {
-      width: 400px; /* width of container */
-      height: 400px; /* height of container */
-      object-fit: cover;
-      object-position: left bottom;
+
+    .photo {
+      background-image: url("../images/me.JPG");
+      padding-top: 100%;
+      width: 100%;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 }
@@ -92,6 +97,25 @@ p {
 
     align-items: center;
     justify-items: center;
+
+    @media screen and (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 14px;
+      }
+      h1,
+      p {
+        padding: 1rem 0;
+      }
+    }
   }
 }
 
@@ -104,9 +128,26 @@ p {
     .content {
       display: flex;
       flex-direction: row;
+      padding: 2rem;
+
       p {
         padding: 0;
         font-size: 1rem;
+      }
+      & {
+        a {
+          padding: 0;
+          margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: $sm) {
+          // small
+          flex-direction: column;
+        }
+        @media screen and (min-width: $sm) {
+          // big
+          flex-direction: row;
+        }
       }
     }
   }

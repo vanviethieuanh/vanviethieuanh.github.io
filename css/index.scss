@@ -1,17 +1,5 @@
 @import "global";
 
-h1 {
-  padding: 1em 1rem;
-  width: fit-content;
-  font-size: 2rem;
-  font-weight: 500;
-  color: $text-primary;
-}
-p {
-  width: fit-content;
-  padding: 0 1rem;
-}
-
 .nav {
   box-sizing: border-box;
   position: fixed;
@@ -115,7 +103,6 @@ p {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 0 1rem;
     }
   }
 }
@@ -138,15 +125,43 @@ p {
     .content {
       display: flex;
       flex-direction: column;
+      .text {
+        display: flex;
 
-      h1 {
-        padding: 0;
-      }
-
-      p {
-        padding: 0;
-        font-size: 1rem;
+        @media screen and (max-width: $sm) {
+          // small
+          flex-direction: column;
+        }
+        @media screen and (min-width: $sm) {
+          // big
+          flex-direction: row;
+        }
       }
     }
+  }
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: $sm) {
+  p {
+    padding: 0.3rem 2rem;
+  }
+  h1 {
+    padding: 0.7rem 2rem;
+    padding-bottom: 1rem;
+  }
+  .button {
+    padding: 0rem 2rem !important;
+  }
+}
+@media screen and (min-width: $sm) {
+  p {
+    padding: 0;
+    vertical-align: bottom;
+  }
+  h1 {
+    padding-bottom: 2rem;
   }
 }

@@ -37,6 +37,28 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  padding: 1em 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #424242;
+}
+
+h1 underline {
+  border-bottom: solid 3px #93bd95;
+}
+
+p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 1rem;
+  color: #656461;
+}
+
 a.button {
   font-family: "Roboto Mono", monospace;
   font-size: 1rem;
@@ -98,49 +120,6 @@ a.button:hover {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-}
-
-.scroll {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-}
-
-.scroll .border {
-  width: 20px;
-  height: 30px;
-  -webkit-box-shadow: inset 0 0 0 2px #656461;
-          box-shadow: inset 0 0 0 2px #656461;
-  border-radius: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.scroll .border::after {
-  content: "";
-  margin-left: 8px;
-  width: 4px;
-  height: 6px;
-  border-radius: 2px;
-  background-color: #656461;
-  -webkit-animation: scroll 1.5s ease-in-out infinite;
-          animation: scroll 1.5s ease-in-out infinite;
 }
 
 .section {
@@ -208,10 +187,18 @@ a.button:hover {
   padding: 0 0.8rem;
 }
 
+@media screen and (max-width: 600px) {
+  .social {
+    width: 100%;
+    background: #f3ecdf;
+  }
+}
+
 .social a {
   text-decoration: none;
   font-weight: 600;
   margin-right: 0.7rem;
+  color: #656461;
 }
 
 .social a:last-child {
@@ -252,33 +239,17 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  padding: 1em 1rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #424242;
-}
-
-h1 underline {
-  border-bottom: solid 3px #93bd95;
-}
-
-p {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0 1rem;
-}
-
 .s1 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 44px auto 44px;
-      grid-template-rows: 44px auto 44px;
-  justify-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1rem;
 }
 
 .s1 .container {
@@ -288,9 +259,31 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-columns: 1fr 400px;
-      grid-template-columns: 1fr 400px;
-  padding: 4rem;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+@media screen and (max-width: 600px) {
+  .s1 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 2rem;
+  }
+  .s1 .container h1 {
+    font-size: 1.5rem;
+  }
+  .s1 .container p {
+    font-size: 14px;
+  }
+  .s1 .container h1,
+  .s1 .container p {
+    padding: 1rem 0;
+  }
 }
 
 .s1 .container .content {
@@ -306,15 +299,13 @@ p {
           justify-content: flex-start;
 }
 
-.s1 .container img {
-  width: 400px;
-  /* width of container */
-  height: 400px;
-  /* height of container */
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: left bottom;
-     object-position: left bottom;
+.s1 .container .photo {
+  background-image: url("../images/me.JPG");
+  padding-top: 100%;
+  width: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .duty {
@@ -344,6 +335,35 @@ p {
   justify-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  .duty .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 2rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .duty .container h1 {
+    font-size: 1.5rem;
+  }
+  .duty .container p {
+    font-size: 14px;
+  }
+  .duty .container h1,
+  .duty .container p {
+    padding: 1rem 0;
+  }
+}
+
 .contact {
   display: -ms-grid;
   display: grid;
@@ -369,10 +389,34 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding: 2rem;
 }
 
 .contact .container .content p {
   padding: 0;
   font-size: 1rem;
+}
+
+.contact .container .content a {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contact .container .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .contact .container .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=about.css.map */
