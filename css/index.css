@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f3f3f3;
+  background: #f0f0f0;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -38,7 +38,7 @@ p {
 }
 
 body {
-  background-color: #f3f3f3;
+  background-color: #f0f0f0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,6 +53,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+}
+
+a {
+  text-decoration: none;
 }
 
 header {
@@ -86,7 +90,6 @@ header nav {
 }
 
 header nav a {
-  text-decoration: none;
   color: #858585;
   opacity: .4;
 }
@@ -113,8 +116,8 @@ section {
 }
 
 section .card {
-  -webkit-animation: shrink 2s ease-in-out;
-          animation: shrink 2s ease-in-out;
+  -webkit-animation: shrink 1s ease-in-out;
+          animation: shrink 1s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,9 +134,16 @@ section .card {
   min-width: 200px;
   height: 300px;
   border-radius: 20px;
-  background-color: #f3f3f3;
+  background-color: #f0f0f0;
   -webkit-box-shadow: 20px 20px 60px #cfcfcf, -20px -20px 60px #ffffff;
           box-shadow: 20px 20px 60px #cfcfcf, -20px -20px 60px #ffffff;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+section .card:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
 }
 
 section .card svg {

@@ -11,6 +11,10 @@ body {
   height: 100vh;
 }
 
+a{
+  text-decoration: none;
+}
+
 header {
   position: absolute;
   top: 0px;
@@ -34,7 +38,6 @@ header {
     right: 2rem;
 
     a {
-      text-decoration: none;
       color: $text-subtitle;
       opacity: .4;
 
@@ -54,7 +57,7 @@ section {
   width: 100%;
 
   .card {
-    animation: shrink 2s ease-in-out;
+    animation: shrink 1s ease-in-out;
 
     display: flex;
     flex-direction: column;
@@ -68,6 +71,12 @@ section {
 
     background-color: $bg;
     box-shadow: $neumorphism;
+
+    transition: all .5s ease-in-out;
+
+  &:hover{
+    transform: translateY(-20px);
+  }
 
     svg{
       width: 60px;
