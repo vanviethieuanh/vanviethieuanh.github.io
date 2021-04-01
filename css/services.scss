@@ -2,23 +2,6 @@
 
 $nav-height: 44px;
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: $bg;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $text-subtitle;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $text-primary;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -33,10 +16,16 @@ body {
   overflow-x: hidden;
 }
 
+.page {
+  height: 200vh;
+  display: grid;
+}
+
 .s1 {
   display: flex;
   justify-content: center;
   align-items: center;
+
   .container {
     display: grid;
     grid-template-columns: auto 400px;
@@ -51,14 +40,17 @@ body {
       h1 {
         font-size: 1.7rem;
       }
+
       p {
         font-size: 14px;
       }
+
       h1,
       p {
         padding: 1rem 0;
       }
     }
+
     @media screen and (min-width: $sm) {
       h1 {
         white-space: nowrap;
@@ -70,6 +62,7 @@ body {
       flex-direction: column;
       justify-content: center;
     }
+
     .photo {
       background-image: url("../images/desk.JPG");
       padding-top: 100%;
@@ -88,69 +81,48 @@ body {
 
   .container {
     display: grid;
+    row-gap: 2rem;
+    justify-items: left;
+    grid-template-areas:
+      "question   question  question"
+      "design     app       graphic"
+      "contact    contact   contact";
 
-    grid-template-columns: 1fr repeat(3, 2fr);
-    grid-template-rows: 1fr 4fr 1fr;
-    align-items: flex-start;
 
-    gap: 2rem;
+    .question {
+      padding: 0 1rem;
+      grid-area: question;
+    }
 
-    [what-i-do] {
-      grid-column-start: 1;
-      grid-column-end: 2;
+    .web-design {
+      grid-area: design;
+    }
 
-      color: $text-subtitle;
-      font-weight: bold;
+    .web-app {
+      grid-area: app;
+    }
 
+    .graphic-design {
+      grid-area: graphic;
+    }
+
+    .contact {
+      grid-area: contact;
+
+      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: center;
 
-      margin-bottom: 1rem;
-
-      &::after {
-        content: "";
-        width: 3em;
-        height: 1px;
-
-        border-bottom: 1px solid $text-subtitle;
-        opacity: 0.5;
-        @media screen and (max-width: $sm) {
-          display: none;
-        }
-      }
-    }
-    [what-i-do-ans] {
-      color: $text-subtitle;
-
-      grid-column-start: 2;
-      grid-column-end: 4;
-      &::after {
-        content: "";
-        width: 10em;
-        height: 1px;
-        border-bottom: 1px solid $text-subtitle;
-      }
-    }
-    [sub] {
-      * {
-        padding: 0.5em 0;
-      }
-      @media screen and (max-width: $sm) {
-        h1 {
-          padding: 0;
-        }
+      a {
+        padding: 1em 1rem;
+        text-decoration: none;
+        color: $text-subtitle;
+        font-weight: bold;
       }
     }
 
-    [web-design] {
-      grid-column-start: 2;
-    }
-
-    a.button {
-      grid-column-start: 2;
-    }
   }
+
   @media screen and (max-width: $sm) {
     .container {
       display: flex;

@@ -10,110 +10,81 @@
 
 
   <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="./sal.css" />
 
   <title>Hi, I'm Anh</title>
 </head>
 
 <body>
-  <div class="nav">
-    <div data-sal-duration="1800" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce"
-      class="content">
-      <a href="./about.html">About</a>
-      <a href="./services.html">Services</a>
-      <a href="">Work</a>
-    </div>
-  </div>
-
-  <div class="hamburger">
-    <div class="burger">
-      <span class=""></span>
-      <span class=""></span>
-    </div>
-  </div>
-
-  <div class="social">
-    <a target="_blank" href="https://www.behance.net/vanviethieuanh">Bē</a>
-    <a target="_blank" href="https://github.com/vanviethieuanh">Gh</a>
-  </div>
-
-  <div class="section s1">
-    <div></div>
-    <div class="container">
-      <div data-sal-duration="1800" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce"
-        class="content">
-        <h1>
-          Sometime,<br />
-          simplicity touch!
-        </h1>
-        <p>
-          Hi, I’m Anh. I create simple website for you <br />
-          so that you can simply focus on your clients.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="section s2">
-    <div class="container">
-      <div data-sal-duration="1800" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce"
-        class="content">
-        <h1>
-          To get more clients, <br />
-          you would need their trust.
-        </h1>
-        <p>
-          What’s make people <b>trust</b> your business? <br />
-          They need something which makes them believe <br />
-          that your business is serious. <br />
-          And
-          <b>a professional website proves that.</b>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="section contact">
-    <div></div>
-    <div class="container">
-      <div data-sal-duration="1800" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce"
-        class="content">
-        <h1>Wanna work together?</h1>
-        <div class="text">
-          <a class="button" href="mailto: vanviethieuanh@gmail.com">Let’s talk!</a>
-          <p>and tell me about your amazing story!</p>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>©vanviethieuanh</p>
-    </div>
-  </div>
-  <script src="./sal.js"></script>
-  <script defer>
-    sal();
-
-    let isOpen = false;
-
-    const burgers = document.querySelectorAll(".burger span");
-    const nav = document.querySelector("div.nav");
-
-    document.querySelector(".hamburger").addEventListener("click", (e) => {
-      if (isOpen) {
-        burgers.forEach((e) => {
-          e.classList.remove("open");
-        });
-        nav.classList.remove("open");
-
-        isOpen = false;
-      } else {
-        burgers.forEach((e) => {
-          e.classList.add("open");
-        });
-        nav.classList.add("open");
-
-        isOpen = true;
-      }
-    });
-  </script>
+  <header>
+    <h2 class="title">
+      Fullstack Developer aka UX/UI Designer
+    </h2>
+    <nav>
+      <a target="_blank" href="https://www.behance.net/vanviethieuanh">Bēhace</a>
+      <a target="_blank" href="https://github.com/vanviethieuanh">Github</a>
+    </nav>
+  </header>
+  <section>
+    <article id="about" class="card">
+      <svg viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 66.6667C0 51.9391 11.9391 40 26.6667 40H53.3333C68.0609 40 80 51.9391 80 66.6667V66.6667C80 68.5076 78.5076 70 76.6667 70H3.33333C1.49239 70 0 68.5076 0 66.6667V66.6667Z"
+          fill="url(#paint0_linear)" />
+        <circle id="head" cx="40.5" cy="17.5" r="17.5" fill="url(#paint1_linear)" />
+        <defs>
+          <linearGradient id="paint0_linear" x1="0" y1="40" x2="19.726" y2="92.6027" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF665A" />
+            <stop offset="1" stop-color="#FF8C64" />
+          </linearGradient>
+          <linearGradient id="paint1_linear" x1="23" y1="0" x2="58" y2="35" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF665A" />
+            <stop offset="1" stop-color="#FF8C64" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <h2>About </h2>
+    </article>
+    <article id="works" class="card">
+      <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="80" height="60" rx="10" fill="url(#paint0_linear)" />
+        <path id="terminal-dash" d="M49.793 47.207H30V43.6758H49.793V47.207Z" fill="#F9F9F9" />
+        <path
+          d="M13.6738 21.5098L15.5723 19.5586L27.3848 29.4199L15.5723 39.2813L13.6738 37.3477L23.2539 29.4551L13.6738 21.5098Z"
+          fill="#F9F9F9" />
+        <defs>
+          <linearGradient id="paint0_linear" x1="0" y1="0" x2="57.6" y2="76.8" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF665A" />
+            <stop offset="1" stop-color="#FF8C64" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <h2>Works</h2>
+    </article>
+    <article id="contact" class="card">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="circles">
+          <circle cx="15.5" cy="83.5" r="15.5" fill="url(#paint0_linear)" />
+          <circle cx="67.5" cy="72.5" r="20.5" fill="url(#paint2_linear)" />
+          <circle cx="36" cy="26" r="26" fill="url(#paint1_linear)" />
+        </g>
+        <defs>
+          <linearGradient id="paint0_linear" x1="0" y1="68" x2="31" y2="99" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF665A" />
+            <stop offset="1" stop-color="#FF8C64" />
+          </linearGradient>
+          <linearGradient id="paint1_linear" x1="10" y1="0" x2="62" y2="52" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF665A" />
+            <stop offset="1" stop-color="#FF8C64" />
+          </linearGradient>
+          <linearGradient id="paint2_linear" x1="47" y1="52" x2="88" y2="93" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF665A" />
+            <stop offset="1" stop-color="#FF8C64" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <h2>Contact</h2>
+    </article>
+  </section>
 </body>
 
 </html>

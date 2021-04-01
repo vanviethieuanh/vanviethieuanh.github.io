@@ -1,14 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway&display=swap');
+// Typo
+$font: "Roboto Mono",
+monospace;
+$sans: 'Raleway', sans-serif;
+$serif: 'Playfair Display',
+serif;
 
-$font: "Roboto Mono", monospace;
 
-$bg: #f3ecdf;
-$text-primary: #424242;
-$text-subtitle: #72706d;
-$main-color: #93bd95;
+$h1: 50px;
+$h2: 20px;
+$h3: 12px;
+
+
+
+// Color
+$bg:#f3f3f3;
+$text-primary: #363636;
+$text-subtitle: #858585;
+$linear: linear-gradient(135deg, #FF665A 0%, #FF8C64 100%);
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Effect
+$neumorphism: 20px 20px 60px #cfcfcf,
+-20px -20px 60px #ffffff;
+
+// Size
+$round: 20px;
 
 $focus-width: 1100px;
-
 $sm: 600px;
 
 ::-webkit-scrollbar {
@@ -28,164 +50,20 @@ $sm: 600px;
   background: $text-primary;
 }
 
-$nav-height: 44px;
+body{
+  font-family: $sans;
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  width: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-
-  font-family: $font;
-  font-size: 14px;
-
-  background-color: $bg;
-  color: $text-subtitle;
-
-  overflow-x: hidden;
-}
-
-h1 {
-  padding: 1em 1rem;
-  width: fit-content;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: $text-primary;
-  underline {
-    border-bottom: solid 3px $main-color;
-  }
-}
-p {
-  width: fit-content;
-  padding: 0 1rem;
-  color: $text-subtitle;
-}
-
-a.button {
-  font-family: "Roboto Mono", monospace;
-  font-size: 1rem;
-  color: $text-subtitle;
-  text-decoration: none;
-  font-weight: bold;
-
   margin: 0;
-  padding: 0 0.3em;
-
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  text-align: center;
-
-  transition: all 0.3s ease-in-out;
-
-  width: max-content;
-
-  background: transparent;
-
-  &:hover {
-    background: transparentize($color: $main-color, $amount: 0.5);
-    color: $text-primary;
-  }
-
-  @media screen and (max-width: $sm) {
-    padding: 0;
-  }
+  padding: 0;
 }
 
-.container {
-  max-width: $focus-width;
+h1{
+  font-family: $sans;
+  color: $text-subtitle;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.section {
-  height: 100vh;
-  justify-items: center;
-  @media screen and (max-width: $sm) {
-    height: unset;
-  }
-}
-
-.copyright {
-  width: 100%;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: $main-color;
-  p {
-    line-height: 1em;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-}
-
-.back {
-  position: fixed;
-  padding: 0.7em;
-
-  display: grid;
-  grid-template-rows: 1fr 3px;
-
-  a {
-    text-decoration: none;
-    color: $text-subtitle;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out;
-    border-bottom: 2px solid $main-color;
-  }
-  &:hover {
-    a {
-      transform: translateX(-3px);
-    }
-  }
-}
-
-.social {
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  bottom: 0;
-  height: $nav-height;
-  align-items: center;
-  padding: 0 0.8rem;
-
-  @media screen and (max-width: $sm) {
-    width: 100%;
-    background: $bg;
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 0.7rem;
-    color: $text-subtitle;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &:hover {
-      color: $text-primary;
-      cursor: pointer;
-    }
-  }
+p{
+  font-family: $sans;
+  color: $text-subtitle;
 }
