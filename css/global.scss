@@ -1,69 +1,111 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway&display=swap');
-// Typo
-$font: "Roboto Mono",
-monospace;
-$sans: 'Raleway', sans-serif;
-$serif: 'Playfair Display',
-serif;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Roboto&display=swap');
 
+// Stroke
+$border: solid 4px #000000;
+
+// Typo
+$font-dense: 'Oswald', sans-serif;
+$font-p: 'Roboto', sans-serif;
 
 $h1: 50px;
 $h2: 20px;
 $h3: 12px;
 
-
-
 // Color
-$bg:#f0f0f0;
+$bg: white;
+
 $text-primary: #363636;
 $text-subtitle: #858585;
-$linear: linear-gradient(135deg, #FF665A 0%, #FF8C64 100%);
-$shadow-color: rgba(0, 0, 0, 0.1);
 
-// Effect
-$neumorphism: 20px 20px 60px #cfcfcf,
--20px -20px 60px #ffffff;
+$blue: #699BF7;
+$red: #FC5151;
+$yellow: #FFCE42;
+$green: #2ECC71;
+$violet: #7D3CFF;
+$behance: #0057ff;
+$purple: #9B59B6;
 
 // Size
 $round: 20px;
+$container-padding: 0 4rem;
 
 $focus-width: 1100px;
 $sm: 600px;
 
 ::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $bg;
+    background: $bg;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $text-subtitle;
-  border-radius: 5px;
+    background: $text-subtitle;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $text-primary;
+    background: $text-primary;
 }
 
-body{
-  font-family: $sans;
+body {
+    font-size: 16px;
+    font-family: $font-dense;
 
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-h1{
-  font-family: $sans;
-  color: $text-subtitle;
+h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: $font-dense;
+    color: black;
+}
+h2 {
+    font-family: $font-dense;
+    font-weight: normal;
+    color: black;
+    font-size: 1.2rem;
+}
+h3 {
+    font-weight: 300;
+    font-family: $font-dense;
+    color: $text-subtitle;
+    font-size: 1.2rem;
 }
 
-p{
-  font-family: $sans;
-  color: $text-subtitle;
+p {
+    font-family: $font-p;
+    color: $text-subtitle;
+}
+
+$button-shadow-size:6px;
+$button-height:40px;
+button{
+    outline: none;
+
+    height: $button-height;
+
+    border-radius: 0;
+    border: $border;
+    
+    font-family: $font-dense;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 0;
+    
+    padding: 0 .5rem;
+    padding-bottom: $button-shadow-size;
+
+    box-shadow: inset 0 -1*$button-shadow-size 0 rgba($color: #000000, $alpha: .2);
+
+    &:active{
+        height: $button-height -$button-shadow-size;
+        padding-bottom: 0;
+        box-shadow: none;
+        transform: translate(0, $button-shadow-size);
+    }
 }

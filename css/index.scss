@@ -1,234 +1,120 @@
 @import "global";
 
 body {
-  background-color: $bg;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: white;
 
   height: 100vh;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
 header {
-  position: absolute;
-  top: 0px;
-  width: 100%;
+  padding: $container-padding;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   display: flex;
   flex-direction: row;
 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 
-  h2.title {
-    color: $text-subtitle;
-
-    font-weight: normal;
-    top: 2rem;
+  .title {
+    margin: 0;
+    margin-right: auto;
   }
 
   nav {
-    position: absolute;
-    right: 2rem;
+    margin-left: auto;
 
     a {
       color: $text-subtitle;
-      opacity: .4;
+      font-weight: 300;
+      padding-left: 1rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
 
       &:hover {
-        opacity: 1;
+        color: black;
+      }
+
+      &.active {
+        color: black;
+        font-weight: normal;
       }
     }
   }
 }
 
 section {
+  padding: $container-padding;
+
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
+  align-items: flex-start;
 
-  .card {
-    animation: shrink 1s ease-in-out;
-
+  ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    min-width: 200px;
-    height: 300px;
+    width: 100%;
+    justify-content: space-between;
 
-    border-radius: $round;
+    padding: 0;
 
+    li {
+      list-style: none;
+      border: $border;
+
+      transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+
+      .card {
+        width: 280px;
+        height: 346px;
+
+        display: grid;
+        grid-template-rows: auto 66px;
+
+        .title {
+          display: grid;
+          place-items: center;
+
+          border-top: $border;
+
+          * {
+            margin: 0;
+          }
+        }
+      }
+
+      &:hover{
+        transform: translate(-10px,-10px);
+        box-shadow: 10px 10px 0 black;
+      }
+    }
+  }
+}
+
+footer{
+  padding: $container-padding;
+  padding-top: 1rem;
+
+  button{
+    margin-right: 1rem;
+  }
+
+  #github{
     background-color: $bg;
-    box-shadow: $neumorphism;
-
-    transition: all .5s ease-in-out;
-
-  &:hover{
-    transform: translateY(-20px);
+    color: $text-primary;
   }
 
-    svg{
-      width: 60px;
-      height: 80px;
-    }
-    h2 {
-      font-weight: normal;
-      color: $text-subtitle;
-    }
-  }
-}
-
-#about:hover{
-  #head{
-    animation-name: slide-around;
-    animation-timing-function: ease-in-out;
-    animation-duration: 1s;
-  }
-}
-
-#works {
-  &:hover {
-    #terminal-dash {
-      animation-name: flicker;
-      animation-timing-function: ease-in-out;
-      animation-duration: 1s;
-      animation-iteration-count: 2;
-    }
-  }
-}
-
-#contact {
-  &:hover {
-    #circles circle {
-      animation-duration: 1s;
-
-      &:nth-child(1) {
-        animation-name: circle-1;
-        animation-delay: 0;
-      }
-
-      &:nth-child(2) {
-        animation-name: circle-2;
-        animation-delay: .5s;
-      }
-
-      &:nth-child(3) {
-        animation-name: circle-3;
-        animation-delay: 1s;
-      }
-    }
-  }
-
-}
-
-@keyframes shrink {
-  0% {
-    box-shadow: 0 0 20px transparent,
-      0 0 20px transparent;
-  }
-
-  100% {
-    box-shadow:$neumorphism;
-  }
-}
-
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes flicker {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-
-@keyframes circle-1 {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(10px, -10px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-
-
-@keyframes circle-2 {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(-6px, -6px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-
-@keyframes circle-3 {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(-10px, 10px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-
-@keyframes slide-around {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  25% {
-    transform: translate(0px, 3px);
-  }
-
-  75% {
-    transform: translate(0px, -3px);
-  }
-
-  100% {
-    transform: translate(0, 0);
+  #behance{
+    background-color: $behance;
+    color: $bg;
   }
 }
