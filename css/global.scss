@@ -29,7 +29,7 @@ $purple: #9B59B6;
 $round: 20px;
 $container-padding: 0 4rem;
 
-$focus-width: 1100px;
+$focus-width: 900px;
 $sm: 600px;
 
 ::-webkit-scrollbar {
@@ -42,7 +42,6 @@ $sm: 600px;
 
 ::-webkit-scrollbar-thumb {
     background: $text-subtitle;
-    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -56,6 +55,8 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    scrollbar-width: thin;
 }
 
 h1 {

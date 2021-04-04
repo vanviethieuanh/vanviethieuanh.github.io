@@ -9,7 +9,6 @@
 
 ::-webkit-scrollbar-thumb {
   background: #858585;
-  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -23,6 +22,7 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scrollbar-width: thin;
 }
 
 h1 {
@@ -85,31 +85,17 @@ a {
 }
 
 header {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 4rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-header .title {
-  margin: 0;
-  margin-right: auto;
 }
 
 header nav {
-  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header nav a {
@@ -132,6 +118,8 @@ header nav a.active {
 }
 
 section {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,54 +137,52 @@ section {
 }
 
 section ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(280px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin: 0;
   padding: 0;
 }
 
 section ul li {
   list-style: none;
-  border: solid 4px #000000;
-  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-section ul li * {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
-section ul li canvas#tictactoe {
-  background-color: #FC5151;
-}
-
-section ul li:hover {
-  -webkit-transform: translate(-10px, -10px);
-          transform: translate(-10px, -10px);
-  -webkit-box-shadow: 10px 10px 0 black;
-          box-shadow: 10px 10px 0 black;
-}
-
-section ul li:hover * {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
 }
 
 section ul li .card {
+  border: solid 4px #000000;
   width: 280px;
   height: 346px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto 66px;
       grid-template-rows: auto 66px;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+section ul li .card * {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+section ul li .card:hover {
+  -webkit-transform: translate(-10px, -10px);
+          transform: translate(-10px, -10px);
+  -webkit-box-shadow: 10px 10px 0 black;
+          box-shadow: 10px 10px 0 black;
+}
+
+section ul li .card:hover * {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 section ul li .card .title {
+  background-color: white;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -218,14 +204,14 @@ section ul li .card .content#tictactoe {
 }
 
 section ul li .card .content#tictactoe #xo * {
-  opacity: 0;
+  visibility: hidden;
 }
 
 section ul li .card .content#tictactoe #xo #xo1 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
   -webkit-animation-fill-mode: forwards;
@@ -233,10 +219,10 @@ section ul li .card .content#tictactoe #xo #xo1 {
 }
 
 section ul li .card .content#tictactoe #xo #xo2 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
   -webkit-animation-fill-mode: forwards;
@@ -244,10 +230,10 @@ section ul li .card .content#tictactoe #xo #xo2 {
 }
 
 section ul li .card .content#tictactoe #xo #xo3 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s;
   -webkit-animation-fill-mode: forwards;
@@ -255,10 +241,10 @@ section ul li .card .content#tictactoe #xo #xo3 {
 }
 
 section ul li .card .content#tictactoe #xo #xo4 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
   -webkit-animation-fill-mode: forwards;
@@ -266,10 +252,10 @@ section ul li .card .content#tictactoe #xo #xo4 {
 }
 
 section ul li .card .content#tictactoe #xo #xo5 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 2.5s;
           animation-delay: 2.5s;
   -webkit-animation-fill-mode: forwards;
@@ -277,10 +263,10 @@ section ul li .card .content#tictactoe #xo #xo5 {
 }
 
 section ul li .card .content#tictactoe #xo #xo6 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
   -webkit-animation-fill-mode: forwards;
@@ -288,10 +274,10 @@ section ul li .card .content#tictactoe #xo #xo6 {
 }
 
 section ul li .card .content#tictactoe #xo #xo7 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 3.5s;
           animation-delay: 3.5s;
   -webkit-animation-fill-mode: forwards;
@@ -299,10 +285,10 @@ section ul li .card .content#tictactoe #xo #xo7 {
 }
 
 section ul li .card .content#tictactoe #xo #xo8 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
   -webkit-animation-fill-mode: forwards;
@@ -310,10 +296,10 @@ section ul li .card .content#tictactoe #xo #xo8 {
 }
 
 section ul li .card .content#tictactoe #xo #xo9 {
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
   -webkit-animation-delay: 4.5s;
           animation-delay: 4.5s;
   -webkit-animation-fill-mode: forwards;
@@ -344,8 +330,8 @@ section ul li .card .content#enigma b::after {
           animation-play-state: inherit;
   -webkit-animation-name: crypto;
           animation-name: crypto;
-  -webkit-animation-duration: 7s;
-          animation-duration: 7s;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -355,33 +341,33 @@ section ul li .card .content#enigma b::after {
 }
 
 section ul li .card .content#enigma b:nth-child(1)::after {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
 }
 
 section ul li .card .content#enigma b:nth-child(2)::after {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 section ul li .card .content#enigma b:nth-child(3)::after {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
 section ul li .card .content#enigma b:nth-child(4)::after {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
 section ul li .card .content#enigma b:nth-child(5)::after {
-  -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 section ul li .card .content#enigma b:nth-child(6)::after {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 section ul li .card .content#enigma b:nth-child(7)::after {
@@ -390,13 +376,13 @@ section ul li .card .content#enigma b:nth-child(7)::after {
 }
 
 section ul li .card .content#enigma b:nth-child(8)::after {
-  -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 
 section ul li .card .content#enigma b:nth-child(9)::after {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
 }
 
 section ul li .card .content#twitter {
@@ -413,15 +399,16 @@ section ul li .card .content#twitter #bird #eye {
           animation: blink 5s linear forwards infinite;
 }
 
-section ul li .card .content#mondrian svg * {
-  opacity: 0;
+section ul li .card .content#mondrian {
+  background: white;
 }
 
 section ul li .card .content#mondrian svg *:nth-child(1) {
+  visibility: hidden;
   -webkit-animation-play-state: inherit;
           animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
+  -webkit-animation-name: appear;
+          animation-name: appear;
   -webkit-animation-duration: .4s;
           animation-duration: .4s;
   -webkit-animation-delay: 0.5s;
@@ -431,10 +418,11 @@ section ul li .card .content#mondrian svg *:nth-child(1) {
 }
 
 section ul li .card .content#mondrian svg *:nth-child(2) {
+  visibility: hidden;
   -webkit-animation-play-state: inherit;
           animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
+  -webkit-animation-name: appear;
+          animation-name: appear;
   -webkit-animation-duration: .4s;
           animation-duration: .4s;
   -webkit-animation-delay: 1s;
@@ -444,10 +432,11 @@ section ul li .card .content#mondrian svg *:nth-child(2) {
 }
 
 section ul li .card .content#mondrian svg *:nth-child(3) {
+  visibility: hidden;
   -webkit-animation-play-state: inherit;
           animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
+  -webkit-animation-name: appear;
+          animation-name: appear;
   -webkit-animation-duration: .4s;
           animation-duration: .4s;
   -webkit-animation-delay: 1.5s;
@@ -457,10 +446,11 @@ section ul li .card .content#mondrian svg *:nth-child(3) {
 }
 
 section ul li .card .content#mondrian svg *:nth-child(4) {
+  visibility: hidden;
   -webkit-animation-play-state: inherit;
           animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
+  -webkit-animation-name: appear;
+          animation-name: appear;
   -webkit-animation-duration: .4s;
           animation-duration: .4s;
   -webkit-animation-delay: 2s;
@@ -470,10 +460,11 @@ section ul li .card .content#mondrian svg *:nth-child(4) {
 }
 
 section ul li .card .content#mondrian svg *:nth-child(5) {
+  visibility: hidden;
   -webkit-animation-play-state: inherit;
           animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
+  -webkit-animation-name: appear;
+          animation-name: appear;
   -webkit-animation-duration: .4s;
           animation-duration: .4s;
   -webkit-animation-delay: 2.5s;
@@ -483,10 +474,11 @@ section ul li .card .content#mondrian svg *:nth-child(5) {
 }
 
 section ul li .card .content#mondrian svg *:nth-child(6) {
+  visibility: hidden;
   -webkit-animation-play-state: inherit;
           animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
+  -webkit-animation-name: appear;
+          animation-name: appear;
   -webkit-animation-duration: .4s;
           animation-duration: .4s;
   -webkit-animation-delay: 3s;
@@ -495,83 +487,45 @@ section ul li .card .content#mondrian svg *:nth-child(6) {
           animation-fill-mode: forwards;
 }
 
-section ul li .card .content#mondrian svg *:nth-child(7) {
-  -webkit-animation-play-state: inherit;
-          animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-section ul li .card .content#mondrian svg *:nth-child(8) {
-  -webkit-animation-play-state: inherit;
-          animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-section ul li .card .content#mondrian svg *:nth-child(9) {
-  -webkit-animation-play-state: inherit;
-          animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-delay: 4.5s;
-          animation-delay: 4.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-section ul li .card .content#mondrian svg *:nth-child(10) {
-  -webkit-animation-play-state: inherit;
-          animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-section ul li .card .content#mondrian svg *:nth-child(11) {
-  -webkit-animation-play-state: inherit;
-          animation-play-state: inherit;
-  -webkit-animation-name: popup;
-          animation-name: popup;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-delay: 5.5s;
-          animation-delay: 5.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
 footer {
+  font-size: 14px;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 4rem;
-  padding-top: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer p {
+  padding-left: 1rem;
+  font-size: 12px;
+  color: #858585;
+  margin: 0;
+  line-height: 27px;
+}
+
+footer a {
+  color: #858585;
+  padding-left: 1rem;
+}
+
+footer a:first-child {
+  padding-left: 0;
+}
+
+footer a:hover {
+  color: black;
 }
 
 footer button {
   margin-right: 1rem;
-}
-
-footer #github {
-  background-color: white;
-  color: #363636;
 }
 
 footer #behance {
@@ -707,7 +661,7 @@ footer #behance {
   }
 }
 
-@-webkit-keyframes popup {
+@-webkit-keyframes fadein {
   from {
     opacity: 0;
   }
@@ -716,12 +670,30 @@ footer #behance {
   }
 }
 
-@keyframes popup {
+@keyframes fadein {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes appear {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=index.css.map */

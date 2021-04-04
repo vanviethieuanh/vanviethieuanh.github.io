@@ -11,25 +11,18 @@ a {
 }
 
 header {
+  max-width: $focus-width;
+  margin: 0 auto;
+
   padding: $container-padding;
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  display: flex;
-  flex-direction: row;
-
-  align-items: center;
-  justify-content: flex-end;
-
-  .title {
-    margin: 0;
-    margin-right: auto;
-  }
-
   nav {
-    margin-left: auto;
+    display: flex;
 
     a {
+
       color: $text-subtitle;
       font-weight: 300;
       padding-left: 1rem;
@@ -51,51 +44,57 @@ header {
 }
 
 section {
+  max-width: $focus-width;
+  margin: 0 auto;
+
   padding: $container-padding;
 
   display: flex;
   flex-direction: column;
-
   justify-content: space-evenly;
   align-items: flex-start;
 
   ul {
-    display: flex;
+    display: grid;
+    justify-items: center;
 
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    
     width: 100%;
-    justify-content: space-between;
-
+    
+    margin: 0;
     padding: 0;
 
     li {
-      *{animation-play-state: paused;}
-
       list-style: none;
-      border: $border;
-
-      transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-
-      canvas {
-        &#tictactoe {
-          background-color: $red;
-        }
-      }
-
-      &:hover {
-        *{animation-play-state: running;}
-
-        transform: translate(-10px, -10px);
-        box-shadow: 10px 10px 0 black;
-      }
 
       .card {
+        border: $border;
+
         width: 280px;
         height: 346px;
 
         display: grid;
         grid-template-rows: auto 66px;
 
+        * {
+          animation-play-state: paused;
+        }
+
+        transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+
+        &:hover {
+          * {
+            animation-play-state: running;
+          }
+
+          transform: translate(-10px, -10px);
+          box-shadow: 10px 10px 0 black;
+        }
+
         .title {
+          background-color: white;
           display: grid;
           place-items: center;
 
@@ -115,13 +114,13 @@ section {
 
             #xo {
               * {
-                opacity: 0;
+                visibility: hidden;
               }
 
               @for $i from 1 to 10 {
                 #xo#{$i} {
-                  animation-name: popup;
-                  animation-duration: .4s;
+                  animation-name: appear;
+                  animation-duration: .2s;
                   animation-delay: #{$i*0.5}s;
                   animation-fill-mode: forwards;
                 }
@@ -152,19 +151,51 @@ section {
 
               &::after {
                 content: "0";
-                
+
                 animation-play-state: inherit;
                 animation-name: crypto;
-                animation-duration: 7s;
+                animation-duration: 6s;
                 animation-timing-function: linear;
                 animation-iteration-count: infinite;
                 animation-fill-mode: forwards;
               }
 
-              @for $i from 1 to 10 {
-                &:nth-child(#{$i})::after {
-                  animation-delay: random($limit: 7) * 0.5 + s;
-                }
+              $delay-factor:0.1;
+
+              &:nth-child(1)::after {
+                animation-delay: 1 * $delay-factor + s;
+              }
+
+              &:nth-child(2)::after {
+                animation-delay: 2* $delay-factor + s;
+              }
+
+              &:nth-child(3)::after {
+                animation-delay: 6* $delay-factor + s;
+              }
+
+              &:nth-child(4)::after {
+                animation-delay: 3* $delay-factor + s;
+              }
+
+              &:nth-child(5)::after {
+                animation-delay: 4* $delay-factor + s;
+              }
+
+              &:nth-child(6)::after {
+                animation-delay: 7* $delay-factor + s;
+              }
+
+              &:nth-child(7)::after {
+                animation-delay: 5* $delay-factor + s;
+              }
+
+              &:nth-child(8)::after {
+                animation-delay: 0* $delay-factor + s;
+              }
+
+              &:nth-child(9)::after {
+                animation-delay: 9* $delay-factor + s;
               }
             }
           }
@@ -186,17 +217,12 @@ section {
           }
 
           &#mondrian {
-            svg {
-              * {
-                opacity: 0;
-              }
-            }
-
-            @for $i from 1 to 12 {
+            background: white;
+            @for $i from 1 to 7 {
               svg *:nth-child(#{$i}) {
-
+                visibility: hidden;
                 animation-play-state: inherit;
-                animation-name: popup;
+                animation-name: appear;
                 animation-duration: .4s;
                 animation-delay: #{$i*0.5}s;
                 animation-fill-mode: forwards;
@@ -212,16 +238,41 @@ section {
 }
 
 footer {
+  font-size: 14px;
+
+  max-width: $focus-width;
+  margin: 0 auto;
+
   padding: $container-padding;
-  padding-top: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  display: flex;
+  flex-direction: row;
+
+  p{
+    padding-left: 1rem;
+    font-size: 12px;
+    color: $text-subtitle;
+    margin: 0;
+    line-height: 27px;
+  }
+
+  a {
+    color: $text-subtitle;
+    padding-left: 1rem;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: black;
+    }
+  }
 
   button {
     margin-right: 1rem;
-  }
-
-  #github {
-    background-color: $bg;
-    color: $text-primary;
   }
 
   #behance {
@@ -302,12 +353,22 @@ footer {
   }
 }
 
-@keyframes popup {
+@keyframes fadein {
   from {
     opacity: 0;
   }
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
   }
 }
