@@ -68,10 +68,25 @@ section {
     padding: 0;
 
     li {
+      *{animation-play-state: paused;}
+
       list-style: none;
       border: $border;
 
       transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+
+      canvas {
+        &#tictactoe {
+          background-color: $red;
+        }
+      }
+
+      &:hover {
+        *{animation-play-state: running;}
+
+        transform: translate(-10px, -10px);
+        box-shadow: 10px 10px 0 black;
+      }
 
       .card {
         width: 280px;
@@ -90,31 +105,209 @@ section {
             margin: 0;
           }
         }
+
+        .content {
+          display: grid;
+          place-items: center;
+
+          &#tictactoe {
+            background-color: $red;
+
+            #xo {
+              * {
+                opacity: 0;
+              }
+
+              @for $i from 1 to 10 {
+                #xo#{$i} {
+                  animation-name: popup;
+                  animation-duration: .4s;
+                  animation-delay: #{$i*0.5}s;
+                  animation-fill-mode: forwards;
+                }
+              }
+            }
+          }
+
+          &#enigma {
+            background-color: $green;
+
+            padding: 15%;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+
+            b {
+              font-size: 36px;
+              color: black;
+
+              &:nth-of-type(1),
+              &:nth-of-type(3),
+              &:nth-of-type(5),
+              &:nth-of-type(6),
+              &:nth-of-type(7),
+              &:nth-of-type(9) {
+                color: white;
+              }
+
+
+              &::after {
+                content: "0";
+                
+                animation-play-state: inherit;
+                animation-name: crypto;
+                animation-duration: 7s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-fill-mode: forwards;
+              }
+
+              @for $i from 1 to 10 {
+                &:nth-child(#{$i})::after {
+                  animation-delay: random($limit: 7) * 0.5 + s;
+                }
+              }
+            }
+          }
+
+          &#twitter {
+            background-color: $blue;
+
+            #cactus {
+              #eyes {
+                animation: cactus 5s linear forwards infinite;
+              }
+            }
+
+            #bird {
+              #eye {
+                animation: blink 5s linear forwards infinite;
+              }
+            }
+          }
+
+          &#mondrian {
+            svg {
+              * {
+                opacity: 0;
+              }
+            }
+
+            @for $i from 1 to 12 {
+              svg *:nth-child(#{$i}) {
+
+                animation-play-state: inherit;
+                animation-name: popup;
+                animation-duration: .4s;
+                animation-delay: #{$i*0.5}s;
+                animation-fill-mode: forwards;
+              }
+            }
+          }
+        }
       }
 
-      &:hover{
-        transform: translate(-10px,-10px);
-        box-shadow: 10px 10px 0 black;
-      }
+
     }
   }
 }
 
-footer{
+footer {
   padding: $container-padding;
-  padding-top: 1rem;
+  padding-top: 4rem;
 
-  button{
+  button {
     margin-right: 1rem;
   }
 
-  #github{
+  #github {
     background-color: $bg;
     color: $text-primary;
   }
 
-  #behance{
+  #behance {
     background-color: $behance;
     color: $bg;
+  }
+}
+
+
+@keyframes blink {
+
+  0%,
+  100% {
+    transform: scale(1, .05);
+  }
+
+  5%,
+  95% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes cactus {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(-4px);
+  }
+
+  50% {
+    transform: translateX(-4px);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes crypto {
+
+  5% {
+    content: "E";
+  }
+
+  10% {
+    content: "N";
+  }
+
+  15% {
+    content: "I";
+  }
+
+  20% {
+    content: "G";
+  }
+
+  25% {
+    content: "M";
+  }
+
+  30% {
+    content: "A";
+  }
+
+  35% {
+    content: "0";
+  }
+
+  0%,
+  100% {
+    content: "0";
+  }
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
