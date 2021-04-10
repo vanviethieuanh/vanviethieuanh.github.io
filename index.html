@@ -89,7 +89,7 @@
       <li>
         <a href="https://vanviethieuanh.github.io/tictactoe/" target="_blank">
           <article class="card">
-            <div id="tictactoe" class="content">
+            <div id="tictactoe" class="content" style="--play-state: paused; --bg:var(--red)">
               <svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="xo">
                   <path id="xo3" fill-rule="evenodd" clip-rule="evenodd"
@@ -129,7 +129,7 @@
       <li>
         <a href="https://github.com/vanviethieuanh/twitter-clone" target="_blank">
           <article class="card">
-            <div id="twitter" class="content">
+            <div id="twitter" class="content" style="--bg:var(--blue)">
               <svg width="237" height="177" viewBox="0 0 237 177" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="pots">
                   <g id="bird">
@@ -190,7 +190,7 @@
       <li>
         <a href="https://github.com/vanviethieuanh/group-chat" target="_blank">
           <article class="card">
-            <div id="mondrian" class="content">
+            <div id="mondrian" class="content" style="--play-state: paused; --bg:white">
               <svg width="280" height="280" viewBox="4 4 272 272" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect style="--order: 7" x="29" y="63" width="249" height="30" fill="#FC5151" stroke="black"
                   stroke-width="4" />
@@ -220,13 +220,12 @@
               <h1>Group chat</h1>
             </div>
           </article>
-
         </a>
       </li>
       <li>
         <a href="https://github.com/vanviethieuanh/enigma-machine" target="_blank">
           <article class="card">
-            <div id="enigma" class="content">
+            <div id="enigma" class="content" style="--play-state: paused; --bg:var(--green)">
               <div id="code">
                 <b style="--order: 5"></b>
                 <b style="--order: 0"></b>
@@ -246,6 +245,32 @@
         </a>
       </li>
     </ul>
+    <script defer>
+      function isScrolledIntoView(elem) {
+        const docViewTop = this.scrollY;
+        const docViewBottom = docViewTop + this.innerHeight;
+
+        const elemTop = document.querySelector(elem).offsetTop;
+        const elemBottom = elemTop + document.querySelector(elem).offsetHeight;
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+      }
+
+      window.addEventListener('scroll', () => {
+        const cardsId = ['#tictactoe', '#enigma', '#mondrian'];
+        const isPhone = window.innerWidth < 768;
+
+        cardsId.forEach(element => {
+          if (isScrolledIntoView(element) && isPhone) {
+            document.querySelector(element).style.setProperty('--play-state', 'running')
+          }
+          else {
+            document.querySelector(element).style.setProperty('--play-state', 'paused')
+          }
+        });
+
+      })
+    </script>
   </section>
   <footer>
     <a title="Github" target="_blank" href="https://github.com/vanviethieuanh">

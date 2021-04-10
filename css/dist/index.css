@@ -223,7 +223,7 @@ section ul {
   display: grid;
   justify-items: left;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 0;
   padding: 0;
 }
@@ -241,14 +241,14 @@ section ul li .card {
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 section ul li .card * {
-  animation-play-state: paused;
+  animation-play-state: var(--play-state);
 }
 section ul li .card:hover {
   transform: translate(-10px, -10px);
   box-shadow: 10px 10px 0 black;
 }
 section ul li .card:hover * {
-  animation-play-state: running;
+  --play-state: running;
 }
 section ul li .card .title {
   background-color: white;
@@ -266,7 +266,7 @@ section ul li .card .content {
   place-items: center;
 }
 section ul li .card .content#tictactoe {
-  background-color: #FC5151;
+  background: var(--bg);
 }
 section ul li .card .content#tictactoe #xo * {
   visibility: hidden;
@@ -326,7 +326,7 @@ section ul li .card .content#tictactoe #xo #xo9 {
   animation-fill-mode: forwards;
 }
 section ul li .card .content#enigma {
-  background-color: #2ECC71;
+  background: var(--bg);
 }
 section ul li .card .content#enigma #code {
   width: 80%;
@@ -354,7 +354,7 @@ section ul li .card .content#enigma #code b::after {
   animation-delay: calc(var(--order) * 600ms);
 }
 section ul li .card .content#twitter {
-  background-color: #699BF7;
+  background: var(--bg);
 }
 section ul li .card .content#twitter #cactus #eyes {
   animation: cactus 5s linear forwards infinite;
@@ -363,11 +363,12 @@ section ul li .card .content#twitter #bird #eye {
   animation: blink 5s linear forwards infinite;
 }
 section ul li .card .content#mondrian {
-  background: white;
+  background: var(--bg);
 }
 section ul li .card .content#mondrian svg {
-  width: 100%;
-  height: 100%;
+  border: solid 4px #000000;
+  width: 280px;
+  height: 280px;
 }
 section ul li .card .content#mondrian svg * {
   visibility: hidden;
