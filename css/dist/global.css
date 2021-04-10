@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Roboto&display=swap");
+:root {
+  --blue: #699BF7;
+  --red: #FC5151;
+  --yellow: #FFCE42;
+  --green: #2ECC71;
+  --violet: #7D3CFF;
+  --behance: #0057ff;
+  --purple: #9B59B6;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -18,16 +28,13 @@
 body {
   font-size: 16px;
   font-family: "Oswald", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   scrollbar-width: thin;
 }
-
 body * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -65,18 +72,13 @@ button {
   font-weight: normal;
   font-size: 1.2rem;
   line-height: 0;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   padding-bottom: 6px;
-  -webkit-box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.2);
 }
-
 button:active {
   height: 34px;
   padding-bottom: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translate(0, 6px);
-          transform: translate(0, 6px);
+  box-shadow: none;
+  transform: translate(0, 6px);
 }
-/*# sourceMappingURL=contact.css.map */

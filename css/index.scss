@@ -14,12 +14,17 @@ header {
   max-width: $focus-width;
   margin: 0 auto;
 
-  padding: $container-padding;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
 
-  nav {
-    display: flex;
+  div.💻 {
+    width: 100%;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+
+    text-align: center;
 
     a {
 
@@ -40,6 +45,125 @@ header {
         font-weight: normal;
       }
     }
+
+    nav {
+      display: flex;
+
+      &.social {
+        justify-content: flex-end;
+      }
+
+      &.pages {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  div.📱 {
+    display: none;
+
+    align-items: center;
+
+    $burger-long: 20px;
+
+    .burger-button {
+      margin-left: auto;
+
+      display: inline-block;
+      cursor: pointer;
+
+      z-index: 10;
+    }
+
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: $burger-long;
+      height: 2px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+      transform-origin: $burger-long/2 1px;
+    }
+
+    .show .bar1 {
+      transform: translateY(4px) rotate(-45deg);
+    }
+
+    .show .bar2 {
+      transform: translateY(-4px) rotate(45deg);
+    }
+
+    nav {
+      visibility: hidden;
+    }
+
+    .show~nav {
+      visibility: visible;
+    }
+
+    nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+
+      width: 100vw;
+      height: 100vh;
+
+      background-color: $bg;
+
+      display: grid;
+      place-items: center;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        outline: none;
+
+        width: clamp(220px, 60%, 270px);
+      }
+
+      li {
+        list-style: none;
+        background-color: black;
+        
+
+        a {
+          border: 8px solid black;
+
+          margin: 1rem 0;
+
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 9px;
+
+          *{
+            width: 100%;
+          }
+          div{
+            background-color: var(--color);
+          }
+          h2{
+            background-color: white;
+          }
+        }
+
+        &:nth-child(2n) {
+          flex-direction: row-reverse;
+        }
+
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 36px;
+
+        padding: 0 1rem;
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -47,7 +171,7 @@ section {
   max-width: $focus-width;
   margin: 0 auto;
 
-  padding: $container-padding;
+  padding: 0 $padding;
 
   display: flex;
   flex-direction: column;
@@ -55,28 +179,30 @@ section {
   align-items: flex-start;
 
   ul {
+    width: 100%;
+
     display: grid;
-    justify-items: center;
+    justify-items: left;
 
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    
-    width: 100%;
-    
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
     margin: 0;
     padding: 0;
 
     li {
       list-style: none;
+      width: 100%;
+      aspect-ratio: 8 / 10;
 
       .card {
         border: $border;
 
-        width: 280px;
-        height: 346px;
+        width: 100%;
+        height: 100%;
 
         display: grid;
-        grid-template-rows: auto 66px;
+        grid-template-rows: 1fr 1fr;
 
         * {
           animation-play-state: paused;
@@ -106,6 +232,9 @@ section {
         }
 
         .content {
+          width: 100%;
+          aspect-ratio: 1/1;
+
           display: grid;
           place-items: center;
 
@@ -131,73 +260,44 @@ section {
           &#enigma {
             background-color: $green;
 
-            padding: 15%;
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(3, 1fr);
+            #code {
 
-            b {
-              font-size: 36px;
-              color: black;
+              width: 80%;
+              aspect-ratio: 1/1;
 
-              &:nth-of-type(1),
-              &:nth-of-type(3),
-              &:nth-of-type(5),
-              &:nth-of-type(6),
-              &:nth-of-type(7),
-              &:nth-of-type(9) {
-                color: white;
-              }
+              display: grid;
+              place-items: center;
+              grid-template-rows: repeat(3, 1fr);
+              grid-template-columns: repeat(3, 1fr);
 
+              b {
+                font-size: 36px;
+                color: black;
 
-              &::after {
-                content: "0";
+                &:nth-of-type(1),
+                &:nth-of-type(3),
+                &:nth-of-type(5),
+                &:nth-of-type(6),
+                &:nth-of-type(7),
+                &:nth-of-type(9) {
+                  color: white;
+                }
 
-                animation-play-state: inherit;
-                animation-name: crypto;
-                animation-duration: 6s;
-                animation-timing-function: linear;
-                animation-iteration-count: infinite;
-                animation-fill-mode: forwards;
-              }
+                &::after {
+                  content: "0";
 
-              $delay-factor:0.1;
+                  animation-play-state: inherit;
+                  animation-name: crypto;
+                  animation-duration: 6s;
+                  animation-timing-function: linear;
+                  animation-iteration-count: infinite;
+                  animation-fill-mode: forwards;
 
-              &:nth-child(1)::after {
-                animation-delay: 1 * $delay-factor + s;
-              }
-
-              &:nth-child(2)::after {
-                animation-delay: 2* $delay-factor + s;
-              }
-
-              &:nth-child(3)::after {
-                animation-delay: 6* $delay-factor + s;
-              }
-
-              &:nth-child(4)::after {
-                animation-delay: 3* $delay-factor + s;
-              }
-
-              &:nth-child(5)::after {
-                animation-delay: 4* $delay-factor + s;
-              }
-
-              &:nth-child(6)::after {
-                animation-delay: 7* $delay-factor + s;
-              }
-
-              &:nth-child(7)::after {
-                animation-delay: 5* $delay-factor + s;
-              }
-
-              &:nth-child(8)::after {
-                animation-delay: 0* $delay-factor + s;
-              }
-
-              &:nth-child(9)::after {
-                animation-delay: 9* $delay-factor + s;
+                  animation-delay: calc(var(--order) * 600ms);
+                }
               }
             }
+
           }
 
           &#twitter {
@@ -218,16 +318,21 @@ section {
 
           &#mondrian {
             background: white;
-            @for $i from 1 to 7 {
-              svg *:nth-child(#{$i}) {
+
+            svg {
+              width: 100%;
+              height: 100%;
+
+              * {
                 visibility: hidden;
                 animation-play-state: inherit;
                 animation-name: appear;
                 animation-duration: .4s;
-                animation-delay: #{$i*0.5}s;
+                animation-delay: calc(var(--order) * 500ms);
                 animation-fill-mode: forwards;
               }
             }
+
           }
         }
       }
@@ -243,14 +348,13 @@ footer {
   max-width: $focus-width;
   margin: 0 auto;
 
-  padding: $container-padding;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
+
 
   display: flex;
   flex-direction: row;
 
-  p{
+  p {
     padding-left: 1rem;
     font-size: 12px;
     color: $text-subtitle;
@@ -323,27 +427,27 @@ footer {
     content: "E";
   }
 
-  10% {
+  15% {
     content: "N";
   }
 
-  15% {
+  25% {
     content: "I";
   }
 
-  20% {
+  35% {
     content: "G";
   }
 
-  25% {
+  45% {
     content: "M";
   }
 
-  30% {
+  55% {
     content: "A";
   }
 
-  35% {
+  65% {
     content: "0";
   }
 
@@ -370,5 +474,17 @@ footer {
 
   to {
     visibility: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    div.💻 {
+      display: none;
+    }
+
+    div.📱 {
+      display: flex;
+    }
   }
 }

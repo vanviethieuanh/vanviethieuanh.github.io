@@ -25,11 +25,21 @@ $violet: #7D3CFF;
 $behance: #0057ff;
 $purple: #9B59B6;
 
+:root{
+    --blue: #699BF7;
+    --red: #FC5151;
+    --yellow: #FFCE42;
+    --green: #2ECC71;
+    --violet: #7D3CFF;
+    --behance: #0057ff;
+    --purple: #9B59B6;
+}
+
 // Size
 $round: 20px;
-$container-padding: 0 4rem;
+$padding: 2rem;
 
-$focus-width: 900px;
+$focus-width: 1100px;
 $sm: 600px;
 
 ::-webkit-scrollbar {
@@ -57,6 +67,9 @@ body {
     padding: 0;
 
     scrollbar-width: thin;
+    *{
+        box-sizing: border-box;
+    }
 }
 
 h1 {

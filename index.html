@@ -18,16 +18,70 @@
 
 <body>
   <header>
-    <nav>
-      <a class="active" href="/index.html">work</a>
-      <a href="/about.html">about</a>
-      <a href="/contact.html">contact</a>
-      <a title="Github" target="_blank" href="https://github.com/vanviethieuanh" style="margin-left: auto;">
-        <i class="fab fa-github-alt"></i></a>
-      <a title="Behance" target="_blank" href="https://www.behance.net/vanviethieuanh">
-        <i class="fab fa-behance"></i>
-      </a>
-    </nav>
+    <div class="💻">
+      <nav class="pages">
+        <a class="active" href="/index.html">work</a>
+        <a href="/about.html">about</a>
+        <a href="/contact.html">contact</a>
+      </nav>
+      <p>Văn Viết Hiếu Anh</p>
+      <nav class="social">
+        <a title="Github" target="_blank" href="https://github.com/vanviethieuanh">
+          <i class="fab fa-github-alt"></i></a>
+        <a title="Behance" target="_blank" href="https://www.behance.net/vanviethieuanh">
+          <i class="fab fa-behance"></i>
+        </a>
+      </nav>
+    </div>
+    <div class="📱">
+      <p>Văn Viết Hiếu Anh</p>
+
+      <div class="burger-button" onclick="changeBurger(this)">
+        <div class="effect">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+        </div>
+        <script>
+          function changeBurger(x) {
+            x.classList.toggle("show");
+          }
+        </script>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="">
+              <h2>work</h2>
+              <div style="--color: var(--red)"></div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div style="--color: var(--yellow)"></div>
+              <h2>about</h2>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <h2>contact</h2>
+              <div style="--color: var(--green)"></div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div style="--color: var(--purple)"></div>
+              <h2>github</h2>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <h2>behance</h2>
+              <div style="--color: var(--behance)"></div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <section>
     <h2>RECENT WORK</h2>
@@ -138,17 +192,28 @@
           <article class="card">
             <div id="mondrian" class="content">
               <svg width="280" height="280" viewBox="4 4 272 272" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="29" y="63" width="249" height="30" fill="#FC5151" stroke="black" stroke-width="4" />
-                <rect x="173" y="2" width="105" height="91" fill="#FFCE42" stroke="black" stroke-width="4" />
-                <rect x="2" y="2" width="27" height="167" fill="#FFCE42" stroke="black" stroke-width="4" />
-                <rect x="251" y="112" width="27" height="57" fill="#FFCE42" stroke="black" stroke-width="4" />
-                <path d="M2 169H200.767L240.139 208H2V169Z" fill="#3498DB" stroke="black" stroke-width="4" />
-                <rect x="251" y="93" width="27" height="45" fill="#3498DB" stroke="black" stroke-width="4" />
-                <rect x="173" y="2" width="105" height="34" fill="#3498DB" stroke="black" stroke-width="4" />
-                <rect x="2" y="208" width="167" height="70" fill="#3498DB" stroke="black" stroke-width="4" />
-                <rect x="87" y="208" width="167" height="70" fill="#FC5151" stroke="black" stroke-width="4" />
-                <rect x="225" y="208" width="29" height="70" fill="#FFCE42" stroke="black" stroke-width="4" />
-                <rect x="225" y="169" width="53" height="57" fill="#FC5151" stroke="black" stroke-width="4" />
+                <rect style="--order: 7" x="29" y="63" width="249" height="30" fill="#FC5151" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 1" x="173" y="2" width="105" height="91" fill="#FFCE42" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 0" x="2" y="2" width="27" height="167" fill="#FFCE42" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 6" x="251" y="112" width="27" height="57" fill="#FFCE42" stroke="black"
+                  stroke-width="4" />
+                <path style="--order: 8" d="M2 169H200.767L240.139 208H2V169Z" fill="#3498DB" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 0" x="251" y="93" width="27" height="45" fill="#3498DB" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 10" x="173" y="2" width="105" height="34" fill="#3498DB" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 5" x="2" y="208" width="167" height="70" fill="#3498DB" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 2" x="87" y="208" width="167" height="70" fill="#FC5151" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 4" x="225" y="208" width="29" height="70" fill="#FFCE42" stroke="black"
+                  stroke-width="4" />
+                <rect style="--order: 3" x="225" y="169" width="53" height="57" fill="#FC5151" stroke="black"
+                  stroke-width="4" />
               </svg>
             </div>
             <div class="title">
@@ -162,7 +227,17 @@
         <a href="https://github.com/vanviethieuanh/enigma-machine" target="_blank">
           <article class="card">
             <div id="enigma" class="content">
-              <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+              <div id="code">
+                <b style="--order: 5"></b>
+                <b style="--order: 0"></b>
+                <b style="--order: 2"></b>
+                <b style="--order: 7"></b>
+                <b style="--order: 8"></b>
+                <b style="--order: 1"></b>
+                <b style="--order: 6"></b>
+                <b style="--order: 4"></b>
+                <b style="--order: 3"></b>
+              </div>
             </div>
             <div class="title">
               <h1>Enigma Machine</h1>
@@ -170,8 +245,6 @@
           </article>
         </a>
       </li>
-
-
     </ul>
   </section>
   <footer>
