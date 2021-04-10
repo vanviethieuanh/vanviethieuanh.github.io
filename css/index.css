@@ -253,7 +253,7 @@ header div.📱 nav li a {
 }
 
 header div.📱 nav li a .side {
-  background-image: url("../svg/stars.svg");
+  background-image: url("../stars.svg");
   background-repeat: repeat-x;
   -webkit-animation: cylinders 100s linear infinite var(--orientation), shrinkY 1000ms linear forwards;
           animation: cylinders 100s linear infinite var(--orientation), shrinkY 1000ms linear forwards;

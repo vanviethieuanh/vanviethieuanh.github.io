@@ -197,7 +197,7 @@ header div.📱 nav li a {
   flex-direction: inherit;
 }
 header div.📱 nav li a .side {
-  background-image: url("../svg/stars.svg");
+  background-image: url("../stars.svg");
   background-repeat: repeat-x;
   animation: cylinders 100s linear infinite var(--orientation), shrinkY 1000ms linear forwards;
   animation-play-state: paused !important;
