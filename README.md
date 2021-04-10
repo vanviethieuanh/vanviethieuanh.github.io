@@ -1,6 +1,6 @@
-# portfolio
+# Portfolio
 
-Van Viet Hieu Anh's portfolio
+Check out at [vanviethieuanh.com](https://vanviethieuanh.com/)
 
 ## Weird things about this project
 
