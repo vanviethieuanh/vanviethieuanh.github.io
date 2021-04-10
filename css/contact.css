@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Roboto&display=swap");
+:root {
+  --blue: #699BF7;
+  --red: #FC5151;
+  --yellow: #FFCE42;
+  --green: #2ECC71;
+  --violet: #7D3CFF;
+  --behance: #0057ff;
+  --purple: #9B59B6;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -22,6 +32,7 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: 0;
   scrollbar-width: thin;
 }
 
@@ -78,5 +89,14 @@ button:active {
           box-shadow: none;
   -webkit-transform: translate(0, 6px);
           transform: translate(0, 6px);
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 /*# sourceMappingURL=contact.css.map */

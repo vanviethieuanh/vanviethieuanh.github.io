@@ -15,6 +15,7 @@ header {
   margin: 0 auto;
 
   padding: 2rem;
+  z-index: 100;
 
   div.💻 {
     width: 100%;
@@ -61,7 +62,6 @@ header {
 
   div.📱 {
     display: none;
-
     align-items: center;
 
     $burger-long: 20px;
@@ -96,13 +96,18 @@ header {
     }
 
     nav {
-      visibility: hidden;
-    }
+      transform: translateX(-100vw);
 
+    }
+    
     .show~nav {
-      visibility: visible;
-    }
+      transform: translate(0, 0);
+      .side{
+        animation-play-state: running !important;
+      }
 
+    }
+    
     nav {
       position: fixed;
       left: 0;
@@ -116,46 +121,58 @@ header {
       display: grid;
       place-items: center;
 
+      transition: all 400ms ease-in-out;
+
       ul {
         margin: 0;
         padding: 0;
         outline: none;
 
-        width: clamp(220px, 60%, 270px);
+        width: clamp(220px, 60%, 240px);
       }
 
       li {
         list-style: none;
         background-color: black;
-        
 
         a {
+          background-color: black;
           border: 8px solid black;
 
           margin: 1rem 0;
 
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+          display: flex;
           gap: 0 9px;
+          flex-direction: inherit;
 
-          *{
-            width: 100%;
-          }
-          div{
+          .side{
+            background-image: url('../svg/stars.svg');
+            background-repeat:repeat-x;
+
+            
+            animation: cylinders 100s linear infinite var(--orientation),shrinkY 1000ms linear forwards;
+            animation-play-state: paused !important;
+            animation-delay: calc(400ms + var(--order) * 1s);
             background-color: var(--color);
           }
-          h2{
-            background-color: white;
+        }
+        &:nth-child(2n+1) {
+          flex-direction: row-reverse;
+
+          & h2{
+            justify-content: flex-end;
           }
         }
 
-        &:nth-child(2n) {
-          flex-direction: row-reverse;
-        }
 
       }
 
       h2 {
+        width: 100%;
+
+        display: flex;
+        background-color: white;
+
         text-transform: uppercase;
         font-weight: bold;
         font-size: 36px;
@@ -476,6 +493,24 @@ footer {
 
   to {
     visibility: visible;
+  }
+}
+
+@keyframes shrinkY {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+@keyframes cylinders {
+  from {
+    background-position: 0 0;
+  }
+    to {
+    background-position: -10000px 0;
   }
 }
 
