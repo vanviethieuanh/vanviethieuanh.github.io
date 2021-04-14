@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 // Stroke
 $border: solid 4px #000000;
 
 // Typo
+$font: 'Raleway', sans-serif;
 $font-dense: 'Oswald', sans-serif;
 $font-p: 'Roboto', sans-serif;
 
@@ -19,7 +21,7 @@ $text-subtitle: #858585;
 
 $blue: #699BF7;
 $red: #FC5151;
-$yellow: #FFCE42;
+$yellow: #F5BF02;
 $green: #2ECC71;
 $violet: #7D3CFF;
 $behance: #0057ff;
@@ -44,18 +46,6 @@ $sm: 600px;
 
 ::-webkit-scrollbar {
     width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: $bg;
-}
-
-::-webkit-scrollbar-thumb {
-    background: $text-subtitle;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: $text-primary;
 }
 
 body {
@@ -122,5 +112,14 @@ button{
         padding-bottom: 0;
         box-shadow: none;
         transform: translate(0, $button-shadow-size);
+    }
+}
+
+.card{
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+    
+    &:hover{
+        transform: translate(-10px, -10px);
+        box-shadow: 10px 10px 0 black;
     }
 }

@@ -1,10 +1,184 @@
-@import "global";
+@import 'global';
 
-body{
+$primary-font: $font-dense;
+
+$border-thickness: 4px;
+$border-color: black;
+$border: $border-thickness solid $border-color;
+$border-radius: 0px;
+$ticket-devider-size: 2px;
+
+$bg: $yellow;
+
+$text-primary: black;
+
+$focus-width: 760px;
+
+body {
     box-sizing: border-box;
+    background-color: $bg;
+
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 4rem auto;
+    width: $focus-width;
 
     display: grid;
-    place-items: center;
+    gap: 4rem;
+}
 
-    height: 100vh;
+h1 {
+    font-family: $primary-font;
+    font-weight: bold;
+}
+
+.title {
+    color: $text-primary;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 36px;
+    font-family: $primary-font;
+    font-weight: bold;
+
+    margin: 0;
+    padding: 0;
+
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.callout {
+    h1 {
+        color: black;
+        font-size: 48px;
+        padding: 2rem 0;
+        margin: 0;
+        letter-spacing: .03em;
+    }
+}
+
+
+.about {
+    $height: 240px;
+    height: $height;
+
+    display: grid;
+    grid-template-columns: auto $ticket-devider-size auto;
+    align-items: center;
+
+    .avatar {
+        width: fit-content;
+
+        display: flex;
+
+        border: $border;
+        border-radius: $border-radius/2 0 0 $border-radius/2;
+
+        background-color: $text-primary;
+
+        .img {
+            height: $height;
+            width: $height;
+
+            aspect-ratio: 1/1;
+
+            background-image: url('../images/me.JPG');
+            background-position: bottom;
+            background-size: cover;
+        }
+
+        .title {
+            padding-left: $border-thickness;
+            width: 60px;
+
+            background-color: $text-primary;
+
+            justify-content: center;
+
+            writing-mode: vertical-lr;
+            transform: scale(-1);
+
+            color: white;
+            letter-spacing: 0.5rem;
+        }
+    }
+
+    .devider {
+        content: '';
+
+        height: 100%;
+        width: auto;
+
+        border-right: $ticket-devider-size dashed $text-primary;
+    }
+
+    .intro {
+        display: flex;
+
+        height: 100%;
+        font-family: $font-p;
+
+        padding: 2rem;
+
+        border: $border;
+        border-radius: 0 $border-radius/2 $border-radius/2 0;
+
+        background-color: white;
+    }
+}
+
+.services {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+
+    grid-template-areas:
+        'title  title'
+        'design development';
+
+    .title {
+        padding-left: 2rem;
+    }
+
+    & > .title {
+        grid-area: title;
+        padding: 0;
+        margin: 0;
+    }
+
+    .service {
+        border: $border;
+        background-color: white;
+    }
+
+    .projects {
+        font-family: $font-p;
+        font-weight: 400;
+        color: $text-primary;
+
+        margin-left: auto;
+        height: 50px;
+    }
+
+    .design {
+        grid-area: design;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .development {
+        grid-area: development;
+
+        .title {
+            height: 170px;
+        }
+    }
 }
