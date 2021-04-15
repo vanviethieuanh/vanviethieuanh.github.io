@@ -22,6 +22,7 @@ $text-subtitle: #858585;
 $blue: #699BF7;
 $red: #FC5151;
 $yellow: #F5BF02;
+$light-yellow: #FFE100;
 $green: #2ECC71;
 $violet: #7D3CFF;
 $behance: #0057ff;
@@ -30,6 +31,7 @@ $purple: #9B59B6;
 :root{
     --blue: #699BF7;
     --red: #FC5151;
+    --light-yellow: #FFE100;
     --yellow: #FFCE42;
     --green: #2ECC71;
     --violet: #7D3CFF;
@@ -121,5 +123,6 @@ button{
     &:hover{
         transform: translate(-10px, -10px);
         box-shadow: 10px 10px 0 black;
+        box-shlight-adow: 10px 10px 0 black;
     }
 }

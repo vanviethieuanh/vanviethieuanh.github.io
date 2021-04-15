@@ -58,23 +58,20 @@ h1 {
         font-size: 48px;
         padding: 2rem 0;
         margin: 0;
-        letter-spacing: .03em;
+        letter-spacing: 0.03em;
     }
 }
 
-
 .about {
-    $height: 240px;
-    height: $height;
-
     display: grid;
     grid-template-columns: auto $ticket-devider-size auto;
     align-items: center;
 
     .avatar {
-        width: fit-content;
+        height: 100%;
 
-        display: flex;
+        display: grid;
+        grid-template-columns: 60px auto;
 
         border: $border;
         border-radius: $border-radius/2 0 0 $border-radius/2;
@@ -82,9 +79,6 @@ h1 {
         background-color: $text-primary;
 
         .img {
-            height: $height;
-            width: $height;
-
             aspect-ratio: 1/1;
 
             background-image: url('../images/me.JPG');
@@ -104,7 +98,7 @@ h1 {
             transform: scale(-1);
 
             color: white;
-            letter-spacing: 0.5rem;
+            letter-spacing: 0.1em;
         }
     }
 
@@ -120,7 +114,7 @@ h1 {
     .intro {
         display: flex;
 
-        height: 100%;
+        width: clamp(45ch, auto, 75ch);
         font-family: $font-p;
 
         padding: 2rem;
@@ -144,6 +138,7 @@ h1 {
         'design development';
 
     .title {
+        top: 0;
         padding-left: 2rem;
     }
 
@@ -156,15 +151,29 @@ h1 {
     .service {
         border: $border;
         background-color: white;
-    }
 
-    .projects {
-        font-family: $font-p;
-        font-weight: 400;
-        color: $text-primary;
+        display: grid;
 
-        margin-left: auto;
-        height: 50px;
+        grid-template-columns:1fr ;
+        grid-template-rows:1fr ;
+        grid-template-areas: 'overlap';
+
+        *{
+            position: relative;
+        }
+
+        .illustration {
+            grid-area: overlap;
+        }
+
+        .title{
+            grid-area: overlap;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+        }
     }
 
     .design {
@@ -172,13 +181,114 @@ h1 {
 
         display: flex;
         align-items: center;
+
+        background-color: $violet;
     }
 
     .development {
+        background-color: $red;
         grid-area: development;
 
-        .title {
-            height: 170px;
+        .planet{
+            z-index: 0;
         }
+
+        .illustration{
+            #circle{
+                transform-origin: 231px 91px;
+
+                animation: rotate 3s ease-in-out infinite;
+            }
+
+            #planet{
+                fill: $light-yellow;
+                background: url('../svg/earth-cloud.svg');
+            }
+        
+            #cloud1{
+                transform: translate(48px,0) rotate(23deg);
+                animation: cloud1 10s linear infinite;
+            }
+            #cloud2{
+                transform: translate(-114px,0) rotate(23deg);
+                animation: cloud2 10s linear infinite;
+            }
+
+            #satellite-front{
+                animation: satellite-front 3s ease-in-out forwards infinite;
+                visibility: hidden;
+                animation-delay: 1.5s;
+            }
+
+            #satellite-back{
+                animation: satellite-back 3s ease-in-out forwards infinite;
+                visibility: hidden;
+            }
+        }
+
+        .title{
+            line-height: 1em;
+        }
+    }
+}
+
+@keyframes satellite-back {
+    0%{
+        transform: translate(-80px,80px);
+        visibility: visible;
+    }
+    
+    50%{
+        transform: translate(0,0);
+        visibility: hidden;
+    }
+    100%{
+        transform: translate(0,0);
+        visibility: hidden;
+    }
+}
+@keyframes satellite-front {
+    0%{
+        transform: translate(0,0);
+        visibility: visible;
+    }
+    50%{
+        transform: translate(-80px,80px);
+        visibility: hidden;
+    }
+    100%{
+        transform: translate(-80px,80px);
+        visibility: hidden;
+    }
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+        
+    50%{
+        transform: rotate(270deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes cloud1 {
+    0%{
+        transform: translate(48px,0);
+    }
+    100%{
+        transform: translate(210px,0px);
+    }
+}
+@keyframes cloud2 {
+    0%{
+        transform: translate(-114px,0px);
+    }
+    100%{
+        transform: translate(48px,0px);
     }
 }

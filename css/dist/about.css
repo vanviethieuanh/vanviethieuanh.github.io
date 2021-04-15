@@ -3,6 +3,7 @@
 :root {
   --blue: #699BF7;
   --red: #FC5151;
+  --light-yellow: #FFE100;
   --yellow: #FFCE42;
   --green: #2ECC71;
   --violet: #7D3CFF;
@@ -79,6 +80,7 @@ button:active {
 .card:hover {
   transform: translate(-10px, -10px);
   box-shadow: 10px 10px 0 black;
+  box-shlight-adow: 10px 10px 0 black;
 }
 
 body {
@@ -122,21 +124,19 @@ h1 {
 }
 
 .about {
-  height: 240px;
   display: grid;
   grid-template-columns: auto 2px auto;
   align-items: center;
 }
 .about .avatar {
-  width: fit-content;
-  display: flex;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 60px auto;
   border: 4px solid black;
   border-radius: 0px 0 0 0px;
   background-color: black;
 }
 .about .avatar .img {
-  height: 240px;
-  width: 240px;
   aspect-ratio: 1/1;
   background-image: url("../images/me.JPG");
   background-position: bottom;
@@ -150,7 +150,7 @@ h1 {
   writing-mode: vertical-lr;
   transform: scale(-1);
   color: white;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.1em;
 }
 .about .devider {
   content: "";
@@ -160,7 +160,7 @@ h1 {
 }
 .about .intro {
   display: flex;
-  height: 100%;
+  width: clamp(45ch, auto, 75ch);
   font-family: "Roboto", sans-serif;
   padding: 2rem;
   border: 4px solid black;
@@ -176,6 +176,7 @@ h1 {
   grid-template-areas: "title  title" "design development";
 }
 .services .title {
+  top: 0;
   padding-left: 2rem;
 }
 .services > .title {
@@ -186,22 +187,118 @@ h1 {
 .services .service {
   border: 4px solid black;
   background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "overlap";
 }
-.services .projects {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: black;
-  margin-left: auto;
-  height: 50px;
+.services .service * {
+  position: relative;
+}
+.services .service .illustration {
+  grid-area: overlap;
+}
+.services .service .title {
+  grid-area: overlap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .services .design {
   grid-area: design;
   display: flex;
   align-items: center;
+  background-color: #7D3CFF;
 }
 .services .development {
+  background-color: #FC5151;
   grid-area: development;
 }
+.services .development .planet {
+  z-index: 0;
+}
+.services .development .illustration #circle {
+  transform-origin: 231px 91px;
+  animation: rotate 3s ease-in-out infinite;
+}
+.services .development .illustration #planet {
+  fill: #FFE100;
+  background: url("../svg/earth-cloud.svg");
+}
+.services .development .illustration #cloud1 {
+  transform: translate(48px, 0) rotate(23deg);
+  animation: cloud1 10s linear infinite;
+}
+.services .development .illustration #cloud2 {
+  transform: translate(-114px, 0) rotate(23deg);
+  animation: cloud2 10s linear infinite;
+}
+.services .development .illustration #satellite-front {
+  animation: satellite-front 3s ease-in-out forwards infinite;
+  visibility: hidden;
+  animation-delay: 1.5s;
+}
+.services .development .illustration #satellite-back {
+  animation: satellite-back 3s ease-in-out forwards infinite;
+  visibility: hidden;
+}
 .services .development .title {
-  height: 170px;
+  line-height: 1em;
+}
+
+@keyframes satellite-back {
+  0% {
+    transform: translate(-80px, 80px);
+    visibility: visible;
+  }
+  50% {
+    transform: translate(0, 0);
+    visibility: hidden;
+  }
+  100% {
+    transform: translate(0, 0);
+    visibility: hidden;
+  }
+}
+@keyframes satellite-front {
+  0% {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+  50% {
+    transform: translate(-80px, 80px);
+    visibility: hidden;
+  }
+  100% {
+    transform: translate(-80px, 80px);
+    visibility: hidden;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes cloud1 {
+  0% {
+    transform: translate(48px, 0);
+  }
+  100% {
+    transform: translate(210px, 0px);
+  }
+}
+@keyframes cloud2 {
+  0% {
+    transform: translate(-114px, 0px);
+  }
+  100% {
+    transform: translate(48px, 0px);
+  }
 }

@@ -74,6 +74,9 @@ button:active {
   transform: translate(0, 6px);
 }
 
+.card {
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
 .card:hover {
   transform: translate(-10px, -10px);
   box-shadow: 10px 10px 0 black;

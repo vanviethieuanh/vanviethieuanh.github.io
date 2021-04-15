@@ -3,6 +3,7 @@
 :root {
   --blue: #699BF7;
   --red: #FC5151;
+  --light-yellow: #FFE100;
   --yellow: #FFCE42;
   --green: #2ECC71;
   --violet: #7D3CFF;
@@ -79,4 +80,5 @@ button:active {
 .card:hover {
   transform: translate(-10px, -10px);
   box-shadow: 10px 10px 0 black;
+  box-shlight-adow: 10px 10px 0 black;
 }
