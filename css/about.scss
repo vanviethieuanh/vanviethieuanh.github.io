@@ -20,6 +20,8 @@ body {
 
     margin: 0;
     padding: 0;
+
+    font-size: 16px;
 }
 
 main {
@@ -33,6 +35,18 @@ main {
 h1 {
     font-family: $primary-font;
     font-weight: bold;
+    font-size: 3rem;
+}
+
+.avatar {
+    border: $border-thickness solid $border-color;
+
+    width: 280px;
+    height: 280px;
+
+    background-image: url('../images/me.JPG');
+    background-position: bottom;
+    background-size: cover;
 }
 
 .title {
@@ -41,7 +55,7 @@ h1 {
     display: flex;
     align-items: center;
 
-    font-size: 36px;
+    font-size: 2rem;
     font-family: $primary-font;
     font-weight: bold;
 
@@ -53,12 +67,19 @@ h1 {
 }
 
 .callout {
+    display: flex;
+    align-items: center;
+
     h1 {
         color: black;
-        font-size: 48px;
+        font-size: 3rem;
         padding: 2rem 0;
         margin: 0;
         letter-spacing: 0.03em;
+    }
+
+    *:last-child{
+        margin-left: auto;
     }
 }
 
@@ -67,39 +88,21 @@ h1 {
     grid-template-columns: auto $ticket-devider-size auto;
     align-items: center;
 
-    .avatar {
+    .title {
         height: 100%;
 
-        display: grid;
-        grid-template-columns: 60px auto;
-
-        border: $border;
-        border-radius: $border-radius/2 0 0 $border-radius/2;
+        padding-left: $border-thickness;
+        width: 60px;
 
         background-color: $text-primary;
 
-        .img {
-            aspect-ratio: 1/1;
+        justify-content: center;
 
-            background-image: url('../images/me.JPG');
-            background-position: bottom;
-            background-size: cover;
-        }
+        writing-mode: vertical-lr;
+        transform: scale(-1);
 
-        .title {
-            padding-left: $border-thickness;
-            width: 60px;
-
-            background-color: $text-primary;
-
-            justify-content: center;
-
-            writing-mode: vertical-lr;
-            transform: scale(-1);
-
-            color: white;
-            letter-spacing: 0.1em;
-        }
+        color: white;
+        letter-spacing: 0.1em;
     }
 
     .devider {
@@ -154,11 +157,11 @@ h1 {
 
         display: grid;
 
-        grid-template-columns:1fr ;
-        grid-template-rows:1fr ;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
         grid-template-areas: 'overlap';
 
-        *{
+        * {
             position: relative;
         }
 
@@ -166,13 +169,12 @@ h1 {
             grid-area: overlap;
         }
 
-        .title{
+        .title {
             grid-area: overlap;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-
         }
     }
 
@@ -189,106 +191,116 @@ h1 {
         background-color: $red;
         grid-area: development;
 
-        .planet{
+        .planet {
             z-index: 0;
         }
 
-        .illustration{
-            #circle{
+        .illustration {
+            #circle {
                 transform-origin: 231px 91px;
 
                 animation: rotate 3s ease-in-out infinite;
             }
 
-            #planet{
+            #planet {
                 fill: $light-yellow;
                 background: url('../svg/earth-cloud.svg');
             }
-        
-            #cloud1{
-                transform: translate(48px,0) rotate(23deg);
+
+            #cloud1 {
+                transform: translate(48px, 0) rotate(23deg);
                 animation: cloud1 10s linear infinite;
             }
-            #cloud2{
-                transform: translate(-114px,0) rotate(23deg);
+            #cloud2 {
+                transform: translate(-114px, 0) rotate(23deg);
                 animation: cloud2 10s linear infinite;
             }
 
-            #satellite-front{
+            #satellite-front {
                 animation: satellite-front 3s ease-in-out forwards infinite;
                 visibility: hidden;
                 animation-delay: 1.5s;
             }
 
-            #satellite-back{
+            #satellite-back {
                 animation: satellite-back 3s ease-in-out forwards infinite;
                 visibility: hidden;
             }
         }
 
-        .title{
+        .title {
             line-height: 1em;
         }
     }
 }
 
 @keyframes satellite-back {
-    0%{
-        transform: translate(-80px,80px);
+    0% {
+        transform: translate(-80px, 80px);
         visibility: visible;
     }
-    
-    50%{
-        transform: translate(0,0);
+
+    50% {
+        transform: translate(0, 0);
         visibility: hidden;
     }
-    100%{
-        transform: translate(0,0);
+    100% {
+        transform: translate(0, 0);
         visibility: hidden;
     }
 }
 @keyframes satellite-front {
-    0%{
-        transform: translate(0,0);
+    0% {
+        transform: translate(0, 0);
         visibility: visible;
     }
-    50%{
-        transform: translate(-80px,80px);
+    50% {
+        transform: translate(-80px, 80px);
         visibility: hidden;
     }
-    100%{
-        transform: translate(-80px,80px);
+    100% {
+        transform: translate(-80px, 80px);
         visibility: hidden;
     }
 }
 
 @keyframes rotate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-        
-    50%{
+
+    50% {
         transform: rotate(270deg);
     }
 
-    100%{
+    100% {
         transform: rotate(0deg);
     }
 }
 
 @keyframes cloud1 {
-    0%{
-        transform: translate(48px,0);
+    0% {
+        transform: translate(48px, 0);
     }
-    100%{
-        transform: translate(210px,0px);
+    100% {
+        transform: translate(210px, 0px);
     }
 }
 @keyframes cloud2 {
-    0%{
-        transform: translate(-114px,0px);
+    0% {
+        transform: translate(-114px, 0px);
     }
-    100%{
-        transform: translate(48px,0px);
+    100% {
+        transform: translate(48px, 0px);
+    }
+}
+
+@keyframes resize {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
     }
 }
