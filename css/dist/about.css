@@ -83,8 +83,12 @@ button:active {
   box-shlight-adow: 10px 10px 0 black;
 }
 
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
+  width: 100%;
   background-color: #F5BF02;
   margin: 0;
   padding: 0;
@@ -93,7 +97,8 @@ body {
 
 main {
   margin: 4rem auto;
-  width: 760px;
+  width: auto;
+  max-width: 760px;
   display: grid;
   gap: 4rem;
 }
@@ -104,13 +109,8 @@ h1 {
   font-size: 3rem;
 }
 
-.avatar {
-  border: 4px solid black;
-  width: 280px;
-  height: 280px;
-  background-image: url("../images/me.JPG");
-  background-position: bottom;
-  background-size: cover;
+section {
+  width: auto;
 }
 
 .title {
@@ -120,25 +120,33 @@ h1 {
   font-size: 2rem;
   font-family: "Oswald", sans-serif;
   font-weight: bold;
-  margin: 0;
-  padding: 0;
+  margin: 0.5rem 0;
   user-select: none;
   text-transform: uppercase;
 }
 
 .callout {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
   align-items: center;
+  justify-content: center;
 }
 .callout h1 {
+  width: fit-content;
+  height: fit-content;
   color: black;
   font-size: 3rem;
-  padding: 2rem 0;
-  margin: 0;
   letter-spacing: 0.03em;
+  margin-left: 3rem;
 }
-.callout *:last-child {
-  margin-left: auto;
+.callout .avatar {
+  border: 4px solid black;
+  width: 280px;
+  height: 280px;
+  background-image: url("../images/me.JPG");
+  background-position: bottom;
+  background-size: cover;
 }
 
 .about {
@@ -164,34 +172,28 @@ h1 {
   border-right: 2px dashed black;
 }
 .about .intro {
-  width: clamp(45ch, auto, 60ch);
+  font-size: 1rem;
+  width: clamp(45ch, 100%, 75ch);
   font-family: "Roboto", sans-serif;
   padding: 2rem;
   border: 4px solid black;
   border-radius: 0 0px 0px 0;
   background-color: white;
 }
-.about .intro a, .about .intro abbr {
+.about .intro a,
+.about .intro abbr {
   text-decoration: none;
   font-weight: 500;
   color: black;
 }
 
-.services {
+.services .content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
-  grid-template-areas: "title  title" "design development";
 }
 .services .title {
   top: 0;
-  padding-left: 2rem;
-}
-.services > .title {
-  grid-area: title;
-  padding: 0;
-  margin: 0;
 }
 .services .service {
   border: 4px solid black;
@@ -208,6 +210,7 @@ h1 {
   grid-area: overlap;
 }
 .services .service .title {
+  padding-left: 2rem;
   grid-area: overlap;
   display: flex;
   flex-direction: column;
@@ -215,14 +218,12 @@ h1 {
   align-items: flex-start;
 }
 .services .design {
-  grid-area: design;
   display: flex;
   align-items: center;
   background-color: #7D3CFF;
 }
 .services .development {
   background-color: #FC5151;
-  grid-area: development;
 }
 .services .development .planet {
   z-index: 0;
@@ -256,6 +257,45 @@ h1 {
   line-height: 1em;
 }
 
+@media (max-width: 768px) {
+  main {
+    margin: 2rem;
+  }
+
+  .callout {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+  }
+  .callout h1 {
+    padding: 0;
+    margin: 2rem 0;
+  }
+  .callout .avatar {
+    grid-row: 2;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .about {
+    grid-template-columns: auto;
+    grid-template-rows: auto 2px auto;
+    align-items: center;
+  }
+  .about .title {
+    writing-mode: horizontal-tb;
+    width: 100%;
+    transform: unset;
+  }
+  .about .devider {
+    border-right: none;
+    border-top: 2px dashed black;
+  }
+  .about .intro {
+    width: auto;
+  }
+}
 @keyframes satellite-back {
   0% {
     transform: translate(-80px, 80px);
