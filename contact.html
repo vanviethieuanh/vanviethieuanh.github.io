@@ -6,13 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 110 110%22><text y=%22.9em%22 font-size=%2290%22>🤙</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="css/contact.css">
 
-    <title>About me</title>
+    <title>Văn Viết Hiếu Anh</title>
+    <meta name="title" content="Văn Viết Hiếu Anh">
+    <meta name="description" content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vanviethieuanh.com/">
+    <meta property="og:title" content="Văn Viết Hiếu Anh">
+    <meta property="og:description" content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer.">
+    <!-- <meta property="og:image" content=""> -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vanviethieuanh.com/">
+    <meta property="twitter:title" content="Văn Viết Hiếu Anh">
+    <meta property="twitter:description" content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer.">
+    <!-- <meta property="twitter:image" content=""> -->
 </head>
 
 <body>
-    <h1>Comming soon !</h1>
+    <main>
+        <section class="call">
+            <h1>
+                Let's write an amazing story!
+            </h1>
+            <p>
+                💬 I'm happy that you are here! <br>
+                Leave me the message through any platforms bellow! I will reply as soon as I can.
+            </p>
+        </section>
+
+        <section class="options">
+            <a onclick="CopyEmailToClipboard()">
+                <div class="platform email" style="--color:#e74c3c">
+                    <div class="icon"><i class="far fa-envelope"></i></div>
+                    <h2 class="title"></h2>
+                </div>
+            </a>
+            <a href="http://www.facebook.com/vanviethieuanh/" target="_blank">
+                <div class="platform fb" style="--color:#4064ac">
+                    <div class="icon"><i class="fab fa-facebook-f"></i></div>
+                    <h2 class="title">Facebook</h2>
+                </div>
+            </a>
+
+            <script>
+                function CopyEmailToClipboard() {
+                    navigator.clipboard.writeText("vanviethieuanh@gmail.com").then(function () {
+                        document.querySelector('.platform.email h2').classList.add('copied')
+                    })
+                }
+            </script>
+        </section>
+    </main>
 </body>
 
 </html>
