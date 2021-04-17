@@ -115,9 +115,13 @@ h1 {
     }
 
     .intro {
-        display: flex;
+        a, abbr{
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+        }
 
-        width: clamp(45ch, auto, 75ch);
+        width: clamp(45ch, auto, 60ch);
         font-family: $font-p;
 
         padding: 2rem;

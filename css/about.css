@@ -202,15 +202,18 @@ h1 {
 }
 
 .about .intro {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: clamp(45ch, auto, 75ch);
+  width: clamp(45ch, auto, 60ch);
   font-family: "Roboto", sans-serif;
   padding: 2rem;
   border: 4px solid black;
   border-radius: 0 0px 0px 0;
   background-color: white;
+}
+
+.about .intro a, .about .intro abbr {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
 }
 
 .services {
