@@ -219,7 +219,7 @@ section {
         height: 100%;
 
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr auto;
 
         * {
           animation-play-state: var(--play-state);
@@ -241,13 +241,12 @@ section {
           border-top: $border;
 
           * {
-            margin: 0;
+            margin: 0.5rem;
           }
         }
 
         .content {
           width: 100%;
-          aspect-ratio: 1/1;
 
           display: grid;
           place-items: center;

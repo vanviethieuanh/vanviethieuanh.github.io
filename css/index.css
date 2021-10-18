@@ -336,8 +336,8 @@ section ul li .card {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
   -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
@@ -360,12 +360,11 @@ section ul li .card .title {
 }
 
 section ul li .card .title * {
-  margin: 0;
+  margin: 0.5rem;
 }
 
 section ul li .card .content {
   width: 100%;
-  aspect-ratio: 1/1;
   display: -ms-grid;
   display: grid;
   place-items: center;
