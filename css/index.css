@@ -559,6 +559,37 @@ section ul li .card .content#mondrian svg * {
           animation-fill-mode: forwards;
 }
 
+section ul li .card .content#k-means {
+  background: var(--bg);
+  width: 100%;
+  height: 100%;
+}
+
+section ul li .card .content#k-means svg {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 70%;
+  max-width: 70%;
+}
+
+section ul li .card .content#k-means circle {
+  fill: white;
+  -webkit-transition: fill ease-in-out 1s;
+  transition: fill ease-in-out 1s;
+}
+
+section ul li .card .content#k-means:hover #group_1 > circle {
+  fill: #2ECC71;
+}
+
+section ul li .card .content#k-means:hover #group_2 > circle {
+  fill: #F5BF02;
+}
+
+section ul li .card .content#k-means:hover #group_3 > circle {
+  fill: #FC5151;
+}
+
 footer {
   font-size: 14px;
   max-width: 1100px;
