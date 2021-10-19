@@ -843,7 +843,7 @@ footer #behance {
     display: flex;
   }
   .card {
-    min-height: 1vw;
+    min-height: 100vw;
   }
 }
 /*# sourceMappingURL=index.css.map */
