@@ -842,5 +842,8 @@ footer #behance {
     display: -ms-flexbox;
     display: flex;
   }
+  .card {
+    min-height: 600px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
