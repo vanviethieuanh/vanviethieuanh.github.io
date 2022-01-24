@@ -63,8 +63,17 @@ a{
 
     display: grid;
 
+    margin-top: 20px;
+
     .platform{
         height: 51px;
+
+        background-color: $text-primary;
+        transition: all .2s ease-in-out;
+
+        &:hover{
+            background-color: var(--color);
+        }
     }
     h2{
         // hide h2 text

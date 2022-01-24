@@ -154,10 +154,18 @@ a {
   gap: 1rem;
   display: -ms-grid;
   display: grid;
+  margin-top: 20px;
 }
 
 .dense .platform {
   height: 51px;
+  background-color: #363636;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.dense .platform:hover {
+  background-color: var(--color);
 }
 
 .dense h2 {
