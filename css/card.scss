@@ -57,6 +57,21 @@ a{
     gap: 1rem;
 }
 
+.dense{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    display: grid;
+
+    .platform{
+        height: 51px;
+    }
+    h2{
+        // hide h2 text
+        display: none;
+    }
+}
+
 .platform{
     color: white;
 

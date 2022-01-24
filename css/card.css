@@ -148,6 +148,22 @@ a {
   gap: 1rem;
 }
 
+.dense {
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  display: -ms-grid;
+  display: grid;
+}
+
+.dense .platform {
+  height: 51px;
+}
+
+.dense h2 {
+  display: none;
+}
+
 .platform {
   color: white;
   border: solid 4px #000000;
