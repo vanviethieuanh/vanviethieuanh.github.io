@@ -62,7 +62,7 @@ button {
   outline: none;
   height: 40px;
   border-radius: 0;
-  border: solid 4px #000000;
+  border: solid 3px #000000;
   font-family: "Oswald", sans-serif;
   font-weight: normal;
   font-size: 1.2rem;
@@ -83,15 +83,27 @@ button:active {
 }
 
 .card {
-  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  width: 280px;
+  height: 343px;
+  border: solid 3px black;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 280px auto;
+      grid-template-rows: 280px auto;
+  overflow: hidden;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.card .illustration {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
 }
 
 .card:hover {
-  -webkit-transform: translate(-10px, -10px);
-          transform: translate(-10px, -10px);
-  -webkit-box-shadow: 10px 10px 0 black;
-          box-shadow: 10px 10px 0 black;
+  margin-top: -20px;
 }
 
 body {
@@ -125,21 +137,21 @@ header div.💻 {
   text-align: center;
 }
 
-header div.💻 a {
+header div.💻 .pages a {
   color: #858585;
   font-weight: 300;
   padding-left: 1rem;
 }
 
-header div.💻 a:first-child {
+header div.💻 .pages a:first-child {
   padding-left: 0;
 }
 
-header div.💻 a:hover {
+header div.💻 .pages a:hover {
   color: black;
 }
 
-header div.💻 a.active {
+header div.💻 .pages a.active {
   color: black;
   font-weight: normal;
 }
@@ -292,6 +304,68 @@ header div.📱 nav h2 {
   margin: 0;
 }
 
+.url_button {
+  border-radius: 10px;
+  border: solid 3px #000000;
+  padding: .2rem .8rem;
+  padding-left: .3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  place-content: center;
+}
+
+.url_button h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.url_button i {
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.url_button:hover i {
+  -webkit-animation: jump 1s ease-in-out infinite;
+          animation: jump 1s ease-in-out infinite;
+}
+
 section {
   max-width: 1100px;
   margin: 0 auto;
@@ -330,7 +404,7 @@ section ul li {
 }
 
 section ul li .card {
-  border: solid 4px #000000;
+  border: solid 3px #000000;
   width: 100%;
   height: 100%;
   display: -ms-grid;
@@ -355,7 +429,7 @@ section ul li .card .title {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  border-top: solid 4px #000000;
+  border-top: solid 3px #000000;
 }
 
 section ul li .card .title * {
@@ -538,7 +612,7 @@ section ul li .card .content#mondrian {
 }
 
 section ul li .card .content#mondrian svg {
-  border: solid 4px #000000;
+  border: solid 3px #000000;
   width: 280px;
   height: 280px;
 }

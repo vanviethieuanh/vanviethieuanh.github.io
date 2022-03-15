@@ -1,7 +1,7 @@
-@import "global";
+@import "../../../css/global";
 
 body {
-  background-color: white;
+  background-color: $bg;
 
   height: 100vh;
 }
@@ -27,7 +27,7 @@ header {
 
     text-align: center;
 
-    a {
+    .pages a {
 
       color: $text-subtitle;
       font-weight: 300;
@@ -182,6 +182,52 @@ header {
       }
     }
   }
+}
+
+.url_button{
+    border-radius: 10px;
+    border: $border;
+    padding: .2rem .8rem;
+    padding-left: .3rem;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+    
+    h3{
+        padding: 0;
+        margin: 0;
+        
+        font-size: 1rem;
+        font-weight: 500;
+        color: white;
+    }
+
+    i{
+        color: white;
+
+        display: grid;
+        place-content: center;
+    }
+
+
+    &:hover{
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-2px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        i{
+            animation: jump 1s ease-in-out infinite;
+        }
+    }
 }
 
 section {
