@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 // Stroke
-$border: solid 4px #000000;
+$border: solid 3px #000000;
 
 // Typo
 $font: 'Raleway', sans-serif;
@@ -116,3 +116,28 @@ button{
         transform: translate(0, $button-shadow-size);
     }
 }
+.card {
+    width: 280px;
+    height: 343px;
+
+    border: solid 3px black;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-rows: 280px auto;
+
+    overflow: hidden;
+
+    transition: all .3s ease-in-out;
+
+    .illustration {
+        display: grid;
+        place-content: center;
+    }
+
+
+    &:hover {
+        margin-top: -20px;
+    }
+}
+

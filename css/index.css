@@ -61,7 +61,7 @@ button {
   outline: none;
   height: 40px;
   border-radius: 0;
-  border: solid 4px #000000;
+  border: solid 3px #000000;
   font-family: "Oswald", sans-serif;
   font-weight: normal;
   font-size: 1.2rem;
@@ -79,6 +79,30 @@ button:active {
           box-shadow: none;
   -webkit-transform: translate(0, 6px);
           transform: translate(0, 6px);
+}
+
+.card {
+  width: 280px;
+  height: 343px;
+  border: solid 3px black;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 280px auto;
+      grid-template-rows: 280px auto;
+  overflow: hidden;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.card .illustration {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.card:hover {
+  margin-top: -20px;
 }
 
 body {
@@ -128,31 +152,7 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-.card {
-  width: 280px;
-  height: 343px;
-  border: solid 3px black;
-  border-radius: 10px;
-  margin: 0 20px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 280px auto;
-      grid-template-rows: 280px auto;
-  overflow: hidden;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-
-.card .illustration {
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-}
-
-.card:hover {
-  margin-top: -20px;
+  gap: 30px;
 }
 
 @-webkit-keyframes rotate {
