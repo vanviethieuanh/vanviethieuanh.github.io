@@ -116,13 +116,3 @@ button{
         transform: translate(0, $button-shadow-size);
     }
 }
-
-.card{
-    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-    
-    &:hover{
-        transform: translate(-10px, -10px);
-        box-shadow: 10px 10px 0 black;
-        box-shlight-adow: 10px 10px 0 black;
-    }
-}

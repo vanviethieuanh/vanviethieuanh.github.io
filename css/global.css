@@ -80,17 +80,4 @@ button:active {
   -webkit-transform: translate(0, 6px);
           transform: translate(0, 6px);
 }
-
-.card {
-  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.card:hover {
-  -webkit-transform: translate(-10px, -10px);
-          transform: translate(-10px, -10px);
-  -webkit-box-shadow: 10px 10px 0 black;
-          box-shadow: 10px 10px 0 black;
-  box-shlight-adow: 10px 10px 0 black;
-}
 /*# sourceMappingURL=global.css.map */
