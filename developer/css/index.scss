@@ -1,0 +1,94 @@
+@import "../../css/global";
+
+body {
+    background-color: $bg;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: $text-primary;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+
+    border-top: solid 3px;
+
+    padding: 0;
+    margin: auto;
+
+    height: 100%;
+
+    display: grid;
+    place-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+
+    gap: 30px;
+}
+
+
+// rotate animation
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+// rotate animation
+@keyframes rotate-round {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#Kubernete{
+    transform-origin: 140.5px 55.5px;
+    animation: rotate 10s infinite;
+}
+
+#Cog1{
+    transform-origin: 53px 174px;
+    animation: rotate-round 10s infinite linear;
+}
+
+#Cog2{
+    transform-origin: 138px 154px;
+    animation: rotate-round 10s infinite linear reverse;
+}
+
+#fullstack{
+    .illustration{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
