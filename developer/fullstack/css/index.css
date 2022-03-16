@@ -124,54 +124,20 @@ header {
 
 header div.💻 {
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-}
-
-header div.💻 .pages a {
-  color: #858585;
-  font-weight: 300;
-  padding-left: 1rem;
-}
-
-header div.💻 .pages a:first-child {
-  padding-left: 0;
-}
-
-header div.💻 .pages a:hover {
-  color: black;
-}
-
-header div.💻 .pages a.active {
-  color: black;
-  font-weight: normal;
-}
-
-header div.💻 nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
 
-header div.💻 nav.social {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-header div.💻 nav.pages {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+header div.💻 *:last-child {
+  margin-left: auto;
 }
 
 header div.📱 {
@@ -361,7 +327,7 @@ header div.📱 nav h2 {
   }
 }
 
-.url_button:hover i {
+.url_button#resume:hover i {
   -webkit-animation: jump 1s ease-in-out infinite;
           animation: jump 1s ease-in-out infinite;
 }
@@ -389,8 +355,8 @@ section ul {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  justify-items: left;
-  gap: 1rem;
+  justify-items: center;
+  gap: 2rem;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 0;
@@ -401,6 +367,7 @@ section ul li {
   list-style: none;
   width: 100%;
   aspect-ratio: 8 / 10;
+  max-width: 350px;
 }
 
 section ul li .card {

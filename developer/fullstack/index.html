@@ -1,756 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link
-            rel="icon"
-            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 110 110%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-            crossorigin="anonymous"
-        />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="./css/index.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 110 110%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
 
-        <title>Văn Viết Hiếu Anh</title>
-        <meta name="title" content="Văn Viết Hiếu Anh" />
-        <meta
-            name="description"
-            content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer."
-        />
+    <link rel="stylesheet" href="./css/index.css" />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vanviethieuanh.com/" />
-        <meta property="og:title" content="Văn Viết Hiếu Anh" />
-        <meta
-            property="og:description"
-            content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer."
-        />
-        <!-- <meta property="og:image" content=""> -->
+    <title>Văn Viết Hiếu Anh</title>
+    <meta name="title" content="Văn Viết Hiếu Anh" />
+    <meta name="description" content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer." />
 
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://vanviethieuanh.com/" />
-        <meta property="twitter:title" content="Văn Viết Hiếu Anh" />
-        <meta
-            property="twitter:description"
-            content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer."
-        />
-        <!-- <meta property="twitter:image" content=""> -->
-    </head>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vanviethieuanh.com/" />
+    <meta property="og:title" content="Văn Viết Hiếu Anh" />
+    <meta property="og:description" content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer." />
+    <!-- <meta property="og:image" content=""> -->
 
-    <body>
-        <header>
-            <div class="💻">
-                <nav class="pages">
-                    <a class="active" href="/index.html">work</a>
-                    <a href="/about.html">about</a>
-                    <a href="/card.html">card</a>
-                </nav>
-                <h3>Văn Viết Hiếu Anh</h3>
-                <nav>
-                    <a href="#" class="url_button" style="background-color: var(--red); margin-left: auto;">
-                        <div style="display: grid; grid-template-columns: 24px auto;">
-                            <i class="fas fa-arrow-down"></i>
-                            <h3>RESUME</h3>
-                        </div>
-                    </a>
-                </nav>
-        
-            </div>
-            <div class="📱">
-                <p>Văn Viết Hiếu Anh</p>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vanviethieuanh.com/" />
+    <meta property="twitter:title" content="Văn Viết Hiếu Anh" />
+    <meta property="twitter:description" content="👋 Hi! I'm Anh, a Fullstack developer, and UI-UX Designer." />
+    <!-- <meta property="twitter:image" content=""> -->
+</head>
 
-                <div class="burger-button" onclick="changeBurger(this)">
-                    <div class="effect">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                    </div>
-                    <script>
-                        function changeBurger(x) {
-                            x.classList.toggle('show')
-                        }
-                    </script>
+<body>
+    <header>
+        <div class="💻">
+            <a href="#" class="url_button" id="resume" style="background-color: var(--red);">
+                <div style="display: grid; grid-template-columns: 24px auto;">
+                    <i class="fas fa-arrow-down"></i>
+                    <h3>RESUME</h3>
                 </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="">
-                                <div
-                                    class="side"
-                                    style="
+            </a>
+            <a href="#" class="url_button" id="resume" style="background-color: var(--violet);">
+                <div style="display: grid; grid-template-columns: 24px auto;">
+                    <i class="fas fa-at"></i>
+                    <h3>CONTACT</h3>
+                </div>
+            </a>
+            <h3>Hi! It's <b>Văn Viết Hiếu Anh</b></h3>
+        </div>
+        <div class="📱">
+            <p>Văn Viết Hiếu Anh</p>
+
+            <div class="burger-button" onclick="changeBurger(this)">
+                <div class="effect">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                </div>
+                <script>
+                    function changeBurger(x) {
+                        x.classList.toggle('show')
+                    }
+                </script>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">
+                            <div class="side" style="
                                         --color: var(--red);
                                         --order: 0;
                                         --orientation: forwards;
-                                    "
-                                ></div>
-                                <h2>work</h2>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./about.html">
-                                <div
-                                    class="side"
-                                    style="
+                                    "></div>
+                            <h2>work</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./about.html">
+                            <div class="side" style="
                                         --color: var(--yellow);
                                         --order: 1;
                                         --orientation: reverse;
-                                    "
-                                ></div>
-                                <h2>about</h2>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./card.html">
-                                <div
-                                    class="side"
-                                    style="
+                                    "></div>
+                            <h2>about</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./card.html">
+                            <div class="side" style="
                                         --color: var(--green);
                                         --order: 2;
                                         --orientation: forwards;
-                                    "
-                                ></div>
-                                <h2>card</h2>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <section>
-            <ul>
-                <li>
-                    <a
-                        href="https://vanviethieuanh.github.io/tictactoe/"
-                        target="_blank"
-                    >
-                        <article class="card">
-                            <div
-                                id="tictactoe"
-                                class="content"
-                                style="--play-state: paused; --bg: var(--red)"
-                            >
-                                <svg
-                                    width="260"
-                                    height="260"
-                                    viewBox="0 0 260 260"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <g id="xo">
-                                        <path
-                                            id="xo3"
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M215.669 221.681L233.512 239.524L239.169 233.868L221.326 216.024L239.181 198.169L233.524 192.512L215.669 210.368L198.157 192.855L192.5 198.512L210.012 216.024L192.512 233.524L198.169 239.181L215.669 221.681Z"
-                                            fill="#363636"
-                                        />
-                                        <circle
-                                            id="xo8"
-                                            cx="130"
-                                            cy="216"
-                                            r="21"
-                                            stroke="white"
-                                            stroke-width="8"
-                                        />
-                                        <circle
-                                            id="xo2"
-                                            cx="46"
-                                            cy="216"
-                                            r="21"
-                                            stroke="white"
-                                            stroke-width="8"
-                                        />
-                                        <circle
-                                            id="xo6"
-                                            cx="216"
-                                            cy="130"
-                                            r="21"
-                                            stroke="white"
-                                            stroke-width="8"
-                                        />
-                                        <path
-                                            id="xo1"
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M129.669 135.681L147.512 153.524L153.169 147.868L135.326 130.024L153.181 112.169L147.524 106.512L129.669 124.368L112.157 106.855L106.5 112.512L124.012 130.024L106.512 147.524L112.169 153.181L129.669 135.681Z"
-                                            fill="#363636"
-                                        />
-                                        <path
-                                            id="xo5"
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M43.6691 135.681L61.5122 153.524L67.1691 147.868L49.3259 130.024L67.1812 112.169L61.5244 106.512L43.6691 124.368L26.1569 106.855L20.5 112.512L38.0122 130.024L20.5122 147.524L26.169 153.181L43.6691 135.681Z"
-                                            fill="#363636"
-                                        />
-                                        <path
-                                            id="xo9"
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M215.669 51.669L233.512 69.5122L239.169 63.8553L221.326 46.0122L239.181 28.1568L233.524 22.5L215.669 40.3553L198.157 22.8431L192.5 28.5L210.012 46.0122L192.512 63.5122L198.169 69.169L215.669 51.669Z"
-                                            fill="#363636"
-                                        />
-                                        <path
-                                            id="xo7"
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M129.669 51.669L147.512 69.5122L153.169 63.8553L135.326 46.0122L153.181 28.1568L147.524 22.5L129.669 40.3553L112.157 22.8431L106.5 28.5L124.012 46.0122L106.512 63.5122L112.169 69.169L129.669 51.669Z"
-                                            fill="#363636"
-                                        />
-                                        <circle
-                                            id="xo4"
-                                            cx="46"
-                                            cy="46"
-                                            r="21"
-                                            stroke="white"
-                                            stroke-width="8"
-                                        />
-                                    </g>
-                                    <g id="lines">
-                                        <rect
-                                            id="Rectangle 11"
-                                            y="85"
-                                            width="260"
-                                            height="6"
-                                            fill="#B03939"
-                                        />
-                                        <rect
-                                            id="Rectangle 15"
-                                            x="176"
-                                            width="260"
-                                            height="6"
-                                            transform="rotate(90 176 0)"
-                                            fill="#B03939"
-                                        />
-                                        <rect
-                                            id="Rectangle 12"
-                                            y="170"
-                                            width="260"
-                                            height="6"
-                                            fill="#B03939"
-                                        />
-                                        <rect
-                                            id="Rectangle 16"
-                                            x="91"
-                                            width="260"
-                                            height="6"
-                                            transform="rotate(90 91 0)"
-                                            fill="#B03939"
-                                        />
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="title">
-                                <h1>Tic tac toe</h1>
-                            </div>
-                        </article>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://github.com/vanviethieuanh/twitter-clone"
-                        target="_blank"
-                    >
-                        <article class="card">
-                            <div
-                                id="twitter"
-                                class="content"
-                                style="--bg: var(--blue)"
-                            >
-                                <svg
-                                    width="237"
-                                    height="177"
-                                    viewBox="0 0 237 177"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <g id="pots">
-                                        <g id="bird">
-                                            <path
-                                                id="Rectangle 34"
-                                                d="M207 77.5V150H152V77.5C152 62.3122 164.312 50 179.5 50C194.688 50 207 62.3122 207 77.5Z"
-                                                fill="white"
-                                                stroke="black"
-                                                stroke-width="4"
-                                            />
-                                            <g id="Ellipse 10">
-                                                <mask
-                                                    id="path-2-inside-1"
-                                                    fill="white"
-                                                >
-                                                    <path
-                                                        d="M180 104.5C180 96.9413 183.003 89.6922 188.347 84.3475C193.692 79.0027 200.941 76 208.5 76L208.5 104.5L180 104.5Z"
-                                                    />
-                                                </mask>
+                                    "></div>
+                            <h2>card</h2>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <ul>
+            <li>
+                <a href="https://vanviethieuanh.github.io/tictactoe/" target="_blank">
+                    <article class="card">
+                        <div id="tictactoe" class="content" style="--play-state: paused; --bg: var(--red)">
+                            <svg width="260" height="260" viewBox="0 0 260 260" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="xo">
+                                    <path id="xo3" fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M215.669 221.681L233.512 239.524L239.169 233.868L221.326 216.024L239.181 198.169L233.524 192.512L215.669 210.368L198.157 192.855L192.5 198.512L210.012 216.024L192.512 233.524L198.169 239.181L215.669 221.681Z"
+                                        fill="#363636" />
+                                    <circle id="xo8" cx="130" cy="216" r="21" stroke="white" stroke-width="8" />
+                                    <circle id="xo2" cx="46" cy="216" r="21" stroke="white" stroke-width="8" />
+                                    <circle id="xo6" cx="216" cy="130" r="21" stroke="white" stroke-width="8" />
+                                    <path id="xo1" fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M129.669 135.681L147.512 153.524L153.169 147.868L135.326 130.024L153.181 112.169L147.524 106.512L129.669 124.368L112.157 106.855L106.5 112.512L124.012 130.024L106.512 147.524L112.169 153.181L129.669 135.681Z"
+                                        fill="#363636" />
+                                    <path id="xo5" fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M43.6691 135.681L61.5122 153.524L67.1691 147.868L49.3259 130.024L67.1812 112.169L61.5244 106.512L43.6691 124.368L26.1569 106.855L20.5 112.512L38.0122 130.024L20.5122 147.524L26.169 153.181L43.6691 135.681Z"
+                                        fill="#363636" />
+                                    <path id="xo9" fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M215.669 51.669L233.512 69.5122L239.169 63.8553L221.326 46.0122L239.181 28.1568L233.524 22.5L215.669 40.3553L198.157 22.8431L192.5 28.5L210.012 46.0122L192.512 63.5122L198.169 69.169L215.669 51.669Z"
+                                        fill="#363636" />
+                                    <path id="xo7" fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M129.669 51.669L147.512 69.5122L153.169 63.8553L135.326 46.0122L153.181 28.1568L147.524 22.5L129.669 40.3553L112.157 22.8431L106.5 28.5L124.012 46.0122L106.512 63.5122L112.169 69.169L129.669 51.669Z"
+                                        fill="#363636" />
+                                    <circle id="xo4" cx="46" cy="46" r="21" stroke="white" stroke-width="8" />
+                                </g>
+                                <g id="lines">
+                                    <rect id="Rectangle 11" y="85" width="260" height="6" fill="#B03939" />
+                                    <rect id="Rectangle 15" x="176" width="260" height="6" transform="rotate(90 176 0)"
+                                        fill="#B03939" />
+                                    <rect id="Rectangle 12" y="170" width="260" height="6" fill="#B03939" />
+                                    <rect id="Rectangle 16" x="91" width="260" height="6" transform="rotate(90 91 0)"
+                                        fill="#B03939" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="title">
+                            <h1>Tic tac toe</h1>
+                        </div>
+                    </article>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/vanviethieuanh/twitter-clone" target="_blank">
+                    <article class="card">
+                        <div id="twitter" class="content" style="--bg: var(--blue)">
+                            <svg width="237" height="177" viewBox="0 0 237 177" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="pots">
+                                    <g id="bird">
+                                        <path id="Rectangle 34"
+                                            d="M207 77.5V150H152V77.5C152 62.3122 164.312 50 179.5 50C194.688 50 207 62.3122 207 77.5Z"
+                                            fill="white" stroke="black" stroke-width="4" />
+                                        <g id="Ellipse 10">
+                                            <mask id="path-2-inside-1" fill="white">
                                                 <path
-                                                    d="M180 104.5C180 96.9413 183.003 89.6922 188.347 84.3475C193.692 79.0027 200.941 76 208.5 76L208.5 104.5L180 104.5Z"
-                                                    fill="black"
-                                                    fill-opacity="0.1"
-                                                    stroke="black"
-                                                    stroke-width="8"
-                                                    mask="url(#path-2-inside-1)"
-                                                />
-                                            </g>
+                                                    d="M180 104.5C180 96.9413 183.003 89.6922 188.347 84.3475C193.692 79.0027 200.941 76 208.5 76L208.5 104.5L180 104.5Z" />
+                                            </mask>
                                             <path
-                                                id="Rectangle 31"
-                                                d="M146.749 121H213.251C214.492 121 215.433 122.117 215.222 123.34L206.602 173.34C206.436 174.299 205.604 175 204.631 175H155.369C154.396 175 153.564 174.299 153.398 173.34L144.778 123.34C144.567 122.117 145.508 121 146.749 121Z"
-                                                fill="#FFCE42"
-                                                stroke="black"
-                                                stroke-width="4"
-                                            />
-                                            <rect
-                                                id="Rectangle 33"
-                                                x="137"
-                                                y="102"
-                                                width="86"
-                                                height="19"
-                                                rx="2"
-                                                fill="#FC5151"
-                                                stroke="black"
-                                                stroke-width="4"
-                                            />
-                                            <g transform="translate(0,72)">
-                                                <circle
-                                                    id="eye"
-                                                    cx="170"
-                                                    cy="0"
-                                                    r="4"
-                                                    fill="black"
-                                                />
-                                            </g>
-                                            <path
-                                                id="bill"
-                                                d="M139.329 69.6933L154.387 65.6587L150.352 80.716L139.329 69.6933Z"
-                                                fill="black"
-                                            />
+                                                d="M180 104.5C180 96.9413 183.003 89.6922 188.347 84.3475C193.692 79.0027 200.941 76 208.5 76L208.5 104.5L180 104.5Z"
+                                                fill="black" fill-opacity="0.1" stroke="black" stroke-width="8"
+                                                mask="url(#path-2-inside-1)" />
                                         </g>
-                                        <g id="cactus">
-                                            <g id="Group 4">
-                                                <path
-                                                    id="Rectangle 34_2"
-                                                    d="M83 29.5V150H28V29.5C28 14.3122 40.3122 2 55.5 2C70.6878 2 83 14.3122 83 29.5Z"
-                                                    fill="#2ECC71"
-                                                    stroke="black"
-                                                    stroke-width="4"
-                                                />
-                                                <path
-                                                    id="Rectangle 31_2"
-                                                    d="M22.7487 121H89.2513C90.4917 121 91.433 122.117 91.2222 123.34L82.6016 173.34C82.4362 174.299 81.6041 175 80.6306 175H31.3694C30.3959 175 29.5638 174.299 29.3984 173.34L20.7778 123.34C20.567 122.117 21.5083 121 22.7487 121Z"
-                                                    fill="#FFCE42"
-                                                    stroke="black"
-                                                    stroke-width="4"
-                                                />
-                                                <rect
-                                                    id="Rectangle 33_2"
-                                                    x="13"
-                                                    y="102"
-                                                    width="86"
-                                                    height="19"
-                                                    rx="2"
-                                                    fill="#FC5151"
-                                                    stroke="black"
-                                                    stroke-width="4"
-                                                />
-                                            </g>
-                                            <circle
-                                                id="Ellipse 11"
-                                                cx="91.5"
-                                                cy="44.5"
-                                                r="7.5"
-                                                fill="#2ECC71"
-                                                stroke="black"
-                                                stroke-width="4"
-                                            />
-                                            <g id="eyes">
-                                                <circle
-                                                    id="left"
-                                                    cx="47"
-                                                    cy="31"
-                                                    r="4"
-                                                    fill="black"
-                                                />
-                                                <circle
-                                                    id="right"
-                                                    cx="64"
-                                                    cy="31"
-                                                    r="4"
-                                                    fill="black"
-                                                />
-                                            </g>
-                                            <circle
-                                                id="Ellipse 12"
-                                                cx="15"
-                                                cy="65"
-                                                r="13"
-                                                fill="#2ECC71"
-                                                stroke="black"
-                                                stroke-width="4"
-                                            />
-                                            <rect
-                                                id="Rectangle 35"
-                                                x="36.9498"
-                                                y="38.9497"
-                                                width="10"
-                                                height="4"
-                                                rx="2"
-                                                fill="black"
-                                                fill-opacity="0.4"
-                                            />
-                                            <rect
-                                                id="Rectangle 36"
-                                                x="63.9498"
-                                                y="39"
-                                                width="10"
-                                                height="4"
-                                                rx="2"
-                                                fill="black"
-                                                fill-opacity="0.4"
-                                            />
+                                        <path id="Rectangle 31"
+                                            d="M146.749 121H213.251C214.492 121 215.433 122.117 215.222 123.34L206.602 173.34C206.436 174.299 205.604 175 204.631 175H155.369C154.396 175 153.564 174.299 153.398 173.34L144.778 123.34C144.567 122.117 145.508 121 146.749 121Z"
+                                            fill="#FFCE42" stroke="black" stroke-width="4" />
+                                        <rect id="Rectangle 33" x="137" y="102" width="86" height="19" rx="2"
+                                            fill="#FC5151" stroke="black" stroke-width="4" />
+                                        <g transform="translate(0,72)">
+                                            <circle id="eye" cx="170" cy="0" r="4" fill="black" />
                                         </g>
+                                        <path id="bill"
+                                            d="M139.329 69.6933L154.387 65.6587L150.352 80.716L139.329 69.6933Z"
+                                            fill="black" />
                                     </g>
-                                </svg>
-                            </div>
-                            <div class="title">
-                                <h1>Twitter clone</h1>
-                            </div>
-                        </article>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://github.com/vanviethieuanh/group-chat"
-                        target="_blank"
-                    >
-                        <article class="card">
-                            <div
-                                id="mondrian"
-                                class="content"
-                                style="--play-state: paused; --bg: white"
-                            >
-                                <svg
-                                    width="280"
-                                    height="280"
-                                    viewBox="4 4 272 272"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <rect
-                                        style="--order: 7"
-                                        x="29"
-                                        y="63"
-                                        width="249"
-                                        height="30"
-                                        fill="#FC5151"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 1"
-                                        x="173"
-                                        y="2"
-                                        width="105"
-                                        height="91"
-                                        fill="#FFCE42"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 0"
-                                        x="2"
-                                        y="2"
-                                        width="27"
-                                        height="167"
-                                        fill="#FFCE42"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 6"
-                                        x="251"
-                                        y="112"
-                                        width="27"
-                                        height="57"
-                                        fill="#FFCE42"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <path
-                                        style="--order: 8"
-                                        d="M2 169H200.767L240.139 208H2V169Z"
-                                        fill="#3498DB"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 0"
-                                        x="251"
-                                        y="93"
-                                        width="27"
-                                        height="45"
-                                        fill="#3498DB"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 10"
-                                        x="173"
-                                        y="2"
-                                        width="105"
-                                        height="34"
-                                        fill="#3498DB"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 5"
-                                        x="2"
-                                        y="208"
-                                        width="167"
-                                        height="70"
-                                        fill="#3498DB"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 2"
-                                        x="87"
-                                        y="208"
-                                        width="167"
-                                        height="70"
-                                        fill="#FC5151"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 4"
-                                        x="225"
-                                        y="208"
-                                        width="29"
-                                        height="70"
-                                        fill="#FFCE42"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                    <rect
-                                        style="--order: 3"
-                                        x="225"
-                                        y="169"
-                                        width="53"
-                                        height="57"
-                                        fill="#FC5151"
-                                        stroke="black"
-                                        stroke-width="3"
-                                    />
-                                </svg>
-                            </div>
-                            <div class="title">
-                                <h1>Group chat</h1>
-                            </div>
-                        </article>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://github.com/vanviethieuanh/enigma-machine"
-                        target="_blank"
-                    >
-                        <article class="card">
-                            <div
-                                id="enigma"
-                                class="content"
-                                style="--play-state: paused; --bg: var(--green)"
-                            >
-                                <div id="code">
-                                    <b style="--order: 5"></b>
-                                    <b style="--order: 0"></b>
-                                    <b style="--order: 2"></b>
-                                    <b style="--order: 7"></b>
-                                    <b style="--order: 8"></b>
-                                    <b style="--order: 1"></b>
-                                    <b style="--order: 6"></b>
-                                    <b style="--order: 4"></b>
-                                    <b style="--order: 3"></b>
-                                </div>
-                            </div>
-                            <div class="title">
-                                <h1>Enigma Machine</h1>
-                            </div>
-                        </article>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="http://vanviethieuanh.com/k-means-clustering/"
-                        target="_blank"
-                    >
-                        <article class="card">
-                            <div
-                                id="k-means"
-                                class="content"
-                                style="--play-state: paused; --bg: #181717;"
-                            >
-                                <svg id="canvas" viewBox="0 0 153 173" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="K-means">
-                                        <g id="group_3">
-                                            <circle
-                                                id="Ellipse 27"
-                                                cx="138"
-                                                cy="47"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 28"
-                                                cx="148"
-                                                cy="69"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 29"
-                                                cx="115"
-                                                cy="69"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 34"
-                                                cx="133"
-                                                cy="86"
-                                                r="5"
-                                            />
+                                    <g id="cactus">
+                                        <g id="Group 4">
+                                            <path id="Rectangle 34_2"
+                                                d="M83 29.5V150H28V29.5C28 14.3122 40.3122 2 55.5 2C70.6878 2 83 14.3122 83 29.5Z"
+                                                fill="#2ECC71" stroke="black" stroke-width="4" />
+                                            <path id="Rectangle 31_2"
+                                                d="M22.7487 121H89.2513C90.4917 121 91.433 122.117 91.2222 123.34L82.6016 173.34C82.4362 174.299 81.6041 175 80.6306 175H31.3694C30.3959 175 29.5638 174.299 29.3984 173.34L20.7778 123.34C20.567 122.117 21.5083 121 22.7487 121Z"
+                                                fill="#FFCE42" stroke="black" stroke-width="4" />
+                                            <rect id="Rectangle 33_2" x="13" y="102" width="86" height="19" rx="2"
+                                                fill="#FC5151" stroke="black" stroke-width="4" />
                                         </g>
-                                        <g id="group_2">
-                                            <circle
-                                                id="Ellipse 23"
-                                                cx="5"
-                                                cy="19"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 24"
-                                                cx="36"
-                                                cy="5"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 25"
-                                                cx="31"
-                                                cy="37"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 26"
-                                                cx="66"
-                                                cy="32"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 35"
-                                                cx="66"
-                                                cy="9"
-                                                r="5"
-                                            />
+                                        <circle id="Ellipse 11" cx="91.5" cy="44.5" r="7.5" fill="#2ECC71"
+                                            stroke="black" stroke-width="4" />
+                                        <g id="eyes">
+                                            <circle id="left" cx="47" cy="31" r="4" fill="black" />
+                                            <circle id="right" cx="64" cy="31" r="4" fill="black" />
                                         </g>
-                                        <g id="group_1">
-                                            <circle
-                                                id="Ellipse 30"
-                                                cx="46"
-                                                cy="110"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 31"
-                                                cx="61"
-                                                cy="134"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 32"
-                                                cx="56"
-                                                cy="168"
-                                                r="5"
-                                            />
-                                            <circle
-                                                id="Ellipse 33"
-                                                cx="31"
-                                                cy="139"
-                                                r="5"
-                                            />
-                                        </g>
+                                        <circle id="Ellipse 12" cx="15" cy="65" r="13" fill="#2ECC71" stroke="black"
+                                            stroke-width="4" />
+                                        <rect id="Rectangle 35" x="36.9498" y="38.9497" width="10" height="4" rx="2"
+                                            fill="black" fill-opacity="0.4" />
+                                        <rect id="Rectangle 36" x="63.9498" y="39" width="10" height="4" rx="2"
+                                            fill="black" fill-opacity="0.4" />
                                     </g>
-                                </svg>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="title">
+                            <h1>Twitter clone</h1>
+                        </div>
+                    </article>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/vanviethieuanh/group-chat" target="_blank">
+                    <article class="card">
+                        <div id="mondrian" class="content" style="--play-state: paused; --bg: white">
+                            <svg width="280" height="280" viewBox="4 4 272 272" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect style="--order: 7" x="29" y="63" width="249" height="30" fill="#FC5151"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 1" x="173" y="2" width="105" height="91" fill="#FFCE42"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 0" x="2" y="2" width="27" height="167" fill="#FFCE42"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 6" x="251" y="112" width="27" height="57" fill="#FFCE42"
+                                    stroke="black" stroke-width="3" />
+                                <path style="--order: 8" d="M2 169H200.767L240.139 208H2V169Z" fill="#3498DB"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 0" x="251" y="93" width="27" height="45" fill="#3498DB"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 10" x="173" y="2" width="105" height="34" fill="#3498DB"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 5" x="2" y="208" width="167" height="70" fill="#3498DB"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 2" x="87" y="208" width="167" height="70" fill="#FC5151"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 4" x="225" y="208" width="29" height="70" fill="#FFCE42"
+                                    stroke="black" stroke-width="3" />
+                                <rect style="--order: 3" x="225" y="169" width="53" height="57" fill="#FC5151"
+                                    stroke="black" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="title">
+                            <h1>Group chat</h1>
+                        </div>
+                    </article>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/vanviethieuanh/enigma-machine" target="_blank">
+                    <article class="card">
+                        <div id="enigma" class="content" style="--play-state: paused; --bg: var(--green)">
+                            <div id="code">
+                                <b style="--order: 5"></b>
+                                <b style="--order: 0"></b>
+                                <b style="--order: 2"></b>
+                                <b style="--order: 7"></b>
+                                <b style="--order: 8"></b>
+                                <b style="--order: 1"></b>
+                                <b style="--order: 6"></b>
+                                <b style="--order: 4"></b>
+                                <b style="--order: 3"></b>
                             </div>
-                            <div class="title">
-                                <h1>k-means clustering</h1>
-                            </div>
-                        </article>
-                    </a>
-                </li>
-            </ul>
-            <script defer>
-                function isScrolledIntoView(elem) {
-                    const docViewTop = this.scrollY
-                    const docViewBottom = docViewTop + this.innerHeight
+                        </div>
+                        <div class="title">
+                            <h1>Enigma Machine</h1>
+                        </div>
+                    </article>
+                </a>
+            </li>
+            <li>
+                <a href="http://vanviethieuanh.com/k-means-clustering/" target="_blank">
+                    <article class="card">
+                        <div id="k-means" class="content" style="--play-state: paused; --bg: #181717;">
+                            <svg id="canvas" viewBox="0 0 153 173" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="K-means">
+                                    <g id="group_3">
+                                        <circle id="Ellipse 27" cx="138" cy="47" r="5" />
+                                        <circle id="Ellipse 28" cx="148" cy="69" r="5" />
+                                        <circle id="Ellipse 29" cx="115" cy="69" r="5" />
+                                        <circle id="Ellipse 34" cx="133" cy="86" r="5" />
+                                    </g>
+                                    <g id="group_2">
+                                        <circle id="Ellipse 23" cx="5" cy="19" r="5" />
+                                        <circle id="Ellipse 24" cx="36" cy="5" r="5" />
+                                        <circle id="Ellipse 25" cx="31" cy="37" r="5" />
+                                        <circle id="Ellipse 26" cx="66" cy="32" r="5" />
+                                        <circle id="Ellipse 35" cx="66" cy="9" r="5" />
+                                    </g>
+                                    <g id="group_1">
+                                        <circle id="Ellipse 30" cx="46" cy="110" r="5" />
+                                        <circle id="Ellipse 31" cx="61" cy="134" r="5" />
+                                        <circle id="Ellipse 32" cx="56" cy="168" r="5" />
+                                        <circle id="Ellipse 33" cx="31" cy="139" r="5" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="title">
+                            <h1>k-means clustering</h1>
+                        </div>
+                    </article>
+                </a>
+            </li>
+        </ul>
+        <script defer>
+            function isScrolledIntoView(elem) {
+                const docViewTop = this.scrollY
+                const docViewBottom = docViewTop + this.innerHeight
 
-                    const elemTop = document.querySelector(elem).offsetTop
-                    const elemBottom =
-                        elemTop + document.querySelector(elem).offsetHeight
+                const elemTop = document.querySelector(elem).offsetTop
+                const elemBottom =
+                    elemTop + document.querySelector(elem).offsetHeight
 
-                    return elemBottom <= docViewBottom && elemTop >= docViewTop
-                }
+                return elemBottom <= docViewBottom && elemTop >= docViewTop
+            }
 
-                window.addEventListener('scroll', () => {
-                    const cardsId = ['#tictactoe', '#enigma', '#mondrian']
-                    const isPhone = window.innerWidth < 768
+            window.addEventListener('scroll', () => {
+                const cardsId = ['#tictactoe', '#enigma', '#mondrian']
+                const isPhone = window.innerWidth < 768
 
-                    cardsId.forEach((element) => {
-                        if (isScrolledIntoView(element) && isPhone) {
-                            document
-                                .querySelector(element)
-                                .style.setProperty('--play-state', 'running')
-                        } else {
-                            document
-                                .querySelector(element)
-                                .style.setProperty('--play-state', 'paused')
-                        }
-                    })
+                cardsId.forEach((element) => {
+                    if (isScrolledIntoView(element) && isPhone) {
+                        document
+                            .querySelector(element)
+                            .style.setProperty('--play-state', 'running')
+                    } else {
+                        document
+                            .querySelector(element)
+                            .style.setProperty('--play-state', 'paused')
+                    }
                 })
-            </script>
-        </section>
-        <footer>
-            <a
-                title="Twitter"
-                target="_blank"
-                href="https://twitter.com/AccodiusdeVan"
-            >
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a
-                title="Instagram"
-                target="_blank"
-                href="https://www.instagram.com/accodius"
-            >
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a
-                title="Github"
-                target="_blank"
-                href="https://github.com/vanviethieuanh"
-            >
-                <i class="fab fa-github-alt"></i>
-            </a>
-            <a
-                title="Behance"
-                target="_blank"
-                href="https://www.behance.net/vanviethieuanh"
-            >
-                <i class="fab fa-behance"></i>
-            </a>
-            <p>Văn Viết Hiếu Anh</p>
-        </footer>
-    </body>
+            })
+        </script>
+    </section>
+    <footer>
+        <a title="Instagram" target="_blank" href="https://www.linkedin.com/in/vanviethieuanh/">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a title="Github" target="_blank" href="https://github.com/vanviethieuanh">
+            <i class="fab fa-github-alt"></i>
+        </a>
+        <a title="Behance" target="_blank" href="https://www.behance.net/vanviethieuanh">
+            <i class="fab fa-behance"></i>
+        </a>
+        <p>Văn Viết Hiếu Anh</p>
+    </footer>
+</body>
+
 </html>
