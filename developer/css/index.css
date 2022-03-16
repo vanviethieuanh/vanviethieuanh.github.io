@@ -215,16 +215,109 @@ h2 {
 }
 
 #Cog1 {
-  -webkit-transform-origin: 53px 174px;
-          transform-origin: 53px 174px;
+  -webkit-transform-origin: 68px 173.5px;
+          transform-origin: 68px 173.5px;
   -webkit-animation: rotate-round 10s infinite linear;
           animation: rotate-round 10s infinite linear;
 }
 
 #Cog2 {
-  -webkit-transform-origin: 138px 154px;
-          transform-origin: 138px 154px;
+  -webkit-transform-origin: 152.8px 152.5px;
+          transform-origin: 152.8px 152.5px;
   animation: rotate-round 10s infinite linear reverse;
+}
+
+#cursor {
+  -webkit-animation: cursor 10s infinite;
+          animation: cursor 10s infinite;
+}
+
+@-webkit-keyframes cursor {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(90px, -10px);
+            transform: translate(90px, -10px);
+  }
+  80% {
+    -webkit-transform: translate(150px, 30px);
+            transform: translate(150px, 30px);
+  }
+}
+
+@keyframes cursor {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(90px, -10px);
+            transform: translate(90px, -10px);
+  }
+  80% {
+    -webkit-transform: translate(150px, 30px);
+            transform: translate(150px, 30px);
+  }
+}
+
+#rec1 {
+  -webkit-animation: color-transition 10s infinite;
+          animation: color-transition 10s infinite;
+}
+
+@-webkit-keyframes color-transition {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #2ECC71;
+  }
+  80% {
+    fill: white;
+  }
+}
+
+@keyframes color-transition {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #2ECC71;
+  }
+  80% {
+    fill: white;
+  }
+}
+
+#rec2 {
+  -webkit-animation: color-transition-2 10s infinite;
+          animation: color-transition-2 10s infinite;
+}
+
+@-webkit-keyframes color-transition-2 {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: white;
+  }
+  80% {
+    fill: #699BF7;
+  }
+}
+
+@keyframes color-transition-2 {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: white;
+  }
+  80% {
+    fill: #699BF7;
+  }
 }
 
 #fullstack .illustration {

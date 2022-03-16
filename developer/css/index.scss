@@ -70,23 +70,79 @@ h2 {
     }
 }
 
-#Kubernete{
+#Kubernete {
     transform-origin: 140.5px 55.5px;
     animation: rotate 10s infinite;
 }
 
-#Cog1{
-    transform-origin: 53px 174px;
+#Cog1 {
+    transform-origin: 68px 173.5px;
     animation: rotate-round 10s infinite linear;
 }
 
-#Cog2{
-    transform-origin: 138px 154px;
+#Cog2 {
+    transform-origin: 152.8px 152.5px;
     animation: rotate-round 10s infinite linear reverse;
 }
 
-#fullstack{
-    .illustration{
+#cursor {
+    @keyframes cursor {
+        0% {
+            transform: translate(0px, 0px);
+        }
+
+        50% {
+            transform: translate(90px, -10px);
+        }
+
+        80% {
+            transform: translate(150px, 30px);
+        }
+    }
+
+    animation: cursor 10s infinite;
+}
+
+#rec1 {
+    @keyframes color-transition {
+        0% {
+            fill: $bg;
+        }
+
+        50% {
+            fill: $green;
+        }
+
+        80% {
+            fill: $bg;
+        }
+    }
+
+    animation: color-transition 10s infinite;
+}
+
+#rec2 {
+    @keyframes color-transition-2 {
+        0% {
+            fill: $bg;
+        }
+
+        50% {
+            fill: $bg;
+        }
+
+        80% {
+            fill: $blue;
+        }
+    }
+
+    animation: color-transition-2 10s infinite;
+}
+
+
+
+#fullstack {
+    .illustration {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
