@@ -1,0 +1,11 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vanviethieuanh/portfolio.git",
+  "author": "vanviethieuanh <vanviethieuanh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sal.js": "^0.7.7"
+  }
+}

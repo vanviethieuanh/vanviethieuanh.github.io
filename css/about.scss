@@ -1,0 +1,154 @@
+@import "global";
+
+$nav-height: 44px;
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $text-subtitle;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $text-primary;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: $font;
+  font-size: 14px;
+
+  background-color: $bg;
+  color: $text-subtitle;
+
+  overflow-x: hidden;
+}
+
+.s1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 1rem;
+
+  .container {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+    @media screen and (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 14px;
+      }
+      h1,
+      p {
+        padding: 1rem 0;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .photo {
+      background-image: url("../images/me.JPG");
+      padding-top: 100%;
+      width: 100%;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.duty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 100%;
+    max-width: $focus-width;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 2rem;
+    padding: 2rem;
+
+    align-items: center;
+    justify-items: center;
+
+    @media screen and (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 14px;
+      }
+      h1,
+      p {
+        padding: 1rem 0;
+      }
+    }
+  }
+}
+
+.contact {
+  display: grid;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      display: flex;
+      flex-direction: row;
+      padding: 2rem;
+
+      p {
+        padding: 0;
+        font-size: 1rem;
+      }
+      & {
+        a {
+          padding: 0;
+          margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: $sm) {
+          // small
+          flex-direction: column;
+        }
+        @media screen and (min-width: $sm) {
+          // big
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}

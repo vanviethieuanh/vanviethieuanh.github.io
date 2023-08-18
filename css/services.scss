@@ -1,0 +1,161 @@
+@import "global";
+
+$nav-height: 44px;
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $text-subtitle;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $text-primary;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: $font;
+  font-size: 14px;
+
+  background-color: $bg;
+  color: $text-subtitle;
+
+  overflow-x: hidden;
+}
+
+.s1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    display: grid;
+    grid-template-columns: auto 400px;
+    gap: 2rem;
+
+    @media screen and (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+      margin-top: 4rem;
+
+      h1 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 14px;
+      }
+      h1,
+      p {
+        padding: 1rem 0;
+      }
+    }
+    @media screen and (min-width: $sm) {
+      h1 {
+        white-space: nowrap;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .photo {
+      background-image: url("../images/desk.JPG");
+      padding-top: 100%;
+      width: 100%;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.what-i-do {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: grid;
+
+    grid-template-columns: 1fr repeat(3, 2fr);
+    grid-template-rows: 1fr 4fr 1fr;
+    align-items: flex-start;
+
+    gap: 2rem;
+
+    [what-i-do] {
+      grid-column-start: 1;
+      grid-column-end: 2;
+
+      color: $text-subtitle;
+      font-weight: bold;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: -1rem;
+
+      &::after {
+        content: "";
+        width: 3em;
+        height: 1px;
+
+        border-bottom: 1px solid $text-subtitle;
+        opacity: 0.5;
+        @media screen and (max-width: $sm) {
+          display: none;
+        }
+      }
+    }
+    [what-i-do-ans] {
+      color: $text-subtitle;
+
+      grid-column-start: 2;
+      grid-column-end: 4;
+      &::after {
+        content: "";
+        width: 10em;
+        height: 1px;
+        border-bottom: 1px solid $text-subtitle;
+      }
+    }
+    [sub] {
+      * {
+        padding: 0.5em 0;
+      }
+      @media screen and (max-width: $sm) {
+        h1 {
+          padding: 0;
+        }
+      }
+    }
+
+    [web-design] {
+      grid-column-start: 2;
+    }
+
+    a.button {
+      grid-column-start: 2;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 5rem 2rem;
+      gap: 2rem;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@import "global";
+
+.nav {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100vw;
+
+  height: 100vh;
+  background-color: $main-color;
+  z-index: 10;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease-in-out;
+
+  word-wrap: break-word;
+
+  transform: translateX(-100vw);
+
+  &.open {
+    transform: translateX(0vw);
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $text-subtitle;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0.7em;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: $text-primary;
+      }
+    }
+  }
+}
+
+.hamburger {
+  position: fixed;
+
+  width: 44px;
+  height: 44px;
+
+  z-index: 30;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .burger {
+    width: 17px;
+    height: 12px;
+
+    span {
+      transition: all 0.3s ease-in-out;
+
+      width: 17px;
+      height: 2px;
+      background-color: $text-subtitle;
+      color: $text-subtitle;
+      position: absolute;
+
+      &:last-child {
+        margin-top: 10px;
+
+        &.open {
+          transform: rotate(-45deg) translateY(-7px);
+        }
+      }
+
+      &.open {
+        transform: rotate(45deg) translateY(7px);
+      }
+    }
+  }
+}
+
+.s1 {
+  display: grid;
+  grid-template-rows: $nav-height auto $nav-height;
+
+  justify-items: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.s2 {
+  display: grid;
+
+  justify-items: center;
+  align-items: center;
+}
+
+.contact {
+  display: grid;
+  grid-template-rows: $nav-height auto $nav-height;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      display: flex;
+      flex-direction: column;
+      .text {
+        display: flex;
+
+        @media screen and (max-width: $sm) {
+          // small
+          flex-direction: column;
+        }
+        @media screen and (min-width: $sm) {
+          // big
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: $sm) {
+  p {
+    padding: 0.3rem 2rem;
+  }
+  h1 {
+    padding: 0.7rem 2rem;
+    padding-bottom: 1rem;
+  }
+  .button {
+    padding: 0rem 2rem !important;
+  }
+}
+@media screen and (min-width: $sm) {
+  p {
+    padding: 0;
+    vertical-align: bottom;
+  }
+  h1 {
+    padding-bottom: 2rem;
+  }
+}

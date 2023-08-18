@@ -1,0 +1,28 @@
+{
+  "description": "global.scss",
+  "starred": false,
+  "viewers_can_download": true,
+  "editors_can_edit_access": true,
+  "last_modified_by_any_user": "2020-09-28T04:28:02.224Z",
+  "last_modified_by_me": "2020-09-28T04:28:02.224Z",
+  "content_last_modified": "2020-09-28T04:28:02.224Z",
+  "created": "2020-11-03T14:30:33.500Z",
+  "permissions": [
+    {
+      "id": "15875749708189832757",
+      "name": "Văn Viết Hiếu Anh",
+      "type": "user",
+      "role": "owner",
+      "kind": "drive#permission",
+      "photo_link": "https://lh3.googleusercontent.com/a/AAcHTtdphLTUl-NcBTPnLI4ljha5ZMLBSTUsHUYu8sZfcp55E74=s64",
+      "self_link": "https://www.googleapis.com/drive/v2/files/1Dzg7Jc1-m8OGat-WHLXY3My5DkaMNTG_/permissions/15875749708189832757",
+      "email_address": "vanviethieuanh@gmail.com",
+      "domain": "gmail.com",
+      "etag": "\"8-LRsWMBe8LjOmX0V5jz0bDr-Nc\"",
+      "deleted": false,
+      "pending_owner": false
+    }
+  ],
+  "title": "global.scss",
+  "mime_type": "application/octet-stream"
+}

@@ -1,0 +1,28 @@
+{
+  "description": "desk.JPG",
+  "starred": false,
+  "viewers_can_download": true,
+  "editors_can_edit_access": true,
+  "last_modified_by_any_user": "2020-08-31T06:47:07.391Z",
+  "last_modified_by_me": "2020-08-31T06:47:07.391Z",
+  "content_last_modified": "2020-08-31T06:47:07.391Z",
+  "created": "2020-11-03T14:39:17.502Z",
+  "permissions": [
+    {
+      "id": "15875749708189832757",
+      "name": "Văn Viết Hiếu Anh",
+      "type": "user",
+      "role": "owner",
+      "kind": "drive#permission",
+      "photo_link": "https://lh3.googleusercontent.com/a/AAcHTtdphLTUl-NcBTPnLI4ljha5ZMLBSTUsHUYu8sZfcp55E74=s64",
+      "self_link": "https://www.googleapis.com/drive/v2/files/1YrwqRjmh0wQN-L2Lve0nyXHT-sNgDvLB/permissions/15875749708189832757",
+      "email_address": "vanviethieuanh@gmail.com",
+      "domain": "gmail.com",
+      "etag": "\"DtOn_XIzdsmZnGz3Zom-Vmxe9tY\"",
+      "deleted": false,
+      "pending_owner": false
+    }
+  ],
+  "title": "desk.JPG",
+  "mime_type": "image/jpeg"
+}
