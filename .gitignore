@@ -2,3 +2,6 @@ svg
 
 # Editor
 .vscode
+
+*.css
+*.css.map
