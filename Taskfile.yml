@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  default:
+    desc: Build all SCSS files (main + submodules)
+    cmds:
+      - task: build
+
+  build:
+    desc: Compile all SCSS to CSS
+    deps:
+      - build:main
+      - build:dev
+      - build:accodius
+
+  build:main:
+    desc: Build main site CSS
+    cmds:
+      - npx sass css/global.scss css/global.css
+      - npx sass css/index.scss css/index.css
+      - npx sass css/card.scss css/card.css
+
+  build:dev:
+    desc: Build dev submodule CSS
+    dir: dev
+    cmds:
+      - npx sass css/global.scss css/global.css
+      - npx sass css/index.scss css/index.css
+      - npx sass css/card.scss css/card.css
+
+  build:accodius:
+    desc: Build accodius submodule CSS
+    dir: accodius
+    cmds:
+      - npx sass css/global.scss css/global.css
+      - npx sass css/index.scss css/index.css
+      - npx sass css/card.scss css/card.css
+
+  watch:
+    desc: Watch all SCSS files for changes
+    deps:
+      - watch:main
+      - watch:dev
+      - watch:accodius
+
+  watch:main:
+    desc: Watch main site SCSS
+    cmds:
+      - npx sass --watch css/:css/
+
+  watch:dev:
+    desc: Watch dev submodule SCSS
+    dir: dev
+    cmds:
+      - npx sass --watch css/:css/
+
+  watch:accodius:
+    desc: Watch accodius submodule SCSS
+    dir: accodius
+    cmds:
+      - npx sass --watch css/:css/
+
+  clean:
+    desc: Remove all generated CSS files
+    cmds:
+      - rm -f css/*.css css/*.css.map
+      - rm -f dev/css/*.css dev/css/*.css.map
+      - rm -f accodius/css/*.css accodius/css/*.css.map
+
+  format:
+    desc: Format all code files (HTML, SCSS, YAML)
+    cmds:
+      - npx prettier --write "**/*.{html,scss,yml,yaml,md}" --ignore-path .gitignore

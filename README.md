@@ -4,25 +4,28 @@
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Markup | Plain HTML (no framework, no SSG) |
-| Styling | SCSS → compiled to CSS |
-| Fonts | Google Fonts — Oswald, Raleway, Roboto |
-| Icons | Font Awesome 5.15 (CDN) |
-| Graphics | Inline SVG |
-| Analytics | Google Analytics (gtag.js) |
-| Hosting | GitHub Pages |
+| Layer     | Technology                             |
+| --------- | -------------------------------------- |
+| Markup    | Plain HTML (no framework, no SSG)      |
+| Styling   | SCSS → compiled to CSS                 |
+| Fonts     | Google Fonts — Oswald, Raleway, Roboto |
+| Icons     | Font Awesome 5.15 (CDN)                |
+| Graphics  | Inline SVG                             |
+| Analytics | Google Analytics (gtag.js)             |
+| Hosting   | GitHub Pages                           |
 
 ## Style
 
-Neo-brutalist / cartoon aesthetic:
+**Gruvbox Light + Neo-brutalist** aesthetic:
 
-- **Thick black borders** — `solid 3px #000000` globally
-- **Bold color palette** — bright blue, red, yellow, green, violet
-- **3D button press** — inset shadow + `:active` shrink
+- **Color palette** — [Gruvbox Light](https://github.com/morhetz/gruvbox) with warm, retro tones
+  - Background: `#fbf1c7` (cream) → `#ebdbb2` (subtle)
+  - Foreground: `#282828` (dark) for text and borders
+  - Accents: bright red, green, yellow, blue, purple, aqua, orange
+- **Thick borders** — `solid 3px` globally using Gruvbox dark0
+- **Unified press-effect** — SCSS mixin for 3D inset shadow + `:active` shrink on buttons, cards, platforms
 - **Hover lift** — cards translate up 20px on hover
-- **Cartoon SVGs** — `stroke-width: 3-4` on inline SVGs
+- **Inline SVG graphics** — `stroke-width: 3-4` with CSS custom properties for colors
 
 ## Structure
 
