@@ -1,13 +1,63 @@
-# Portfolio
+# vanviethieuanh.github.io
 
-Check out at [vanviethieuanh.github.io](https://vanviethieuanh.github.io/)
+> 👋 Personal portfolio — [vanviethieuanh.github.io](https://vanviethieuanh.github.io/)
 
-## Weird things about this project
+## Tech Stack
 
-**The blink animation of bird in twitter clone card** kind of fun when I use the css keyframe scaleY for animating. It kind of scale from the origin which is 0 and the eye move out of bird =)) because the eye center is 72. So I use a tricky way to fix it is make it in a group and move on top.
+| Layer | Technology |
+|---|---|
+| Markup | Plain HTML (no framework, no SSG) |
+| Styling | SCSS → compiled to CSS |
+| Fonts | Google Fonts — Oswald, Raleway, Roboto |
+| Icons | Font Awesome 5.15 (CDN) |
+| Graphics | Inline SVG |
+| Analytics | Google Analytics (gtag.js) |
+| Hosting | GitHub Pages |
 
-```svg
-    <g transform="translate(0,72)">
-        <circle id="eye" cx="170" cy="0" r="4" fill="black" />
-    </g>
+## Style
+
+Neo-brutalist / cartoon aesthetic:
+
+- **Thick black borders** — `solid 3px #000000` globally
+- **Bold color palette** — bright blue, red, yellow, green, violet
+- **3D button press** — inset shadow + `:active` shrink
+- **Hover lift** — cards translate up 20px on hover
+- **Cartoon SVGs** — `stroke-width: 3-4` on inline SVGs
+
+## Structure
+
 ```
+index.html          # Landing — "Who are you finding?" tarot-style cards
+card.html           # Linktree-style social card page
+css/
+  global.scss       # Design tokens: colors, typography, borders, buttons, cards
+  index.scss        # Index page styles + SVG animations
+  card.scss         # Social card page styles
+  about.scss        # About page styles
+images/             # Pixel art avatar (GIF + PNG)
+svg/                # SVG assets (connect, human, terminal)
+blog/               # Future blog posts
+dev/                # Git submodule → vanviethieuanh/dev
+accodius/           # Git submodule → vanviethieuanh/accodius
+```
+
+## Development
+
+### Prerequisites
+
+- [Sass](https://sass-lang.com/install) — to compile `.scss` → `.css`
+
+### Setup
+
+```bash
+# Clone with submodules
+git clone --recurse-submodules https://github.com/vanviethieuanh/vanviethieuanh.github.io.git
+
+# Or init submodules if already cloned
+git submodule update --init --recursive
+
+# Watch & compile SCSS
+sass --watch css/:css/
+```
+
+Serve locally with VS Code **Live Server** extension or `npx serve .`
