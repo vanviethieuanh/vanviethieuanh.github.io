@@ -35,14 +35,25 @@ layout: post
 ---
 ```
 
-## Liquid Templates
+## Quick Start
 
-Jekyll uses Liquid for templating:
+```bash
+# Install Jekyll
+gem install jekyll bundler
 
-```liquid
-{% for post in site.posts %}
-  <h2>{{ post.title }}</h2>
-{% endfor %}
+# Create new site
+jekyll new my-site
+
+# Serve locally
+cd my-site
+bundle exec jekyll serve
 ```
+
+## Deployment
+
+1. Create a repository named `username.github.io`
+2. Push your Jekyll site to the repo
+3. GitHub Pages will build and host it automatically
+4. Visit `https://username.github.io`
 
 Simple, powerful, and maintainable.
