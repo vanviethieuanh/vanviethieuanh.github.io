@@ -1,6 +1,0 @@
-[submodule "dev"]
-	path = dev
-	url = https://github.com/vanviethieuanh/dev
-[submodule "accodius"]
-	path = accodius
-	url = https://github.com/vanviethieuanh/accodius

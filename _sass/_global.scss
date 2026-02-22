@@ -163,52 +163,13 @@ button {
 }
 
 .card {
-  width: 280px;
-  height: 343px;
-
   @include thick-border($width: 3px, $radius: 10px);
 
-  display: grid;
-  grid-template-rows: 280px auto;
-
-  overflow: hidden;
-
   transition: all 0.3s ease-in-out;
-  position: relative;
-
-  .illustration {
-    display: grid;
-    place-content: center;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: grid;
-    place-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-
-    h2 {
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-  }
+  box-shadow: 0px 0px 0 var(--fg4);
 
   &:hover {
-    margin-top: -20px;
-
-    .overlay {
-      opacity: 1;
-    }
+    box-shadow: 4px 4px 0 var(--fg4);
   }
 }
 
