@@ -2,72 +2,37 @@
 
 version: "3"
 
+vars:
+  RBENV_ROOT:
+    sh: echo $HOME/.rbenv
+  BUNDLE: "{{.RBENV_ROOT}}/shims/bundle"
+
 tasks:
   default:
-    desc: Build all SCSS files (main + submodules)
+    desc: Serve Jekyll site with live reload
     cmds:
-      - task: build
+      - task: serve
+
+  serve:
+    desc: Start Jekyll development server with live reload
+    cmds:
+      - "{{.BUNDLE}} exec jekyll serve --livereload"
 
   build:
-    desc: Compile all SCSS to CSS
-    deps:
-      - build:main
-      - build:dev
-      - build:accodius
-
-  build:main:
-    desc: Build main site CSS
+    desc: Build Jekyll site for production (GitHub Pages)
     cmds:
-      - npx sass css/global.scss css/global.css
-      - npx sass css/index.scss css/index.css
-      - npx sass css/card.scss css/card.css
-
-  build:dev:
-    desc: Build dev submodule CSS
-    dir: dev
-    cmds:
-      - npx sass css/global.scss css/global.css
-      - npx sass css/index.scss css/index.css
-      - npx sass css/card.scss css/card.css
-
-  build:accodius:
-    desc: Build accodius submodule CSS
-    dir: accodius
-    cmds:
-      - npx sass css/global.scss css/global.css
-      - npx sass css/index.scss css/index.css
-      - npx sass css/card.scss css/card.css
-
-  watch:
-    desc: Watch all SCSS files for changes
-    deps:
-      - watch:main
-      - watch:dev
-      - watch:accodius
-
-  watch:main:
-    desc: Watch main site SCSS
-    cmds:
-      - npx sass --watch css/:css/
-
-  watch:dev:
-    desc: Watch dev submodule SCSS
-    dir: dev
-    cmds:
-      - npx sass --watch css/:css/
-
-  watch:accodius:
-    desc: Watch accodius submodule SCSS
-    dir: accodius
-    cmds:
-      - npx sass --watch css/:css/
+      - "{{.BUNDLE}} exec jekyll build"
 
   clean:
-    desc: Remove all generated CSS files
+    desc: Clean Jekyll build artifacts
     cmds:
-      - rm -f css/*.css css/*.css.map
-      - rm -f dev/css/*.css dev/css/*.css.map
-      - rm -f accodius/css/*.css accodius/css/*.css.map
+      - "{{.BUNDLE}} exec jekyll clean"
+      - rm -rf _site
+
+  install:
+    desc: Install Jekyll and dependencies
+    cmds:
+      - "{{.BUNDLE}} install"
 
   format:
     desc: Format all code files (HTML, SCSS, YAML)

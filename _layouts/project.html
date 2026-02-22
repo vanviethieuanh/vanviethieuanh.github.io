@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<article class="project-content">
+  <h1>{{ page.title }}</h1>
+  
+  {% if page.image %}
+  <div class="project-image">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+  </div>
+  {% endif %}
+  
+  {{ content }}
+  
+  {% if page.url_link %}
+  <a href="{{ page.url_link }}" target="_blank" class="project-link">
+    View Project →
+  </a>
+  {% endif %}
+</article>
+
+<style>
+.project-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.project-image {
+  margin: 2rem 0;
+  border: 3px solid var(--fg0);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  display: block;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: var(--blue);
+  color: var(--fg0);
+  text-decoration: none;
+  border: 3px solid var(--fg0);
+  font-family: var(--font-dense);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-4px);
+}
+</style>

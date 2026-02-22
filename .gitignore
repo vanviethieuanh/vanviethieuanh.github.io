@@ -5,3 +5,14 @@ svg
 
 *.css
 *.css.map
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+
+# Old files
+index.html.backup
+card.html.backup

@@ -1,0 +1,61 @@
+---
+layout: default
+title: Blog
+---
+
+<style>
+.blog-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.blog-container h1 {
+  margin-bottom: 2rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 3px solid var(--fg0);
+  border-radius: 10px;
+  background: var(--bg1);
+  transition: all 0.3s ease;
+}
+
+.post-item:hover {
+  transform: translateY(-4px);
+  background: var(--yellow);
+}
+
+.post-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-date {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+</style>
+
+<div class="blog-container">
+  <h1>Blog</h1>
+  
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post-item">
+        <a href="{{ post.url }}">
+          <h2>{{ post.title }}</h2>
+          <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

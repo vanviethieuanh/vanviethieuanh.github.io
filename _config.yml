@@ -1,0 +1,57 @@
+# Site settings
+title: Văn Viết Hiếu Anh
+description: >-
+  👋 Hi! I'm Anh, a Fullstack developer, Pixel Artist, and UI-UX Designer.
+baseurl: ""
+url: "https://vanviethieuanh.github.io"
+author: Văn Viết Hiếu Anh
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - Taskfile.yml
+  - README.md
+  - LICENSE
+  - todo.txt
+  - note.md
+  - .gitignore
+  - .gitmodules
+  - dev
+  - accodius
+
+# Analytics
+google_analytics: G-41F91GFD2Z
