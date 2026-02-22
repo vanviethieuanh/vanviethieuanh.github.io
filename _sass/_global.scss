@@ -211,3 +211,29 @@ button {
     }
   }
 }
+
+footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 2rem;
+
+  a {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--fg0);
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    color: var(--fg0);
+    background: var(--bg1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      background: var(--yellow);
+    }
+  }
+}
