@@ -181,8 +181,6 @@ footer {
   padding: 2rem;
 
   a {
-    width: 40px;
-    height: 40px;
     border: 3px solid var(--fg0);
     border-radius: 5px;
     display: grid;
@@ -191,6 +189,7 @@ footer {
     color: var(--fg0);
     background: var(--bg1);
     transition: all 0.3s ease;
+    padding: 0.5rem;
 
     &:hover {
       transform: translateY(-4px);
