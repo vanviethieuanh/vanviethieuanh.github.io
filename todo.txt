@@ -1,5 +1,0 @@
-2022-03-13 create  page @home
-2022-03-13 Design cards for  page @home
-2022-03-13 Flip cards for @home
-2022-03-13 Write cv as @fullstack
-2022-03-13 create route sub folder @general
