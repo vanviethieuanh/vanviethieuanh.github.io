@@ -16,7 +16,10 @@
 
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 <meta name="title" content="{{ page.title | default: site.title }}" />
-<meta name="description" content="{{ page.description | default: site.description }}" />
+<meta
+  name="description"
+  content="{{ page.description | default: site.description }}"
+/>
 
 <!-- Pinterest -->
 <meta name="p:domain_verify" content="6aec3fccf733b417a0575afc007c039f" />
@@ -25,23 +28,43 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ page.url | absolute_url }}" />
 <meta property="og:title" content="{{ page.title | default: site.title }}" />
-<meta property="og:description" content="{{ page.description | default: site.description }}" />
-<meta property="og:image" content="{{ site.url }}/images/the_forest_facebook.png" />
+<meta
+  property="og:description"
+  content="{{ page.description | default: site.description }}"
+/>
+<meta
+  property="og:image"
+  content="{{ site.url }}/images/the_forest_facebook.png"
+/>
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="{{ page.url | absolute_url }}" />
-<meta property="twitter:title" content="{{ page.title | default: site.title }}" />
-<meta property="twitter:description" content="{{ page.description | default: site.description }}" />
-<meta property="twitter:image" content="{{ site.url }}/images/the_forest_facebook.png" />
+<meta
+  property="twitter:title"
+  content="{{ page.title | default: site.title }}"
+/>
+<meta
+  property="twitter:description"
+  content="{{ page.description | default: site.description }}"
+/>
+<meta
+  property="twitter:image"
+  content="{{ site.url }}/images/the_forest_facebook.png"
+/>
 
 {% if site.google_analytics %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics }}');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "{{ site.google_analytics }}");
 </script>
 {% endif %}

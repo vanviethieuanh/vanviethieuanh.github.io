@@ -4,51 +4,60 @@ title: Projects
 ---
 
 <style>
-.projects-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
-}
+  .projects-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
 
-.projects-container h1 {
-  text-align: center;
-  margin-bottom: 3rem;
-}
+  .projects-container h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
 
-.project-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
+  .project-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
 
-.project-card .illustration {
-  background-size: cover;
-  background-position: center;
-  background-color: var(--bg2);
-}
+  .project-card .illustration {
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bg2);
+  }
 </style>
 
 <div class="projects-container">
   <h1>Projects</h1>
-  
+
   <div class="projects-grid">
     {% for project in site.projects %}
-      <a href="{{ project.url }}" class="project-card card">
-        <div class="illustration" {% if project.image %}style="background-image: url('{{ project.image | relative_url }}');"{% endif %}></div>
-        <div class="title">
-          <h2>{{ project.title }}</h2>
-        </div>
-        <div class="overlay">
-          <h2>{{ project.title }}</h2>
-        </div>
-      </a>
+    <a href="{{ project.url }}" class="project-card card">
+      <div
+        class="illustration"
+        {%
+        if
+        project.image
+        %}style="background-image: url('{{ project.image | relative_url }}');"
+        {%
+        endif
+        %}
+      ></div>
+      <div class="title">
+        <h2>{{ project.title }}</h2>
+      </div>
+      <div class="overlay">
+        <h2>{{ project.title }}</h2>
+      </div>
+    </a>
     {% endfor %}
   </div>
 </div>
