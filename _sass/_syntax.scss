@@ -1,0 +1,228 @@
+// Gruvbox Light Syntax Highlighting for Code Blocks
+// Based on Rouge syntax highlighter
+
+.highlight {
+  background-color: var(--bg1) !important;
+  color: var(--fg0);
+
+  table td {
+    padding: 5px;
+  }
+
+  table pre {
+    margin: 0;
+  }
+
+  .w {
+    color: var(--fg0);
+  }
+
+  // Comments - gray, italic
+  .c,
+  .ch,
+  .cd,
+  .cm,
+  .cpf,
+  .c1,
+  .cs {
+    color: var(--gray);
+    font-style: italic;
+  }
+
+  // Preprocessor
+  .cp {
+    color: var(--aqua-dim);
+  }
+
+  // Errors
+  .err {
+    color: var(--red);
+    font-weight: bold;
+  }
+
+  // Keywords (if, else, function, etc.) - red
+  .k,
+  .kn,
+  .kp,
+  .kr,
+  .kv {
+    color: var(--red-dim);
+    font-weight: 500;
+  }
+
+  // Keyword constants (true, false, null) - purple
+  .kc {
+    color: var(--purple-dim);
+    font-weight: 500;
+  }
+
+  // Keyword types (int, string, etc.) - yellow
+  .kt {
+    color: var(--yellow-dim);
+    font-weight: 500;
+  }
+
+  // Keyword declarations (class, def, var) - orange
+  .kd {
+    color: var(--orange-dim);
+    font-weight: 500;
+  }
+
+  // Strings - green
+  .s,
+  .sb,
+  .sc,
+  .dl,
+  .sd,
+  .s2,
+  .sh,
+  .sx,
+  .s1 {
+    color: var(--green-dim);
+  }
+
+  // String interpolation
+  .si {
+    color: var(--green);
+  }
+
+  // String regex
+  .sr {
+    color: var(--green-dim);
+  }
+
+  // String annotation
+  .sa {
+    color: var(--red-dim);
+  }
+
+  // String escape
+  .se {
+    color: var(--orange-dim);
+  }
+
+  // Names (classes, functions) - aqua
+  .nn {
+    color: var(--aqua-dim);
+    font-weight: 500;
+  }
+
+  .nc {
+    color: var(--aqua-dim);
+    font-weight: 500;
+  }
+
+  // Constants - purple
+  .no {
+    color: var(--purple-dim);
+  }
+
+  // Attributes - green
+  .na {
+    color: var(--green-dim);
+  }
+
+  // Numbers - purple
+  .m,
+  .mb,
+  .mf,
+  .mh,
+  .mi,
+  .il,
+  .mo,
+  .mx {
+    color: var(--purple-dim);
+  }
+
+  // Symbols - blue
+  .ss {
+    color: var(--blue-dim);
+  }
+
+  // Tags (HTML/XML) - blue
+  .nt {
+    color: var(--blue-dim);
+    font-weight: 500;
+  }
+
+  // Tag attributes
+  .nb {
+    color: var(--orange-dim);
+  }
+
+  // Variables - blue
+  .nv,
+  .vc,
+  .vg,
+  .vi {
+    color: var(--blue-dim);
+  }
+
+  // Functions - aqua
+  .nf,
+  .fm {
+    color: var(--aqua-dim);
+    font-weight: 500;
+  }
+
+  // Operators - orange
+  .o,
+  .ow {
+    color: var(--orange-dim);
+  }
+
+  // Punctuation
+  .p,
+  .pi {
+    color: var(--fg0);
+  }
+
+  // Additions (diff) - green
+  .gi {
+    color: var(--green);
+    background-color: rgba(184, 187, 38, 0.1);
+  }
+
+  // Deletions (diff) - red
+  .gd {
+    color: var(--red);
+    background-color: rgba(251, 73, 52, 0.1);
+  }
+
+  // Heading (markdown)
+  .gh {
+    color: var(--blue-dim);
+    font-weight: bold;
+  }
+
+  // Emphasis
+  .ge {
+    font-style: italic;
+  }
+
+  // Strong emphasis
+  .gs {
+    font-weight: bold;
+  }
+
+  .ges {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  // Generic prompt
+  .gp {
+    color: var(--gray);
+    font-weight: bold;
+  }
+
+  // Line numbers
+  .gl {
+    color: var(--gray);
+  }
+
+  // Builtin pseudo
+  .bp {
+    color: var(--orange-dim);
+  }
+}

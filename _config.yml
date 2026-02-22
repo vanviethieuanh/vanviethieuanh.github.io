@@ -10,6 +10,13 @@ author: Văn Viết Hiếu Anh
 markdown: kramdown
 theme: null
 
+# Kramdown settings
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
+
 # Collections
 collections:
   projects:
