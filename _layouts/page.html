@@ -1,0 +1,118 @@
+---
+layout: default
+---
+
+<style>
+  body {
+    background-color: var(--bg0);
+    min-height: 100vh;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  header {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-bottom: 3px solid var(--fg0);
+  }
+
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .brand {
+    background: var(--fg0);
+    color: var(--bg0);
+    padding: 1rem 2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+  }
+
+  .brand:hover {
+    color: var(--green);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--fg4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--blue-dim);
+  }
+
+  .nav-link.active {
+    color: var(--fg0);
+    pointer-events: none;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  main h1 {
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: var(--fg0);
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+  }
+
+  .page-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+</style>
+
+<header>
+  <div class="header-nav">
+    <a href="/" class="brand">Accodius</a>
+    <nav class="nav-links">
+      <a
+        href="/blogs"
+        class="nav-link{% if page.url contains '/blog' %} active{% endif %}"
+        >Blogs</a
+      >
+      <a
+        href="/projects"
+        class="nav-link{% if page.url contains '/projects' %} active{% endif %}"
+        >Projects</a
+      >
+      <a
+        href="https://vanviethieuanh.github.io/resume/rendered/devops.pdf"
+        class="nav-link"
+        target="_blank"
+        >Resume</a
+      >
+      <a href="/card" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>{{ page.title }}</h1>
+</main>
+
+<div class="page-content">{{ content }}</div>

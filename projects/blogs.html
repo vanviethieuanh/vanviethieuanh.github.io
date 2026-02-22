@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Blogs
 permalink: /projects/blogs
 ---
@@ -7,13 +7,7 @@ permalink: /projects/blogs
 <style>
   .blog-container {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-  }
-
-  .blog-container h1 {
-    margin-bottom: 2rem;
-    text-align: center;
+    margin: 0 auto;
   }
 
   .post-list {
@@ -73,8 +67,6 @@ permalink: /projects/blogs
 </style>
 
 <div class="blog-container">
-  <h1>Blogs</h1>
-
   {% if site.posts.size > 0 %}
   <ul class="post-list">
     {% for post in site.posts %}

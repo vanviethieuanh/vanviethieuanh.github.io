@@ -1,18 +1,13 @@
 ---
-layout: default
+layout: page
 title: Projects
+permalink: /projects
 ---
 
 <style>
   .projects-container {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-  }
-
-  .projects-container h1 {
-    text-align: center;
-    margin-bottom: 3rem;
+    margin: 0 auto;
   }
 
   .projects-grid {
@@ -33,11 +28,54 @@ title: Projects
     background-position: center;
     background-color: var(--bg2);
   }
+
+  .more-projects {
+    margin-top: 4rem;
+    max-width: 1200px;
+  }
+
+  .more-projects > ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .more-projects h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--fg0);
+    border-bottom: 3px solid var(--fg4);
+    padding-bottom: 0.5rem;
+  }
+
+  .more-projects ul ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .more-projects ul ul li {
+    margin-bottom: 0.75rem;
+  }
+
+  .more-projects ul ul a {
+    color: var(--fg3);
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .more-projects ul ul a:hover {
+    color: var(--fg0);
+  }
 </style>
 
 <div class="projects-container">
-  <h1>Projects</h1>
-
   <div class="projects-grid">
     {% for project in site.projects %}
     <a href="{{ project.url }}" class="project-card card">
@@ -60,4 +98,93 @@ title: Projects
     </a>
     {% endfor %}
   </div>
+
+  <section class="more-projects">
+    <ul>
+      <li>
+        <h3>Creative Coding</h3>
+        <ul>
+          <li>
+            <a href="https://accodius.com/creative-coding/lissajous-curve/">
+              Lissajous Curves
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://accodius.com/creative-coding/richard-feynmen-ellipse/"
+            >
+              Richard Feynman Ellipse
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Algorithms</h3>
+        <ul>
+          <li>
+            <a href="http://vanviethieuanh.github.io/k-means-clustering/">
+              K Means Clustering
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://vanviethieuanh.github.io/page-replacement-algorithms/"
+            >
+              Page Replacement Algorithms
+            </a>
+          </li>
+          <li>
+            <a href="https://vanviethieuanh.github.io/scheduling-algorithms/">
+              Scheduling Algorithms
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Web Dev - UI Design</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/vanviethieuanh/twitter-clone">
+              Twitter Clone
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/vanviethieuanh/group-chat">
+              Group Chat
+            </a>
+          </li>
+          <li>
+            <a href="http://vanviethieuanh.github.io/tictactoe/">
+              Tic Tac Toe
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Emulation</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/vanviethieuanh/enigma-machine">
+              Enigma Machine
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Automation</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/vanviethieuanh/dataset">
+              Data Scraping
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/vanviethieuanh/pixel-supporter">
+              gif2mp4
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 </div>
