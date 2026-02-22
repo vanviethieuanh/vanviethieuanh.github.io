@@ -16,12 +16,14 @@ Smooth animation means 60 frames per second, giving you 16.67ms per frame. Anyth
 ### What Triggers Reflow/Repaint
 
 **Avoid animating these** (they trigger layout recalculation):
+
 - width, height
 - margin, padding
 - top, right, bottom, left
 - border
 
 **Avoid these** (they trigger repaint):
+
 - background-color
 - color
 - box-shadow
@@ -30,6 +32,7 @@ Smooth animation means 60 frames per second, giving you 16.67ms per frame. Anyth
 ### Use GPU-Accelerated Properties
 
 **Animate these instead** (composited on GPU):
+
 - transform
 - opacity
 
@@ -88,8 +91,12 @@ Spin elements:
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 ```
 
@@ -114,7 +121,9 @@ One of the two GPU-accelerated properties:
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 ```
 
@@ -127,7 +136,9 @@ For simple state changes:
 ```css
 .button {
   background: blue;
-  transition: background 0.3s, transform 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.3s;
 }
 
 .button:hover {
@@ -146,8 +157,13 @@ For complex, multi-step animations:
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 ```
 
@@ -157,19 +173,29 @@ For complex, multi-step animations:
 
 ```css
 /* Linear - constant speed */
-.linear { transition: transform 0.3s linear; }
+.linear {
+  transition: transform 0.3s linear;
+}
 
 /* Ease - default, slow start and end */
-.ease { transition: transform 0.3s ease; }
+.ease {
+  transition: transform 0.3s ease;
+}
 
 /* Ease-in - slow start */
-.ease-in { transition: transform 0.3s ease-in; }
+.ease-in {
+  transition: transform 0.3s ease-in;
+}
 
 /* Ease-out - slow end (best for UI) */
-.ease-out { transition: transform 0.3s ease-out; }
+.ease-out {
+  transition: transform 0.3s ease-out;
+}
 
 /* Ease-in-out - slow start and end */
-.ease-in-out { transition: transform 0.3s ease-in-out; }
+.ease-in-out {
+  transition: transform 0.3s ease-in-out;
+}
 ```
 
 ### Custom Cubic Bezier
@@ -202,8 +228,8 @@ Tell the browser what will animate:
 **⚠️ Don't overuse!** Only use on elements that will definitely animate. Remove it when done:
 
 ```javascript
-element.addEventListener('animationend', () => {
-  element.style.willChange = 'auto';
+element.addEventListener("animationend", () => {
+  element.style.willChange = "auto";
 });
 ```
 
@@ -213,60 +239,94 @@ element.addEventListener('animationend', () => {
 
 ```css
 @keyframes slideIn {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-.slide { animation-name: slideIn; }
+.slide {
+  animation-name: slideIn;
+}
 ```
 
 ### animation-duration
 
 ```css
-.fast { animation-duration: 0.3s; }
-.slow { animation-duration: 2s; }
+.fast {
+  animation-duration: 0.3s;
+}
+.slow {
+  animation-duration: 2s;
+}
 ```
 
 ### animation-timing-function
 
 ```css
-.element { animation-timing-function: ease-in-out; }
+.element {
+  animation-timing-function: ease-in-out;
+}
 ```
 
 ### animation-delay
 
 ```css
-.delayed { animation-delay: 0.5s; }
+.delayed {
+  animation-delay: 0.5s;
+}
 ```
 
 ### animation-iteration-count
 
 ```css
-.three-times { animation-iteration-count: 3; }
-.forever { animation-iteration-count: infinite; }
+.three-times {
+  animation-iteration-count: 3;
+}
+.forever {
+  animation-iteration-count: infinite;
+}
 ```
 
 ### animation-direction
 
 ```css
-.normal { animation-direction: normal; }
-.reverse { animation-direction: reverse; }
-.alternate { animation-direction: alternate; } /* Bounces */
+.normal {
+  animation-direction: normal;
+}
+.reverse {
+  animation-direction: reverse;
+}
+.alternate {
+  animation-direction: alternate;
+} /* Bounces */
 ```
 
 ### animation-fill-mode
 
 ```css
-.stays { animation-fill-mode: forwards; } /* Stays at end */
-.backwards { animation-fill-mode: backwards; } /* Applies first keyframe before starting */
-.both { animation-fill-mode: both; }
+.stays {
+  animation-fill-mode: forwards;
+} /* Stays at end */
+.backwards {
+  animation-fill-mode: backwards;
+} /* Applies first keyframe before starting */
+.both {
+  animation-fill-mode: both;
+}
 ```
 
 ### animation-play-state
 
 ```css
-.paused { animation-play-state: paused; }
-.running { animation-play-state: running; }
+.paused {
+  animation-play-state: paused;
+}
+.running {
+  animation-play-state: running;
+}
 ```
 
 ### Shorthand
@@ -284,67 +344,108 @@ element.addEventListener('animationend', () => {
 
 ```css
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.fade-in { animation: fadeIn 0.5s; }
+.fade-in {
+  animation: fadeIn 0.5s;
+}
 ```
 
 ### Slide In
 
 ```css
 @keyframes slideInFromLeft {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-.slide-in { animation: slideInFromLeft 0.5s ease-out; }
+.slide-in {
+  animation: slideInFromLeft 0.5s ease-out;
+}
 ```
 
 ### Scale In
 
 ```css
 @keyframes scaleIn {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
-.scale-in { animation: scaleIn 0.3s ease-out; }
+.scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
 ```
 
 ### Bounce
 
 ```css
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-.bounce { animation: bounce 0.6s ease-in-out; }
+.bounce {
+  animation: bounce 0.6s ease-in-out;
+}
 ```
 
 ### Shake
 
 ```css
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
 }
 
-.shake { animation: shake 0.5s; }
+.shake {
+  animation: shake 0.5s;
+}
 ```
 
 ### Pulse
 
 ```css
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
-.pulse { animation: pulse 2s infinite; }
+.pulse {
+  animation: pulse 2s infinite;
+}
 ```
 
 ## Accessibility: Respect User Preferences
@@ -380,23 +481,23 @@ Or selectively disable:
 ### Trigger Animations with Classes
 
 ```javascript
-element.classList.add('slide-in');
+element.classList.add("slide-in");
 
-element.addEventListener('animationend', () => {
-  element.classList.remove('slide-in');
+element.addEventListener("animationend", () => {
+  element.classList.remove("slide-in");
 });
 ```
 
 ### Wait for Animations to Complete
 
 ```javascript
-await element.animate([
-  { transform: 'translateX(0)' },
-  { transform: 'translateX(100px)' }
-], {
-  duration: 500,
-  easing: 'ease-out'
-}).finished;
+await element.animate(
+  [{ transform: "translateX(0)" }, { transform: "translateX(100px)" }],
+  {
+    duration: 500,
+    easing: "ease-out",
+  },
+).finished;
 ```
 
 ## Performance Tips
@@ -406,9 +507,15 @@ await element.animate([
 Don't animate too many elements at once. Stagger them:
 
 ```css
-.item:nth-child(1) { animation-delay: 0s; }
-.item:nth-child(2) { animation-delay: 0.1s; }
-.item:nth-child(3) { animation-delay: 0.2s; }
+.item:nth-child(1) {
+  animation-delay: 0s;
+}
+.item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.item:nth-child(3) {
+  animation-delay: 0.2s;
+}
 ```
 
 ### 2. Use requestAnimationFrame
@@ -429,12 +536,12 @@ Don't read and write to the DOM in the same frame:
 
 ```javascript
 // Bad
-element1.style.width = element2.offsetWidth + 'px';
+element1.style.width = element2.offsetWidth + "px";
 
 // Good
 const width = element2.offsetWidth;
 requestAnimationFrame(() => {
-  element1.style.width = width + 'px';
+  element1.style.width = width + "px";
 });
 ```
 
@@ -454,27 +561,37 @@ Help the browser optimize:
 
 ```css
 /* Bad */
-.expand { transition: width 0.3s; }
+.expand {
+  transition: width 0.3s;
+}
 
 /* Good */
-.expand { transition: transform 0.3s; }
-.expand:hover { transform: scaleX(1.2); }
+.expand {
+  transition: transform 0.3s;
+}
+.expand:hover {
+  transform: scaleX(1.2);
+}
 ```
 
 ### 2. Too Many Shadows
 
 ```css
 /* Bad - animating box-shadow is expensive */
-.card { transition: box-shadow 0.3s; }
+.card {
+  transition: box-shadow 0.3s;
+}
 
 /* Better - use pseudo-element */
 .card::after {
-  content: '';
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  content: "";
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: opacity 0.3s;
 }
-.card:hover::after { opacity: 1; }
+.card:hover::after {
+  opacity: 1;
+}
 ```
 
 ### 3. Forgetting transform-origin
@@ -516,6 +633,7 @@ Too fast feels jarring. Too slow feels sluggish.
 ## Conclusion
 
 Good animations:
+
 1. Use transform and opacity
 2. Are smooth (60fps)
 3. Respect user preferences

@@ -14,14 +14,20 @@ Responsive design isn't just about media queries anymore. Modern CSS gives us be
 Traditional approach: hard-coded breakpoints.
 
 ```css
-.container { width: 100%; }
+.container {
+  width: 100%;
+}
 
 @media (min-width: 768px) {
-  .container { width: 750px; }
+  .container {
+    width: 750px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .container { width: 960px; }
+  .container {
+    width: 960px;
+  }
 }
 ```
 
@@ -185,7 +191,7 @@ Classic three-column with flexible center:
 ```css
 .holy-grail {
   display: grid;
-  grid-template: 
+  grid-template:
     "header header header" auto
     "nav main aside" 1fr
     "footer footer footer" auto
@@ -195,7 +201,7 @@ Classic three-column with flexible center:
 
 @media (max-width: 768px) {
   .holy-grail {
-    grid-template: 
+    grid-template:
       "header" auto
       "nav" auto
       "main" 1fr
@@ -211,12 +217,12 @@ Classic three-column with flexible center:
 ### Modern Approach
 
 ```html
-<img 
+<img
   src="small.jpg"
   srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1200w"
   sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 800px"
   alt="Description"
->
+/>
 ```
 
 Browser picks the best image for the situation.
@@ -227,9 +233,9 @@ Different images for different contexts:
 
 ```html
 <picture>
-  <source media="(max-width: 600px)" srcset="portrait.jpg">
-  <source media="(max-width: 1200px)" srcset="landscape.jpg">
-  <img src="wide.jpg" alt="Description">
+  <source media="(max-width: 600px)" srcset="portrait.jpg" />
+  <source media="(max-width: 1200px)" srcset="landscape.jpg" />
+  <img src="wide.jpg" alt="Description" />
 </picture>
 ```
 
@@ -263,7 +269,7 @@ img {
 :root {
   --space: 1rem;
   --space-lg: calc(var(--space) * 2);
-  
+
   @media (min-width: 768px) {
     --space: 1.5rem;
   }
@@ -353,13 +359,16 @@ Better performance: mobile styles are simpler and load first.
 /* Mobile: default */
 
 /* Tablet: 768px */
-@media (min-width: 768px) { }
+@media (min-width: 768px) {
+}
 
 /* Desktop: 1024px */
-@media (min-width: 1024px) { }
+@media (min-width: 1024px) {
+}
 
 /* Large desktop: 1280px */
-@media (min-width: 1280px) { }
+@media (min-width: 1280px) {
+}
 ```
 
 But don't be dogmatic. Let content determine breakpoints.
@@ -412,8 +421,8 @@ Better to not include it at all on mobile, or lazy load.
 
 ```css
 @font-face {
-  font-family: 'CustomFont';
-  src: url('font.woff2');
+  font-family: "CustomFont";
+  src: url("font.woff2");
   font-display: swap;
 }
 ```
@@ -426,7 +435,12 @@ Inline critical styles, load the rest async:
 <style>
   /* Critical above-fold styles */
 </style>
-<link rel="preload" href="main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link
+  rel="preload"
+  href="main.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
 ```
 
 ## Modern Units
@@ -436,11 +450,12 @@ Inline critical styles, load the rest async:
 ```css
 .hero {
   height: 100vh; /* Full viewport height */
-  width: 100vw;  /* Full viewport width */
+  width: 100vw; /* Full viewport width */
 }
 ```
 
 New units:
+
 - `dvh`: Dynamic viewport height (accounts for mobile toolbars)
 - `svh`: Small viewport height
 - `lvh`: Large viewport height
@@ -456,7 +471,7 @@ New units:
 ```css
 .card {
   font-size: 2cqw; /* 2% of container width */
-  padding: 5cqi;   /* 5% of container inline size */
+  padding: 5cqi; /* 5% of container inline size */
 }
 ```
 
@@ -481,7 +496,7 @@ New units:
     display: flex;
     gap: 1rem;
   }
-  
+
   .card img {
     width: 150px;
     flex-shrink: 0;
@@ -509,10 +524,14 @@ New units:
 
 ```css
 /* Bad */
-.box { height: 300px; }
+.box {
+  height: 300px;
+}
 
 /* Good */
-.box { min-height: 300px; }
+.box {
+  min-height: 300px;
+}
 ```
 
 ### 2. Forgetting Touch Targets
@@ -544,6 +563,7 @@ On mobile, `100vh` includes address bar. Use `100dvh` instead.
 ## Conclusion
 
 Modern responsive design:
+
 1. Start mobile-first
 2. Use intrinsic sizing (clamp, minmax, auto-fit)
 3. Embrace container queries

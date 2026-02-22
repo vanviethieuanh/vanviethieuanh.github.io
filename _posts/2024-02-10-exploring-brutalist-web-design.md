@@ -139,33 +139,33 @@ Start with semantic HTML:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>My Brutalist Site</title>
-  <style>
-    body {
-      max-width: 800px;
-      margin: 2rem auto;
-      font-family: monospace;
-      font-size: 18px;
-      padding: 0 1rem;
-    }
-    
-    h1 {
-      font-size: 3rem;
-      border-bottom: 5px solid black;
-    }
-    
-    a {
-      color: blue;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome</h1>
-  <p>This is my brutalist website. It's fast, accessible, and honest.</p>
-</body>
+  <head>
+    <title>My Brutalist Site</title>
+    <style>
+      body {
+        max-width: 800px;
+        margin: 2rem auto;
+        font-family: monospace;
+        font-size: 18px;
+        padding: 0 1rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+        border-bottom: 5px solid black;
+      }
+
+      a {
+        color: blue;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <p>This is my brutalist website. It's fast, accessible, and honest.</p>
+  </body>
 </html>
 ```
 
@@ -199,6 +199,7 @@ Keep it simple:
 ## When to Use Brutalism
 
 **Good for:**
+
 - Personal portfolios
 - Artist websites
 - Experimental projects
@@ -206,6 +207,7 @@ Keep it simple:
 - Manifestos and opinion pieces
 
 **Bad for:**
+
 - E-commerce
 - Corporate websites
 - Apps requiring complex interactions
@@ -214,12 +216,15 @@ Keep it simple:
 ## The Spectrum of Brutalism
 
 ### Extreme Brutalism
+
 Raw HTML, no CSS, browser defaults only.
 
 ### Moderate Brutalism
+
 Intentional design with brutalist aesthetics: bold type, high contrast, minimal decoration.
 
 ### Brutalist-Inspired
+
 Conventional sites with brutalist touches: bold borders, stark colors, honest layouts.
 
 ## Common Mistakes

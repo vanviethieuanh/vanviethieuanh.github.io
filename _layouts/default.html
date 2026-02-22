@@ -4,9 +4,7 @@
     {% include head.html %}
   </head>
   <body style="background: {{ page.bg | default: 'var(--bg0)' }};">
-    {{ content }}
-    {% unless page.hide_footer %}
-      {% include footer.html %}
-    {% endunless %}
+    {{ content }} {% unless page.hide_footer %} {% include footer.html %} {%
+    endunless %}
   </body>
 </html>

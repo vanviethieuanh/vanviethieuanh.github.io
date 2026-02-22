@@ -13,8 +13,13 @@ While creating an animated bird icon, I ran into a bizarre CSS animation issue. 
 
 ```css
 @keyframes blink {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(0); }
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+  }
 }
 
 .eye {
@@ -68,8 +73,9 @@ The `dense` packing algorithm tries to fill holes, which caused items to appear 
 
 I spent 30 minutes debugging why code blocks weren't rendering. The issue? Indentation.
 
-```markdown
+````markdown
 <!-- This doesn't work -->
+
 Some text:
 
     ```javascript
@@ -77,12 +83,15 @@ Some text:
     ```
 
 <!-- This works -->
+
 Some text:
 
 ```javascript
-console.log('hello');
+console.log("hello");
 ```
-```
+````
+
+````
 
 Indented code blocks are treated as literal code in Markdown. Fenced code blocks must start at column 0.
 
@@ -102,7 +111,7 @@ Custom fonts would cause a jarring flash during page load. The solution: font-di
   src: url('/assets/fonts/custom.woff2');
   font-display: swap; /* Show fallback immediately */
 }
-```
+````
 
 The `swap` value shows fallback text immediately, then swaps when the custom font loads. Much better UX.
 
@@ -112,12 +121,12 @@ Changing the order of `@import` statements broke the entire stylesheet. Variable
 
 ```scss
 // This order matters!
-@import 'variables';  // Must be first
-@import 'mixins';     // Uses variables
-@import 'global';     // Uses mixins and variables
+@import "variables"; // Must be first
+@import "mixins"; // Uses variables
+@import "global"; // Uses mixins and variables
 ```
 
-Sass is compiled top-to-bottom. Dependencies must be imported before use. 
+Sass is compiled top-to-bottom. Dependencies must be imported before use.
 
 ## The Mysterious Horizontal Scroll
 

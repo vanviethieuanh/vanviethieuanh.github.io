@@ -87,6 +87,7 @@ yourdomain.com
 3. Configure DNS with your provider:
 
 **Apex domain (yourdomain.com):**
+
 ```
 A record → 185.199.108.153
 A record → 185.199.109.153
@@ -95,6 +96,7 @@ A record → 185.199.111.153
 ```
 
 **Subdomain (www.yourdomain.com):**
+
 ```
 CNAME → username.github.io
 ```
@@ -114,6 +116,7 @@ www.yourdomain.com CNAME  username.github.io
 ```
 
 Then in CNAME file, use:
+
 ```
 www.yourdomain.com
 ```
@@ -171,15 +174,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0
           bundler-cache: true
-      
+
       - name: Build
         run: bundle exec jekyll build
-      
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -206,15 +209,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
-      
+          hugo-version: "latest"
+
       - name: Build
         run: hugo --minify
-      
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -237,17 +240,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - uses: actions/setup-node@v2
         with:
-          node-version: '18'
-      
+          node-version: "18"
+
       - name: Install and Build
         run: |
           npm ci
           npm run build
           npm run export
-      
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -270,25 +273,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       pages: write
       id-token: write
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Build
         run: |
           npm install
           npm run build
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './dist'
-      
+          path: "./dist"
+
       - name: Deploy
         uses: actions/deploy-pages@v1
 ```
@@ -355,11 +358,13 @@ Use GitHub Actions to auto-optimize:
 ### Custom Domain Not Working
 
 Common issues:
+
 - DNS not propagated (wait 24-48 hrs)
 - CNAME file missing or wrong
 - HTTPS enforcement before DNS ready
 
 Check:
+
 ```bash
 dig yourdomain.com
 nslookup yourdomain.com
@@ -368,6 +373,7 @@ nslookup yourdomain.com
 ### Site Not Updating
 
 Force rebuild:
+
 ```bash
 git commit --allow-empty -m "Trigger rebuild"
 git push
@@ -380,7 +386,7 @@ git push
 ✅ **HTTPS** included for free  
 ✅ **Version control** built-in  
 ✅ **Easy** deployment (just push)  
-✅ **Custom domains** supported  
+✅ **Custom domains** supported
 
 ## Limitations
 
@@ -388,7 +394,7 @@ git push
 ❌ No databases  
 ❌ 1GB repository size limit  
 ❌ 100GB bandwidth/month soft limit  
-❌ 10 builds per hour limit  
+❌ 10 builds per hour limit
 
 For dynamic sites, consider Netlify, Vercel, or traditional hosting.
 
@@ -469,26 +475,26 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-          cache: 'npm'
-      
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build
         run: npm run build
-      
+
       - name: Test
         run: npm test
-      
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
@@ -507,6 +513,7 @@ Use environment variables and GitHub Secrets.
 ### 2. Restrict Branch Protection
 
 Enable branch protection for main branch:
+
 - Require pull request reviews
 - Require status checks
 - Restrict who can push
@@ -535,6 +542,7 @@ npm audit fix
 ## Conclusion
 
 GitHub Pages is perfect for static sites:
+
 - Simple setup
 - Free hosting
 - Automatic deployment

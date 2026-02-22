@@ -50,6 +50,7 @@ Now we have a proper layout system:
 ```
 
 This creates:
+
 - 3 columns: fixed, flexible, fixed
 - 3 rows: content-sized, flexible, content-sized
 - 1rem gap between all cells
@@ -129,10 +130,18 @@ Create semantic layouts:
   gap: 1rem;
 }
 
-.header  { grid-area: header; }
-.sidebar { grid-area: sidebar; }
-.main    { grid-area: main; }
-.footer  { grid-area: footer; }
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
 ```
 
 Visual ASCII art in your CSS!
@@ -166,8 +175,8 @@ Place items precisely using line numbers:
 
 ```css
 .item {
-  grid-column: 1 / 3;  /* Start at line 1, end at line 3 */
-  grid-row: 2 / 4;     /* Start at line 2, end at line 4 */
+  grid-column: 1 / 3; /* Start at line 1, end at line 3 */
+  grid-row: 2 / 4; /* Start at line 2, end at line 4 */
 }
 ```
 
@@ -175,8 +184,8 @@ Or use span:
 
 ```css
 .item {
-  grid-column: span 2;  /* Span 2 columns */
-  grid-row: span 3;     /* Span 3 rows */
+  grid-column: span 2; /* Span 2 columns */
+  grid-row: span 3; /* Span 3 rows */
 }
 ```
 
@@ -210,11 +219,11 @@ Similar to Pinterest's layout:
 
 .card {
   /* Each card specifies how many rows it spans */
-  grid-row: span 20;  /* 200px tall */
+  grid-row: span 20; /* 200px tall */
 }
 
 .card.tall {
-  grid-row: span 30;  /* 300px tall */
+  grid-row: span 30; /* 300px tall */
 }
 ```
 
@@ -304,14 +313,14 @@ The most useful responsive pattern.
 ```css
 .grid {
   display: grid;
-  
+
   /* Align items within cells */
-  justify-items: center;  /* Horizontal */
-  align-items: center;    /* Vertical */
-  
+  justify-items: center; /* Horizontal */
+  align-items: center; /* Vertical */
+
   /* Align grid within container */
-  justify-content: center;  /* Horizontal */
-  align-content: center;    /* Vertical */
+  justify-content: center; /* Horizontal */
+  align-content: center; /* Vertical */
 }
 
 /* Override on individual items */
@@ -326,11 +335,11 @@ The most useful responsive pattern.
 ```css
 /* Instead of justify-items and align-items */
 .grid {
-  place-items: center;  /* Centers both axes */
+  place-items: center; /* Centers both axes */
 }
 
 .item {
-  place-self: end start;  /* align-self then justify-self */
+  place-self: end start; /* align-self then justify-self */
 }
 ```
 
@@ -373,7 +382,7 @@ Allow nested grids to participate in parent's grid:
 
 .child {
   display: grid;
-  grid-template-columns: subgrid;  /* Inherits parent's columns */
+  grid-template-columns: subgrid; /* Inherits parent's columns */
   grid-column: span 3;
 }
 ```
@@ -412,9 +421,16 @@ Browser support is improving (Safari and Firefox, Chrome 117+).
   height: 100vh;
 }
 
-.header  { grid-area: header; }
-.sidebar { grid-area: sidebar; }
-.main    { grid-area: main; overflow: auto; }
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.main {
+  grid-area: main;
+  overflow: auto;
+}
 ```
 
 ### Magazine Layout
@@ -426,10 +442,18 @@ Browser support is improving (Safari and Firefox, Chrome 117+).
   gap: 1rem;
 }
 
-.hero    { grid-column: 1 / -1; }
-.feature { grid-column: 1 / 9; }
-.sidebar { grid-column: 9 / -1; }
-.article { grid-column: span 4; }
+.hero {
+  grid-column: 1 / -1;
+}
+.feature {
+  grid-column: 1 / 9;
+}
+.sidebar {
+  grid-column: 9 / -1;
+}
+.article {
+  grid-column: span 4;
+}
 ```
 
 ## Debugging Grid
@@ -437,6 +461,7 @@ Browser support is improving (Safari and Firefox, Chrome 117+).
 ### Firefox DevTools
 
 Best-in-class Grid inspector:
+
 - Visual grid overlay
 - Line numbers
 - Area names
@@ -445,6 +470,7 @@ Best-in-class Grid inspector:
 ### Chrome DevTools
 
 Grid inspector available:
+
 - Toggle grid overlay
 - Show line numbers and names
 - Persistent overlays
@@ -453,14 +479,13 @@ Grid inspector available:
 
 ```css
 .grid {
-  background:
-    repeating-linear-gradient(
-      to right,
-      transparent,
-      transparent calc(100% / 12 - 1px),
-      #f0f 0,
-      #f0f calc(100% / 12)
-    );
+  background: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent calc(100% / 12 - 1px),
+    #f0f 0,
+    #f0f calc(100% / 12)
+  );
 }
 ```
 
@@ -481,7 +506,7 @@ If you have 10 items, Grid creates rows automatically. Control them:
 
 ```css
 .grid {
-  grid-auto-rows: 200px;  /* All implicit rows are 200px */
+  grid-auto-rows: 200px; /* All implicit rows are 200px */
 }
 ```
 
@@ -507,15 +532,16 @@ Don't use percentages for gaps—they're based on grid size:
 
 ```css
 /* Avoid */
-gap: 5%;  /* Changes with container width */
+gap: 5%; /* Changes with container width */
 
 /* Prefer */
-gap: 2rem;  /* Consistent */
+gap: 2rem; /* Consistent */
 ```
 
 ## Browser Support
 
 Grid is supported in all modern browsers (since 2017):
+
 - Chrome 57+
 - Firefox 52+
 - Safari 10.1+
@@ -550,6 +576,7 @@ Use `@supports` for enhancements:
 CSS Grid is the layout system the web always needed. It's intuitive, powerful, and solves problems that used to require hacks.
 
 Master the basics:
+
 - `repeat(auto-fit, minmax(250px, 1fr))` for responsive grids
 - Named areas for semantic layouts
 - Grid + Flexbox for complete control

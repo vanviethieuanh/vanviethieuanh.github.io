@@ -50,11 +50,12 @@ A classic interior design rule that works for interfaces:
 - **10%**: Accent color (buttons, links, highlights)
 
 Example:
+
 ```css
 :root {
-  --dominant: #fbf1c7;   /* 60% - light background */
-  --secondary: #ebdbb2;  /* 30% - sections */
-  --accent: #fe8019;     /* 10% - call-to-action */
+  --dominant: #fbf1c7; /* 60% - light background */
+  --secondary: #ebdbb2; /* 30% - sections */
+  --accent: #fe8019; /* 10% - call-to-action */
 }
 ```
 
@@ -136,6 +137,7 @@ Minimum contrast ratios for readability:
 ```
 
 Tools for checking:
+
 - WebAIM Contrast Checker
 - Chrome DevTools (built-in)
 - Contrast Ratio calculator
@@ -149,9 +151,7 @@ For accessibility, never convey information through color only:
 <span style="color: red;">Error</span>
 
 <!-- Good -->
-<span class="error" aria-label="Error">
-  ⚠️ Error
-</span>
+<span class="error" aria-label="Error"> ⚠️ Error </span>
 ```
 
 ## Building a Palette from Scratch
@@ -355,6 +355,7 @@ Slightly darker or lighter:
 ## Conclusion
 
 Good color choices are about:
+
 1. Understanding color relationships
 2. Maintaining proper contrast
 3. Creating visual hierarchy

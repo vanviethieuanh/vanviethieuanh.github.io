@@ -26,21 +26,21 @@ p5.js is a JavaScript library for creative coding. Built on Processing's philoso
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
-</head>
-<body>
-  <script>
-    function setup() {
-      createCanvas(400, 400);
-    }
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+  </head>
+  <body>
+    <script>
+      function setup() {
+        createCanvas(400, 400);
+      }
 
-    function draw() {
-      background(220);
-      ellipse(200, 200, 50, 50);
-    }
-  </script>
-</body>
+      function draw() {
+        background(220);
+        ellipse(200, 200, 50, 50);
+      }
+    </script>
+  </body>
 </html>
 ```
 
@@ -49,6 +49,7 @@ That's it! You have a canvas with a circle.
 ### The Core Functions
 
 **setup()**: Runs once at the start
+
 ```javascript
 function setup() {
   createCanvas(600, 400);
@@ -57,6 +58,7 @@ function setup() {
 ```
 
 **draw()**: Runs 60 times per second
+
 ```javascript
 function draw() {
   // Animation loop
@@ -94,15 +96,15 @@ endShape(CLOSE);
 
 ```javascript
 // RGB
-fill(255, 0, 0);  // Red
-stroke(0, 255, 0);  // Green outline
+fill(255, 0, 0); // Red
+stroke(0, 255, 0); // Green outline
 strokeWeight(4);
 
 // Grayscale
-fill(128);  // 50% gray
+fill(128); // 50% gray
 
 // Transparency
-fill(255, 0, 0, 128);  // 50% transparent red
+fill(255, 0, 0, 128); // 50% transparent red
 
 // No fill or stroke
 noFill();
@@ -114,7 +116,7 @@ noStroke();
 ```javascript
 // HSB mode (Hue, Saturation, Brightness)
 colorMode(HSB, 360, 100, 100);
-fill(180, 50, 100);  // Cyan
+fill(180, 50, 100); // Cyan
 
 // Back to RGB
 colorMode(RGB, 255);
@@ -142,10 +144,10 @@ function mouseDragged() {
 
 ```javascript
 function keyPressed() {
-  if (key === 's') {
-    save('myDrawing.png');
+  if (key === "s") {
+    save("myDrawing.png");
   }
-  
+
   if (keyCode === LEFT_ARROW) {
     // Move left
   }
@@ -175,7 +177,7 @@ function draw() {
 ```javascript
 function setup() {
   createCanvas(400, 400);
-  frameRate(30);  // 30 FPS instead of 60
+  frameRate(30); // 30 FPS instead of 60
 }
 ```
 
@@ -186,12 +188,12 @@ let x = 0;
 
 function draw() {
   background(255);
-  x += 2;  // Move 2 pixels per frame
-  
+  x += 2; // Move 2 pixels per frame
+
   if (x > width) {
-    x = 0;  // Wrap around
+    x = 0; // Wrap around
   }
-  
+
   ellipse(x, 200, 50, 50);
 }
 ```
@@ -208,7 +210,7 @@ let r = random(255);
 let x = random(100, 300);
 
 // Random from array
-let colors = ['red', 'blue', 'green'];
+let colors = ["red", "blue", "green"];
 let c = random(colors);
 ```
 
@@ -221,13 +223,13 @@ let xoff = 0;
 
 function draw() {
   background(255);
-  
+
   // Map noise (0-1) to canvas height
   let y = noise(xoff) * height;
-  
+
   ellipse(200, y, 50, 50);
-  
-  xoff += 0.01;  // Increment
+
+  xoff += 0.01; // Increment
 }
 ```
 
@@ -239,7 +241,7 @@ let yoff = 0;
 
 function draw() {
   loadPixels();
-  
+
   for (let y = 0; y < height; y++) {
     xoff = 0;
     for (let x = 0; x < width; x++) {
@@ -253,7 +255,7 @@ function draw() {
     }
     yoff += 0.01;
   }
-  
+
   updatePixels();
   noLoop();
 }
@@ -265,9 +267,9 @@ function draw() {
 
 ```javascript
 function draw() {
-  translate(200, 200);  // Move origin to center
-  rotate(frameCount * 0.01);  // Rotate over time
-  rect(-50, -50, 100, 100);  // Draw around new origin
+  translate(200, 200); // Move origin to center
+  rotate(frameCount * 0.01); // Rotate over time
+  rect(-50, -50, 100, 100); // Draw around new origin
 }
 ```
 
@@ -282,7 +284,7 @@ function draw() {
   rotate(PI / 4);
   rect(0, 0, 50, 50);
   pop();
-  
+
   // Back to original transformation
   ellipse(300, 300, 50, 50);
 }
@@ -299,10 +301,10 @@ class Particle {
     this.vel = createVector(random(-2, 2), random(-2, 2));
     this.size = random(10, 30);
   }
-  
+
   update() {
     this.pos.add(this.vel);
-    
+
     // Bounce off edges
     if (this.pos.x < 0 || this.pos.x > width) {
       this.vel.x *= -1;
@@ -311,7 +313,7 @@ class Particle {
       this.vel.y *= -1;
     }
   }
-  
+
   show() {
     ellipse(this.pos.x, this.pos.y, this.size);
   }
@@ -321,15 +323,15 @@ let particles = [];
 
 function setup() {
   createCanvas(600, 400);
-  
+
   for (let i = 0; i < 50; i++) {
     particles.push(new Particle(random(width), random(height)));
   }
 }
 
 function draw() {
-  background(255, 20);  // Trails effect
-  
+  background(255, 20); // Trails effect
+
   for (let p of particles) {
     p.update();
     p.show();
@@ -353,13 +355,13 @@ function setup() {
 
 function draw() {
   background(255);
-  
+
   pos.add(vel);
-  
+
   // Bounce
   if (pos.x < 0 || pos.x > width) vel.x *= -1;
   if (pos.y < 0 || pos.y > height) vel.y *= -1;
-  
+
   ellipse(pos.x, pos.y, 50, 50);
 }
 ```
@@ -374,13 +376,13 @@ let circles = [];
 function setup() {
   createCanvas(600, 600);
   noStroke();
-  
+
   // Try to add circles
   for (let i = 0; i < 1000; i++) {
     let x = random(width);
     let y = random(height);
     let r = random(10, 50);
-    
+
     let valid = true;
     for (let c of circles) {
       let d = dist(x, y, c.x, c.y);
@@ -389,12 +391,12 @@ function setup() {
         break;
       }
     }
-    
+
     if (valid) {
-      circles.push({x, y, r});
+      circles.push({ x, y, r });
     }
   }
-  
+
   background(255);
   for (let c of circles) {
     fill(random(255), random(255), random(255), 128);
@@ -412,11 +414,11 @@ let scale = 20;
 
 function setup() {
   createCanvas(600, 600);
-  
+
   for (let i = 0; i < 1000; i++) {
     particles.push(createVector(random(width), random(height)));
   }
-  
+
   background(255);
 }
 
@@ -424,20 +426,20 @@ function draw() {
   noStroke();
   fill(255, 10);
   rect(0, 0, width, height);
-  
+
   for (let p of particles) {
     let x = floor(p.x / scale);
     let y = floor(p.y / scale);
     let angle = noise(x * 0.1, y * 0.1) * TWO_PI * 2;
-    
+
     p.x += cos(angle);
     p.y += sin(angle);
-    
+
     if (p.x < 0) p.x = width;
     if (p.x > width) p.x = 0;
     if (p.y < 0) p.y = height;
     if (p.y > height) p.y = 0;
-    
+
     stroke(0, 50);
     point(p.x, p.y);
   }
@@ -451,7 +453,7 @@ function setup() {
   createCanvas(600, 600);
   background(255);
   stroke(0);
-  
+
   translate(width / 2, height);
   branch(100);
 }
@@ -459,13 +461,13 @@ function setup() {
 function branch(len) {
   line(0, 0, 0, -len);
   translate(0, -len);
-  
+
   if (len > 4) {
     push();
     rotate(PI / 6);
     branch(len * 0.67);
     pop();
-    
+
     push();
     rotate(-PI / 6);
     branch(len * 0.67);
@@ -480,14 +482,14 @@ function branch(len) {
 let img;
 
 function preload() {
-  img = loadImage('photo.jpg');
+  img = loadImage("photo.jpg");
 }
 
 function setup() {
   createCanvas(600, 400);
   image(img, 0, 0, width, height);
-  
-  filter(GRAY);  // Apply grayscale filter
+
+  filter(GRAY); // Apply grayscale filter
 }
 ```
 
@@ -497,17 +499,17 @@ function setup() {
 function setup() {
   createCanvas(400, 400);
   loadPixels();
-  
+
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
       let index = (x + y * width) * 4;
-      pixels[index] = random(255);      // R
-      pixels[index + 1] = random(255);  // G
-      pixels[index + 2] = random(255);  // B
-      pixels[index + 3] = 255;          // A
+      pixels[index] = random(255); // R
+      pixels[index + 1] = random(255); // G
+      pixels[index + 2] = random(255); // B
+      pixels[index + 3] = 255; // A
     }
   }
-  
+
   updatePixels();
 }
 ```
@@ -516,12 +518,12 @@ function setup() {
 
 ```javascript
 function keyPressed() {
-  if (key === 's') {
-    save('myArt.png');
+  if (key === "s") {
+    save("myArt.png");
   }
-  
-  if (key === 'g') {
-    saveGif('myAnimation', 5);  // 5 seconds
+
+  if (key === "g") {
+    saveGif("myAnimation", 5); // 5 seconds
   }
 }
 ```
@@ -555,7 +557,7 @@ let r = map(mouseX, 0, width, 0, 255);
 ### Lerp (Linear Interpolation)
 
 ```javascript
-let x = lerp(100, 300, 0.5);  // Returns 200
+let x = lerp(100, 300, 0.5); // Returns 200
 ```
 
 ### Distance and Angles

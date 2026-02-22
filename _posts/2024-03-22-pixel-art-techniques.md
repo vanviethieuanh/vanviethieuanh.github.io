@@ -10,12 +10,15 @@ Pixel art is a unique digital art form where every pixel matters. Working with s
 ## Why Pixel Art?
 
 ### Nostalgia
+
 Pixel art evokes the golden age of gaming: NES, SNES, Game Boy. There's something timeless about 16x16 sprites.
 
 ### Constraints Breed Creativity
+
 Limited canvas size and color palette force you to be intentional. Every pixel must earn its place.
 
 ### Scalability
+
 Pixel art scales perfectly. No antialiasing, no blur, just crisp edges at any size (as long as you scale by whole numbers).
 
 ## Getting Started
@@ -33,6 +36,7 @@ Start small and work your way up:
 ### Color Palettes
 
 **Beginner palette sizes:**
+
 - 4 colors: Monochrome plus two shades
 - 8 colors: Good for starting out
 - 16 colors: Classic NES/Game Boy range
@@ -43,12 +47,14 @@ Start small and work your way up:
 ### Tools
 
 **Free:**
+
 - **Piskel**: Browser-based, great for beginners
 - **GraphicsGale**: Windows-only, powerful
 - **GIMP**: With pencil tool and grid
 - **Krita**: Free painting software with pixel art support
 
 **Paid:**
+
 - **Aseprite**: Industry standard ($20)
 - **Pyxel Edit**: Tiles and sprite sheets
 - **Pro Motion NG**: Professional pixel art tool
@@ -64,7 +70,7 @@ Hard edge:          Anti-aliased:
 █████               █████
 █████               █████▓
 █████               █████▓▒
-                    
+
 ```
 
 Use 1-2 intermediate colors between shapes to smooth transitions.
@@ -76,12 +82,13 @@ Creating the illusion of additional colors through patterns:
 ```
 50% gray dithering:
 █ █ █ █
- █ █ █ 
+ █ █ █
 █ █ █ █
- █ █ █ 
+ █ █ █
 ```
 
 **Dithering types:**
+
 - **Checkerboard**: 50/50 blend
 - **2x2 patterns**: Various ratios
 - **Scattered**: More organic feel
@@ -91,13 +98,15 @@ Creating the illusion of additional colors through patterns:
 Group similar colors to create readable forms. Avoid "pixel dust" where individual pixels float alone.
 
 **Bad:**
+
 ```
 █  █  █
- █ █ █ 
+ █ █ █
 █  █  █
 ```
 
 **Good:**
+
 ```
 ███
 ███
@@ -120,12 +129,14 @@ Black outline:     Colored outline:   No outline:
 Don't just change brightness for shadows—shift the hue too.
 
 **Instead of:**
+
 ```css
 Light: #ffaa00
 Shadow: #aa7700  /* Just darker */
 ```
 
 **Try:**
+
 ```css
 Light: #ffaa00
 Shadow: #cc6622  /* Darker AND more red/purple */
@@ -140,6 +151,7 @@ Shadows in nature shift toward blue/purple. Highlights shift toward yellow/orang
 Create materials using repeating patterns:
 
 **Metal:**
+
 ```
 ███▓▓▓███
 ██▓░░░▓██
@@ -149,6 +161,7 @@ Create materials using repeating patterns:
 ```
 
 **Wood grain:**
+
 ```
 ██████▒███
 ████▒▒▒███
@@ -159,6 +172,7 @@ Create materials using repeating patterns:
 ### Pixel Clusters Rules
 
 **The 1-2-3 Rule:**
+
 - Avoid 1 pixel alone
 - 2 pixels are okay for details
 - 3+ pixels create solid forms
@@ -199,9 +213,9 @@ At 16x16, you have limited pixels for faces:
 
 ```
   ████      (Hair: 4-6 pixels)
- ██████   
+ ██████
  █ █ █ █    (Eyes: 1-2 pixels each)
- ██████   
+ ██████
   █  █      (Nose: 1-2 pixels optional)
   ████      (Mouth: 2-3 pixels)
 ```
@@ -211,6 +225,7 @@ At 16x16, you have limited pixels for faces:
 Keep animation smooth with small changes between frames:
 
 **Walk cycle basics:**
+
 ```
 Frame 1:  Frame 2:  Frame 3:  Frame 4:
   █         █         █         █
@@ -279,6 +294,7 @@ Design in black and white first, then add color:
 ### Palette Constraints
 
 **1-bit** (2 colors):
+
 ```
 Black: #000000
 White: #FFFFFF
@@ -288,6 +304,7 @@ White: #FFFFFF
 Limited but iconic retro feel.
 
 **GB** (4 shades of green):
+
 ```
 #0f380f  (Darkest)
 #306230
@@ -306,6 +323,7 @@ Resist the urge to add "just one more color." Work with what you have.
 Diagonal lines look jaggy. Break them up with anti-aliasing:
 
 **Bad:**
+
 ```
     █
    █
@@ -315,6 +333,7 @@ Diagonal lines look jaggy. Break them up with anti-aliasing:
 ```
 
 **Better:**
+
 ```
     █
    ██
@@ -328,6 +347,7 @@ Diagonal lines look jaggy. Break them up with anti-aliasing:
 Shading that follows the outline creates a "puffy" look:
 
 **Pillow shading:**
+
 ```
 ███████
 █▓▓▓▓▓█
@@ -337,6 +357,7 @@ Shading that follows the outline creates a "puffy" look:
 ```
 
 **Directional lighting:**
+
 ```
 ██████▓
 █░░░▓▓▓
@@ -356,6 +377,7 @@ Keep pixel size, color count, and line thickness consistent across all pieces.
 Every pixel should be intentional. Clean up stray pixels:
 
 **Before:**
+
 ```
 █████ █
 █ █ ███
@@ -363,6 +385,7 @@ Every pixel should be intentional. Clean up stray pixels:
 ```
 
 **After:**
+
 ```
 ██████
 ██████

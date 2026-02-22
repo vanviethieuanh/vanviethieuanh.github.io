@@ -36,8 +36,12 @@ SVGs are perfect for the web: infinitely scalable, animatable, and accessible. L
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 ```
 
@@ -49,8 +53,13 @@ SVGs are perfect for the web: infinitely scalable, animatable, and accessible. L
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 ```
 
@@ -58,9 +67,15 @@ SVGs are perfect for the web: infinitely scalable, animatable, and accessible. L
 
 ```css
 @keyframes colorShift {
-  0% { fill: #3b82f6; }
-  50% { fill: #8b5cf6; }
-  100% { fill: #3b82f6; }
+  0% {
+    fill: #3b82f6;
+  }
+  50% {
+    fill: #8b5cf6;
+  }
+  100% {
+    fill: #3b82f6;
+  }
 }
 
 .shape {
@@ -99,7 +114,7 @@ The classic "drawing" effect.
 Use JavaScript to get exact length:
 
 ```javascript
-const path = document.querySelector('.path');
+const path = document.querySelector(".path");
 const length = path.getTotalLength();
 
 path.style.strokeDasharray = length;
@@ -162,12 +177,12 @@ Native SVG animations (being phased out, but still useful):
 
 ```xml
 <circle r="20">
-  <animate 
-    attributeName="r" 
-    from="20" 
-    to="40" 
-    dur="1s" 
-    repeatCount="indefinite" 
+  <animate
+    attributeName="r"
+    from="20"
+    to="40"
+    dur="1s"
+    repeatCount="indefinite"
   />
 </circle>
 ```
@@ -210,26 +225,26 @@ Native SVG animations (being phased out, but still useful):
 Most powerful SVG animation library:
 
 ```javascript
-gsap.to('.logo', {
+gsap.to(".logo", {
   rotation: 360,
   duration: 2,
   repeat: -1,
-  ease: 'linear'
+  ease: "linear",
 });
 
 // Stagger multiple elements
-gsap.to('.dot', {
+gsap.to(".dot", {
   y: -20,
   stagger: 0.1,
   repeat: -1,
-  yoyo: true
+  yoyo: true,
 });
 
 // Complex timeline
 const tl = gsap.timeline();
-tl.to('.shape1', { x: 100, duration: 1 })
-  .to('.shape2', { y: 100, duration: 1 }, '-=0.5')
-  .to('.shape3', { scale: 2, duration: 1 });
+tl.to(".shape1", { x: 100, duration: 1 })
+  .to(".shape2", { y: 100, duration: 1 }, "-=0.5")
+  .to(".shape3", { scale: 2, duration: 1 });
 ```
 
 ### Anime.js
@@ -238,13 +253,15 @@ Lightweight alternative:
 
 ```javascript
 anime({
-  targets: '.svg-path',
+  targets: ".svg-path",
   strokeDashoffset: [anime.setDashoffset, 0],
-  easing: 'easeInOutSine',
+  easing: "easeInOutSine",
   duration: 1500,
-  delay: function(el, i) { return i * 250 },
-  direction: 'alternate',
-  loop: true
+  delay: function (el, i) {
+    return i * 250;
+  },
+  direction: "alternate",
+  loop: true,
 });
 ```
 
@@ -253,14 +270,10 @@ anime({
 jQuery for SVG:
 
 ```javascript
-const s = Snap('.svg-container');
+const s = Snap(".svg-container");
 const circle = s.circle(50, 50, 40);
 
-circle.animate(
-  { r: 80 },
-  1000,
-  mina.bounce
-);
+circle.animate({ r: 80 }, 1000, mina.bounce);
 ```
 
 ## Interactive SVG Animations
@@ -288,11 +301,11 @@ circle.animate(
 ### Click Animations
 
 ```javascript
-document.querySelector('.button-svg').addEventListener('click', function() {
-  this.classList.add('clicked');
-  
+document.querySelector(".button-svg").addEventListener("click", function () {
+  this.classList.add("clicked");
+
   setTimeout(() => {
-    this.classList.remove('clicked');
+    this.classList.remove("clicked");
   }, 600);
 });
 ```
@@ -303,7 +316,9 @@ document.querySelector('.button-svg').addEventListener('click', function() {
 }
 
 @keyframes pop {
-  50% { transform: scale(1.2); }
+  50% {
+    transform: scale(1.2);
+  }
 }
 ```
 
@@ -318,10 +333,10 @@ Only works for same number of points:
 ```css
 @keyframes morph {
   from {
-    d: path('M10,10 L100,10 L100,100 L10,100 Z');
+    d: path("M10,10 L100,10 L100,100 L10,100 Z");
   }
   to {
-    d: path('M55,10 L100,100 L10,100 Z');
+    d: path("M55,10 L100,100 L10,100 Z");
   }
 }
 
@@ -333,11 +348,11 @@ Only works for same number of points:
 ### Using GSAP MorphSVG Plugin
 
 ```javascript
-gsap.to('.shape1', {
-  morphSVG: '.shape2',
+gsap.to(".shape1", {
+  morphSVG: ".shape2",
   duration: 2,
   repeat: -1,
-  yoyo: true
+  yoyo: true,
 });
 ```
 
@@ -346,6 +361,7 @@ gsap.to('.shape1', {
 ### 1. Optimize SVG Files
 
 Use SVGO or SVGOMG to reduce file size:
+
 - Remove unnecessary metadata
 - Simplify paths
 - Reduce decimal precision
@@ -385,7 +401,9 @@ Filters (blur, drop-shadow) are expensive. Use sparingly.
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 ```
 
@@ -397,7 +415,8 @@ Filters (blur, drop-shadow) are expensive. Use sparingly.
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -418,7 +437,9 @@ Filters (blur, drop-shadow) are expensive. Use sparingly.
 }
 
 @keyframes check {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 ```
 
@@ -430,8 +451,13 @@ Filters (blur, drop-shadow) are expensive. Use sparingly.
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 ```
 
@@ -501,7 +527,7 @@ Loading spinners should have fallback text for screen readers.
       <circle cx="50" cy="50" r="40"/>
     </clipPath>
   </defs>
-  
+
   <image href="photo.jpg" clip-path="url(#clip)" />
 </svg>
 ```
@@ -510,8 +536,12 @@ Animate the clip path:
 
 ```css
 @keyframes expandClip {
-  from { r: 0; }
-  to { r: 100; }
+  from {
+    r: 0;
+  }
+  to {
+    r: 100;
+  }
 }
 
 #clip circle {
@@ -528,7 +558,7 @@ Animate the clip path:
       <rect width="100%" height="100%" fill="white" opacity="0"/>
     </mask>
   </defs>
-  
+
   <image href="photo.jpg" mask="url(#fade-mask)" />
 </svg>
 ```
@@ -543,7 +573,7 @@ Animate the clip path:
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
   </defs>
-  
+
   <circle filter="url(#glow)" cx="50" cy="50" r="30"/>
 </svg>
 ```
@@ -552,8 +582,8 @@ Animate the clip path:
 
 ```html
 <svg class="logo" viewBox="0 0 100 100">
-  <circle class="logo-circle" cx="50" cy="50" r="40"/>
-  <path class="logo-path" d="M30,50 L50,70 L70,30"/>
+  <circle class="logo-circle" cx="50" cy="50" r="40" />
+  <path class="logo-path" d="M30,50 L50,70 L70,30" />
 </svg>
 ```
 
@@ -578,11 +608,15 @@ Animate the clip path:
 }
 
 @keyframes drawCircle {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes drawPath {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 ```
 
@@ -597,6 +631,7 @@ Animate the clip path:
 ## Conclusion
 
 SVG animation combines the best of graphics and code:
+
 - Scalable and crisp
 - Performant when done right
 - Accessible and semantic
