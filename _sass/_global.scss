@@ -488,6 +488,8 @@ footer {
         border: none;
         border-radius: 0;
         line-height: 1.6;
+        white-space: pre-wrap;
+        word-break: break-word;
       }
     }
 
