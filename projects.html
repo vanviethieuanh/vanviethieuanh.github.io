@@ -5,186 +5,216 @@ permalink: /projects
 ---
 
 <style>
-  .projects-container {
-    max-width: 1200px;
-    margin: 0 auto;
+  /* Flagship cards */
+  .flagship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
+  .flagship-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem;
+    border: 3px solid var(--fg0);
+    border-radius: 10px;
+    box-shadow: 0 0 0 var(--fg4);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .flagship-card:hover {
+    box-shadow: 4px 4px 0 var(--fg4);
+  }
+
+  .flagship-card h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 0.6rem 0;
+    color: var(--fg0);
+  }
+
+  .flagship-card p {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    color: var(--fg3);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Project sections */
+  .projects-section {
     margin-bottom: 3rem;
   }
 
-  .project-card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .project-card .illustration {
-    background-size: cover;
-    background-position: center;
-    background-color: var(--bg2);
-  }
-
-  .more-projects {
-    margin-top: 4rem;
-    max-width: 1200px;
-  }
-
-  .more-projects > ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .more-projects h3 {
+  .projects-section h3 {
     font-family: "Oswald", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
     margin-bottom: 1rem;
     color: var(--fg0);
     border-bottom: 3px solid var(--fg4);
     padding-bottom: 0.5rem;
   }
 
-  .more-projects ul ul {
+  .projects-section ul {
     list-style: none;
     padding: 0;
+    columns: 2;
+    column-gap: 2rem;
   }
 
-  .more-projects ul ul li {
-    margin-bottom: 0.75rem;
+  .projects-section li {
+    margin-bottom: 0.6rem;
+    break-inside: avoid;
   }
 
-  .more-projects ul ul a {
+  .projects-section a {
     color: var(--fg3);
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
     display: inline-block;
   }
 
-  .more-projects ul ul a:hover {
+  .projects-section a:hover {
     color: var(--fg0);
+  }
+
+  /* Bottom sections: less visual weight */
+  .projects-section.minor h3 {
+    font-size: 1.1rem;
+    color: var(--fg4);
+    border-bottom-width: 2px;
+  }
+
+  .projects-section.minor a {
+    color: var(--fg4);
+    font-size: 0.95rem;
+  }
+
+  .projects-section.minor a:hover {
+    color: var(--fg3);
+  }
+
+  @media (max-width: 600px) {
+    .flagship-grid {
+      grid-template-columns: 1fr;
+    }
+    .projects-section ul {
+      columns: 1;
+    }
   }
 </style>
 
-<div class="projects-container">
-  <div class="projects-grid">
-    {% for project in site.projects %}
-    <a href="{{ project.url }}" class="project-card card">
-      <div
-        class="illustration"
-        {%
-        if
-        project.image
-        %}style="background-image: url('{{ project.image | relative_url }}');"
-        {%
-        endif
-        %}
-      ></div>
-      <div class="title">
-        <h2>{{ project.title }}</h2>
-      </div>
-      <div class="overlay">
-        <h2>{{ project.title }}</h2>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-
-  <section class="more-projects">
-    <ul>
-      <li>
-        <h3>Creative Coding</h3>
-        <ul>
-          <li>
-            <a href="https://accodius.com/creative-coding/lissajous-curve/">
-              Lissajous Curves
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://accodius.com/creative-coding/richard-feynmen-ellipse/"
-            >
-              Richard Feynman Ellipse
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h3>Algorithms</h3>
-        <ul>
-          <li>
-            <a href="http://vanviethieuanh.github.io/k-means-clustering/">
-              K Means Clustering
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://vanviethieuanh.github.io/page-replacement-algorithms/"
-            >
-              Page Replacement Algorithms
-            </a>
-          </li>
-          <li>
-            <a href="https://vanviethieuanh.github.io/scheduling-algorithms/">
-              Scheduling Algorithms
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h3>Web Dev - UI Design</h3>
-        <ul>
-          <li>
-            <a href="https://github.com/vanviethieuanh/twitter-clone">
-              Twitter Clone
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/vanviethieuanh/group-chat">
-              Group Chat
-            </a>
-          </li>
-          <li>
-            <a href="http://vanviethieuanh.github.io/tictactoe/">
-              Tic Tac Toe
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h3>Emulation</h3>
-        <ul>
-          <li>
-            <a href="https://github.com/vanviethieuanh/enigma-machine">
-              Enigma Machine
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h3>Automation</h3>
-        <ul>
-          <li>
-            <a href="https://github.com/vanviethieuanh/dataset">
-              Data Scraping
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/vanviethieuanh/pixel-supporter">
-              gif2mp4
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </section>
+<div class="flagship-grid">
+  <a href="https://github.com/vanviethieuanh/iron-spider" class="flagship-card">
+    <h2>Iron Spider</h2>
+    <p>
+      Pluggable web crawling framework in Rust with concurrent scheduling, retry
+      pipelines, and extensible spider architecture.
+    </p>
+  </a>
+  <a href="https://github.com/vanviethieuanh/unitd" class="flagship-card">
+    <h2>unitd</h2>
+    <p>
+      A friendly HCL-based DSL for managing systemd units and their ecosystem,
+      with support for distributing configuration across many machines.
+    </p>
+  </a>
+  <a
+    href="https://github.com/vanviethieuanh/app-truffle-hunter"
+    class="flagship-card"
+  >
+    <h2>Truffle Hunter</h2>
+    <p>
+      A GitHub scanning tool powered by TruffleHog that auto-expands findings
+      and helps identify which users are worth deeper scan effort.
+    </p>
+  </a>
 </div>
+
+<section class="projects-section">
+  <h3>CS & Engineering</h3>
+  <ul>
+    <li>
+      <a href="https://vanviethieuanh.github.io/scheduling-algorithms/"
+        >Scheduling Algorithms</a
+      >
+    </li>
+    <li>
+      <a href="https://vanviethieuanh.github.io/page-replacement-algorithms/"
+        >Page Replacement Algorithms</a
+      >
+    </li>
+    <li>
+      <a href="http://vanviethieuanh.github.io/k-means-clustering/"
+        >K-Means Clustering</a
+      >
+    </li>
+    <li>
+      <a href="https://github.com/vanviethieuanh/lib-go-pipes">lib-go-pipes</a>
+    </li>
+    <li>
+      <a href="https://github.com/vanviethieuanh/enigma-machine"
+        >Enigma Machine</a
+      >
+    </li>
+    <li>
+      <a href="https://github.com/vanviethieuanh/icon-forge">Icon Forge</a>
+    </li>
+    <li>
+      <a href="https://github.com/vanviethieuanh/dataset">Data Scraping</a>
+    </li>
+  </ul>
+</section>
+
+<section class="projects-section minor">
+  <h3>Others</h3>
+  <ul>
+    <li>
+      <a href="https://github.com/vanviethieuanh/twitter-clone"
+        >Twitter Clone</a
+      >
+    </li>
+    <li>
+      <a href="https://github.com/vanviethieuanh/group-chat">Group Chat</a>
+    </li>
+    <li>
+      <a href="http://vanviethieuanh.github.io/tictactoe/">Tic Tac Toe</a>
+    </li>
+    <li>
+      <a href="https://github.com/vanviethieuanh/pixel-supporter">gif2mp4</a>
+    </li>
+    <li><a href="https://github.com/vanviethieuanh/lunis">Lunis</a></li>
+    <li>
+      <a href="https://accodius.com/creative-coding/lissajous-curve/"
+        >Lissajous Curves</a
+      >
+    </li>
+    <li>
+      <a href="https://accodius.com/creative-coding/richard-feynmen-ellipse/"
+        >Richard Feynman Ellipse</a
+      >
+    </li>
+  </ul>
+</section>
+
+<section class="projects-section minor">
+  <h3>Coursework</h3>
+  <ul>
+    <li>
+      <a href="https://github.com/vanviethieuanh/ugp-cs114"
+        >CS114 — ML Forecasting</a
+      >
+    </li>
+    <li>
+      <a href="https://github.com/vanviethieuanh/ugp-cs231"
+        >CS231 — Computer Vision</a
+      >
+    </li>
+  </ul>
+</section>
